@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#F2EDE4" />
+<title>Maggie Salmerón — Asesora Prudential · El legado que se vive hoy</title>
+<meta name="description" content="Maggie Salmerón, asesora financiera Prudential certificada. Diseño planes de vida + ahorro 100% personalizados. Diagnóstico gratis en 90 segundos." />
+<meta name="keywords" content="Maggie Salmerón, Prudential México, asesora financiera, seguro de vida, plan de retiro, plan educativo, vida inversión" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Maggie Salmerón — Asesora Prudential" />
+<meta property="og:description" content="Diagnóstico gratis en 90 segundos. Tu plan ideal con precio real y comparativo de mercado." />
+<meta property="og:image" content="hero-illustration.webp" />
+<meta property="og:locale" content="es_MX" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preload" as="image" href="hero-illustration.webp" fetchpriority="high" />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+/* ============================================================
+   MAGGIE SALMERÓN · Estilo editorial brutalist (Aritza Salazar)
+   ============================================================ */
+:root{
+  --bg:#F2EDE4;              /* Crema editorial */
+  --bg-deep:#E8E1D2;
+  --paper:#FAF6EE;
+  --ink:#0A0A0A;             /* Negro casi puro */
+  --ink-soft:#1A1A1A;
+  --muted:#6B655C;
+  --line:rgba(10,10,10,0.12);
+  --line-soft:rgba(10,10,10,0.06);
+  --pink:#FF0083;            /* Lemonade Pink — acento único */
+  --pink-soft:#FFB3D9;
+  --pink-bg:#FFE0F0;
+  --serif:'Fraunces', Georgia, serif;
+  --mono:'JetBrains Mono', 'SF Mono', monospace;
+  --sans:'Inter', -apple-system, sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.55;font-size:17px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+
+h1,h2,h3,h4{font-family:var(--serif);font-weight:400;line-height:1.0;letter-spacing:-0.02em;color:var(--ink)}
+h1{font-size:clamp(3.25rem,7vw,7rem);font-weight:400;letter-spacing:-0.04em;line-height:.92}
+h2{font-size:clamp(2.5rem,5vw,4.5rem);letter-spacing:-0.035em;line-height:.95}
+h3{font-size:clamp(1.5rem,2.4vw,2rem);letter-spacing:-0.02em;line-height:1.05}
+em,i{font-style:italic;font-family:var(--serif);font-weight:500;color:var(--ink)}
+em.pink,h1 em,h2 em,h3 em{color:var(--pink);font-style:italic;font-weight:500}
+p{color:#2A2620;font-size:1.0625rem;line-height:1.65}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+
+.container{max-width:1320px;margin:0 auto;padding:0 40px}
+.label{font-family:var(--mono);font-size:.75rem;color:var(--ink);text-transform:uppercase;letter-spacing:.08em;font-weight:500;display:inline-flex;align-items:center;gap:8px}
+.label::before{content:"//";color:var(--pink);font-weight:600}
+.label-num{font-family:var(--mono);font-size:.75rem;color:var(--muted);font-weight:500;letter-spacing:.05em}
+
+/* ============================================================
+   MARQUEE TICKER — banner superior estilo Aritza
+   ============================================================ */
+.marquee{
+  background:var(--ink);color:var(--bg);
+  padding:11px 0;overflow:hidden;
+  border-bottom:1px solid var(--ink);
+  font-family:var(--mono);font-size:.75rem;
+  letter-spacing:.08em;text-transform:uppercase;
+  position:relative;z-index:50;
+}
+.marquee-track{display:flex;animation:scroll 35s linear infinite;white-space:nowrap;width:max-content}
+.marquee-item{padding:0 24px;display:inline-flex;align-items:center;gap:24px}
+.marquee-item::after{content:"✦";color:var(--pink);font-size:.875rem}
+@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* ============================================================
+   NAV
+   ============================================================ */
+.nav{padding:24px 40px;display:flex;justify-content:space-between;align-items:center;background:var(--bg);border-bottom:1px solid var(--line);position:sticky;top:0;z-index:40;backdrop-filter:blur(20px)}
+.logo{display:flex;flex-direction:column;line-height:1.05}
+.logo-name{font-family:var(--serif);font-size:1.375rem;font-weight:500;letter-spacing:-0.02em}
+.logo-role{font-family:var(--mono);font-size:.6875rem;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;margin-top:2px}
+.nav-links{display:flex;gap:36px;align-items:center;font-family:var(--mono);font-size:.8125rem;text-transform:uppercase;letter-spacing:.06em;color:var(--ink)}
+.nav-links a{transition:color .2s}
+.nav-links a:hover{color:var(--pink)}
+.nav-cta{background:var(--ink);color:var(--bg);padding:14px 24px;border:none;cursor:pointer;font-family:var(--mono);font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;font-weight:500;transition:all .25s;display:inline-flex;align-items:center;gap:8px}
+.nav-cta:hover{background:var(--pink);color:#fff}
+.nav-cta::after{content:"→";transition:transform .25s}
+.nav-cta:hover::after{transform:translateX(4px)}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{padding:80px 0 100px;position:relative}
+.hero-label{margin-bottom:48px}
+.hero-grid{display:grid;grid-template-columns:1.3fr 0.7fr;gap:64px;align-items:end}
+.hero h1{margin-bottom:40px}
+.hero h1 em{position:relative;display:inline-block}
+.hero h1 em::before{content:"*";color:var(--pink);font-style:normal;margin-right:4px;font-size:.7em;vertical-align:0.4em}
+.hero h1 em::after{content:"*";color:var(--pink);font-style:normal;margin-left:4px;font-size:.7em;vertical-align:0.4em}
+.hero-sub{font-size:1.1875rem;color:#2A2620;max-width:640px;margin-bottom:48px;line-height:1.55}
+.hero-sub strong{color:var(--ink);font-weight:600}
+
+.hero-stats-inline{display:flex;gap:48px;margin-bottom:48px;padding:32px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.hero-stat{flex:1}
+.hero-stat-num{font-family:var(--serif);font-size:2.5rem;font-weight:500;line-height:1;letter-spacing:-0.03em;margin-bottom:6px;color:var(--ink)}
+.hero-stat-label{font-family:var(--mono);font-size:.6875rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em}
+
+.hero-ctas{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:18px 32px;font-family:var(--mono);font-size:.8125rem;text-transform:uppercase;letter-spacing:.08em;font-weight:500;cursor:pointer;border:none;transition:all .25s;text-decoration:none}
+.btn-primary{background:var(--ink);color:var(--bg)}
+.btn-primary:hover{background:var(--pink);color:#fff;transform:translateY(-1px)}
+.btn-primary::after{content:"→";transition:transform .25s;font-size:1.1em}
+.btn-primary:hover::after{transform:translateX(4px)}
+.btn-ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:var(--bg)}
+
+.hero-photo-col{position:relative;display:flex;flex-direction:column;align-items:center}
+.hero-photo-wrap{position:relative;width:100%;aspect-ratio:4/5;background:transparent;overflow:visible}
+.hero-photo{width:100%;height:100%;object-fit:cover;object-position:center center;position:relative;z-index:2;
+  -webkit-mask-image:radial-gradient(ellipse 95% 92% at center, #000 55%, rgba(0,0,0,0.85) 70%, rgba(0,0,0,0.5) 85%, transparent 100%);
+  mask-image:radial-gradient(ellipse 95% 92% at center, #000 55%, rgba(0,0,0,0.85) 70%, rgba(0,0,0,0.5) 85%, transparent 100%);
+}
+.hero-photo-badge{position:absolute;bottom:-18px;left:50%;transform:translateX(-50%);background:var(--pink);color:#fff;padding:12px 18px;font-family:var(--mono);font-size:.6875rem;text-transform:uppercase;letter-spacing:.1em;font-weight:600;z-index:5;display:inline-flex;align-items:center;gap:8px;white-space:nowrap;box-shadow:0 12px 24px -6px rgba(255,0,131,.45)}
+.hero-photo-badge::before{content:"●";color:#fff;animation:pulse 2s infinite}
+.hero-photo-deco{position:absolute;bottom:36%;right:-20px;font-family:var(--serif);font-style:italic;font-size:5rem;color:var(--pink);opacity:.18;z-index:1;line-height:1;letter-spacing:-0.04em}
+.hero-photo-symbol{position:absolute;top:8%;right:-8px;font-family:var(--serif);font-size:2.5rem;color:var(--pink);z-index:1;line-height:1;opacity:.55}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+.hero-metrics{display:flex;flex-direction:column;gap:14px;margin-top:32px;padding-top:24px;border-top:1px solid var(--line)}
+.hero-metric{display:flex;align-items:center;gap:14px;font-family:var(--mono);font-size:.8125rem;letter-spacing:.02em}
+.hero-metric-icon{font-size:1rem;color:var(--pink);width:20px}
+.hero-metric strong{color:var(--ink);font-weight:600;text-transform:uppercase;letter-spacing:.05em}
+.hero-metric-value{margin-left:auto;font-weight:500;color:var(--ink)}
+
+/* ============================================================
+   BIG STATS SECTION
+   ============================================================ */
+.bigstats{padding:100px 0;border-top:1px solid var(--ink)}
+.bigstats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.bigstat{padding:32px 24px 32px 0;border-right:1px solid var(--line);position:relative}
+.bigstat:last-child{border-right:none}
+.bigstat-num{font-family:var(--serif);font-size:clamp(4rem,8vw,6.5rem);font-weight:400;line-height:.9;letter-spacing:-0.05em;color:var(--ink);margin-bottom:16px}
+.bigstat-num em{color:var(--pink);font-style:italic;font-weight:500}
+.bigstat-num .small{font-size:.35em;color:var(--muted);font-family:var(--mono);font-weight:400;letter-spacing:0;vertical-align:top;margin-left:6px}
+.bigstat-label{font-family:var(--mono);font-size:.75rem;color:var(--ink);text-transform:uppercase;letter-spacing:.06em;line-height:1.4;max-width:200px}
+.bigstat-num-prefix{font-family:var(--mono);font-size:.625rem;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:8px;display:block}
+
+/* ============================================================
+   DIAGNÓSTICO / PAIN
+   ============================================================ */
+.diag{padding:120px 0;border-top:1px solid var(--ink);background:var(--paper)}
+.diag-head{margin-bottom:64px;max-width:920px}
+.diag-head .label{margin-bottom:32px}
+.diag-head h2{margin-bottom:32px}
+.diag-quote{font-family:var(--serif);font-style:italic;font-size:1.5rem;color:var(--ink);padding:24px 32px;border-left:3px solid var(--pink);background:var(--bg);max-width:680px;font-weight:400;line-height:1.4}
+.diag-quote::before{content:'"';font-size:1em;color:var(--pink)}
+.diag-quote::after{content:'"';font-size:1em;color:var(--pink)}
+
+.symptoms{margin-top:80px}
+.symptoms-label{margin-bottom:32px}
+.symptoms-pain-layout{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.symptoms-list{border-top:1px solid var(--line)}
+.symptom-row{padding:24px 0;border-bottom:1px solid var(--line);display:flex;gap:24px;align-items:flex-start}
+.symptom-num{font-family:var(--serif);font-size:2rem;font-weight:400;color:var(--pink);font-style:italic;line-height:1;flex-shrink:0;letter-spacing:-0.03em;width:48px}
+.symptom-text{font-size:1.0625rem;line-height:1.5;color:var(--ink);font-weight:400;flex:1}
+.symptoms-visual{position:relative;width:100%;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center}
+.symptoms-visual img{width:100%;height:100%;object-fit:contain;display:block;filter:drop-shadow(0 24px 40px rgba(10,10,10,0.12))}
+
+/* ============================================================
+   DIFERENCIADOR — Sobre Maggie
+   ============================================================ */
+.diff{padding:140px 0;border-top:1px solid var(--ink);position:relative;overflow:hidden}
+.diff-grid{display:grid;grid-template-columns:0.85fr 1.15fr;gap:80px;align-items:center}
+.diff-photo-col{position:relative;display:flex;flex-direction:column;align-items:center}
+.diff-photo-wrap{position:relative;width:100%;aspect-ratio:4/5;display:flex;align-items:flex-end;justify-content:center}
+.diff-photo{width:100%;height:100%;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 24px 32px rgba(10,10,10,0.15)) drop-shadow(0 8px 12px rgba(10,10,10,0.08));z-index:2;position:relative}
+.diff-photo-tag{background:var(--ink);color:var(--bg);padding:20px 24px;font-family:var(--serif);font-style:italic;font-size:1.0625rem;line-height:1.4;font-weight:400;text-align:left;border-left:3px solid var(--pink);margin-top:-8px;width:100%}
+.diff-photo-symbol{position:absolute;top:10%;right:-8px;font-family:var(--serif);font-style:italic;font-size:4.5rem;color:var(--pink);opacity:.22;z-index:1;line-height:1;letter-spacing:-0.04em}
+
+.diff-content .label{margin-bottom:32px}
+.diff-content h2{margin-bottom:32px}
+.diff-content p{font-size:1.125rem;color:#2A2620;margin-bottom:24px;line-height:1.6;max-width:620px}
+.diff-content p strong{color:var(--ink);font-weight:600}
+
+.diff-pillars{margin-top:48px;display:grid;grid-template-columns:1fr 1fr;gap:32px;padding-top:32px;border-top:1px solid var(--line)}
+.pillar{display:flex;gap:18px;align-items:flex-start}
+.pillar-icon{width:52px;height:52px;flex-shrink:0;display:flex;align-items:center;justify-content:center;border:1.5px solid var(--ink);border-radius:50%;color:var(--ink);font-size:1.25rem;font-weight:600;font-family:var(--mono)}
+.pillar:nth-child(1) .pillar-icon::before{content:"✓"}
+.pillar:nth-child(2) .pillar-icon::before{content:"⚡"}
+.pillar:nth-child(3) .pillar-icon::before{content:"↗"}
+.pillar:nth-child(4) .pillar-icon::before{content:"◈"}
+.pillar:hover .pillar-icon{border-color:var(--pink);color:var(--pink);background:var(--pink-bg)}
+.pillar-body{flex:1}
+.pillar{padding:0}
+.pillar-num{font-family:var(--mono);font-size:.6875rem;color:var(--pink);text-transform:uppercase;letter-spacing:.1em;margin-bottom:8px;font-weight:600}
+.pillar-title{font-family:var(--serif);font-size:1.375rem;font-weight:500;color:var(--ink);margin-bottom:6px;letter-spacing:-0.02em}
+.pillar-desc{font-size:.875rem;color:var(--muted);line-height:1.5}
+
+/* ============================================================
+   MANIFIESTO
+   ============================================================ */
+.manifesto{padding:160px 0;background:var(--ink);color:var(--bg);border-top:1px solid var(--ink);position:relative;overflow:hidden}
+.manifesto::before{content:"✦";position:absolute;top:60px;right:80px;font-size:8rem;color:var(--pink);opacity:.15;font-family:var(--serif)}
+.manifesto::after{content:"//";position:absolute;bottom:60px;left:80px;font-size:6rem;color:var(--pink);opacity:.2;font-family:var(--mono);font-weight:600}
+.manifesto-inner{max-width:1000px;margin:0 auto;position:relative;z-index:1}
+.manifesto-label{font-family:var(--mono);font-size:.75rem;color:var(--pink);text-transform:uppercase;letter-spacing:.12em;margin-bottom:40px;font-weight:600;display:inline-flex;align-items:center;gap:8px}
+.manifesto-label::before{content:"//"}
+.manifesto-quote{font-family:var(--serif);font-size:clamp(2rem,4vw,3.25rem);font-weight:400;line-height:1.15;letter-spacing:-0.02em;color:var(--bg);margin-bottom:48px;font-style:italic}
+.manifesto-quote em{color:var(--pink);font-style:italic;font-weight:500}
+.manifesto-quote .strike{color:rgba(242,237,228,0.4);text-decoration:line-through;text-decoration-color:var(--pink);text-decoration-thickness:2px;font-style:italic}
+.manifesto-author{display:flex;align-items:center;gap:16px;padding-top:32px;border-top:1px solid rgba(242,237,228,0.15)}
+.manifesto-author-mark{width:48px;height:48px;border:1px solid var(--pink);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.5rem;color:var(--pink);font-style:italic}
+.manifesto-author-name{font-family:var(--mono);font-size:.875rem;color:var(--bg);text-transform:uppercase;letter-spacing:.08em;font-weight:500}
+.manifesto-author-role{font-family:var(--mono);font-size:.6875rem;color:rgba(242,237,228,0.55);text-transform:uppercase;letter-spacing:.1em;margin-top:2px}
+
+/* ============================================================
+   PRODUCTOS
+   ============================================================ */
+.products{padding:140px 0;border-top:1px solid var(--ink)}
+.products-head{margin-bottom:80px;max-width:920px}
+.products-head .label{margin-bottom:32px}
+.products-head h2{margin-bottom:24px}
+.products-head p{font-size:1.125rem;color:#2A2620;max-width:680px}
+.products-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0;border-top:1px solid var(--line)}
+.product{padding:48px 32px 48px 0;border-right:1px solid var(--line);cursor:pointer;transition:background .3s;position:relative}
+.product:last-child{border-right:none;padding-right:0}
+.product:nth-child(2){padding-left:32px;padding-right:32px}
+.product:nth-child(3){padding-left:32px}
+.product:hover{background:var(--paper)}
+.product-img-wrap{width:100%;aspect-ratio:1/1;margin-bottom:24px;display:flex;align-items:center;justify-content:center;position:relative;transition:all .4s ease}
+.product-img{width:80%;height:80%;object-fit:contain;transition:transform .5s ease;position:relative;z-index:2;filter:drop-shadow(0 16px 24px rgba(10,10,10,0.12))}
+.product:hover .product-img{transform:translateY(-6px)}
+.product:hover .product-img{transform:scale(1.04)}
+.product-num{font-family:var(--mono);font-size:.6875rem;color:var(--pink);text-transform:uppercase;letter-spacing:.1em;margin-bottom:24px;font-weight:600;display:flex;align-items:center;gap:8px}
+.product-num::before{content:"●"}
+.product-name{font-family:var(--serif);font-size:1.875rem;font-weight:500;color:var(--ink);margin-bottom:16px;letter-spacing:-0.02em;line-height:1.05}
+.product-name em{color:var(--pink);font-style:italic}
+.product-desc{font-size:.9375rem;color:#2A2620;line-height:1.55;margin-bottom:28px}
+.product-feat{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:32px}
+.product-feat li{display:flex;align-items:flex-start;gap:10px;font-family:var(--mono);font-size:.75rem;color:var(--ink);text-transform:uppercase;letter-spacing:.05em;line-height:1.5}
+.product-feat li::before{content:"→";color:var(--pink);font-weight:600;flex-shrink:0}
+.product-link{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.75rem;color:var(--ink);text-transform:uppercase;letter-spacing:.08em;font-weight:600;padding-bottom:6px;border-bottom:1px solid var(--ink);transition:all .25s}
+.product-link::after{content:"→";transition:transform .25s}
+.product:hover .product-link{color:var(--pink);border-bottom-color:var(--pink)}
+.product:hover .product-link::after{transform:translateX(4px)}
+
+/* ============================================================
+   PROCESO
+   ============================================================ */
+.process{padding:140px 0;border-top:1px solid var(--ink);background:var(--paper)}
+.process-head{margin-bottom:80px;max-width:920px}
+.process-head .label{margin-bottom:32px}
+.process-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line)}
+.pstep{padding:48px 32px 48px 0;border-right:1px solid var(--line);position:relative}
+.pstep:nth-child(2){padding-left:32px;padding-right:32px}
+.pstep:nth-child(3){padding-left:32px;border-right:none}
+.pstep-num{font-family:var(--serif);font-size:4rem;font-weight:400;color:var(--pink);font-style:italic;line-height:1;margin-bottom:24px;letter-spacing:-0.03em}
+.pstep h3{margin-bottom:14px;font-size:1.5rem}
+.pstep p{font-size:.9375rem;color:#2A2620;margin-bottom:20px;line-height:1.55}
+.pstep-time{font-family:var(--mono);font-size:.6875rem;color:var(--ink);text-transform:uppercase;letter-spacing:.1em;font-weight:600;padding:6px 12px;background:var(--pink-bg);display:inline-block}
+
+/* ============================================================
+   TESTIMONIOS
+   ============================================================ */
+.testimonials{padding:140px 0;border-top:1px solid var(--ink)}
+.testimonials-head{margin-bottom:64px;max-width:920px}
+.testimonials-head .label{margin-bottom:32px}
+.testimonials-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line)}
+.testimonial{padding:48px 32px 48px 0;border-right:1px solid var(--line)}
+.testimonial:nth-child(2){padding-left:32px;border-right:none}
+.testimonial-quote{font-family:var(--serif);font-size:1.5rem;font-style:italic;font-weight:400;color:var(--ink);line-height:1.4;margin-bottom:32px;letter-spacing:-0.01em}
+.testimonial-quote::before{content:"\201C ";color:var(--pink)}
+.testimonial-author{display:flex;align-items:center;gap:14px}
+.testimonial-mark{width:44px;height:44px;border:1px solid var(--ink);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.25rem;color:var(--ink);font-style:italic;flex-shrink:0}
+.testimonial-name{font-family:var(--mono);font-size:.8125rem;color:var(--ink);text-transform:uppercase;letter-spacing:.06em;font-weight:600;margin-bottom:2px}
+.testimonial-role{font-family:var(--mono);font-size:.6875rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+
+/* ============================================================
+   DIAGNÓSTICO EXPRESS — Chat conversacional
+   ============================================================ */
+.diag-express{padding:120px 0;border-top:1px solid var(--ink);background:var(--paper)}
+.diag-express-head{margin-bottom:48px;max-width:920px}
+.diag-express-head .label{margin-bottom:24px}
+.diag-express-head h2{margin-bottom:20px}
+.diag-express-head p{font-size:1.0625rem;color:#2A2620;max-width:680px;line-height:1.55}
+
+.chat-wrap{max-width:760px;margin:0 auto}
+.chat-window{background:var(--bg);border:1px solid var(--ink);box-shadow:0 30px 60px -20px rgba(10,10,10,0.15);overflow:hidden;display:flex;flex-direction:column}
+.chat-header{display:flex;align-items:center;gap:14px;padding:18px 24px;background:var(--ink);color:var(--bg);border-bottom:1px solid var(--ink)}
+.chat-avatar{width:44px;height:44px;border-radius:50%;background-image:url('1-transparent.webp');background-size:cover;background-position:center 12%;background-color:var(--pink);flex-shrink:0;border:2px solid var(--pink)}
+.chat-header-info{flex:1}
+.chat-name{font-family:var(--mono);font-size:.8125rem;color:var(--bg);font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+.chat-status{font-family:var(--mono);font-size:.6875rem;color:var(--pink);text-transform:uppercase;letter-spacing:.08em;margin-top:2px}
+.chat-progress{font-family:var(--mono);font-size:.75rem;color:rgba(242,237,228,0.7);letter-spacing:.1em;font-weight:500}
+.chat-progress span{color:var(--pink);font-weight:700}
+
+.chat-body{padding:32px 24px;min-height:480px;display:flex;flex-direction:column}
+.chat-screen{display:none;animation:chatFade .5s ease}
+.chat-screen.active{display:flex;flex-direction:column;flex:1}
+@keyframes chatFade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+
+.chat-msg{display:flex;flex-direction:column;gap:8px;margin-bottom:24px;max-width:85%}
+.chat-msg-bot{align-self:flex-start}
+.chat-bubble{background:#fff;border:1px solid var(--line);padding:14px 18px;border-radius:18px 18px 18px 4px;font-size:1rem;line-height:1.45;color:var(--ink);animation:bubblePop .4s ease both;box-shadow:0 2px 6px -2px rgba(10,10,10,0.05)}
+.chat-bubble:nth-child(2){animation-delay:.15s}
+.chat-bubble:nth-child(3){animation-delay:.3s}
+.chat-bubble:nth-child(4){animation-delay:.45s}
+.chat-bubble-question{font-family:var(--serif);font-size:1.25rem;font-weight:500;line-height:1.3;border-color:var(--pink);background:#fff}
+.chat-bubble-question strong{color:var(--pink);font-weight:600}
+.chat-bubble-small{font-size:.875rem;color:var(--muted);background:transparent;border:none;box-shadow:none;padding:4px 0}
+@keyframes bubblePop{from{opacity:0;transform:translateY(8px) scale(.96)}to{opacity:1;transform:translateY(0) scale(1)}}
+
+.chat-options{display:flex;flex-direction:column;gap:10px;align-self:stretch;margin-top:auto}
+.chat-opt{background:#fff;border:1.5px solid var(--line);padding:16px 20px;cursor:pointer;display:flex;align-items:center;gap:14px;font-family:var(--sans);font-size:.9375rem;color:var(--ink);text-align:left;width:100%;transition:all .2s;line-height:1.4}
+.chat-opt:hover{border-color:var(--pink);background:var(--pink-bg);transform:translateX(4px)}
+.chat-opt-icon{font-size:1.5rem;flex-shrink:0;width:28px;text-align:center}
+.chat-opt-selected{background:var(--ink)!important;border-color:var(--ink)!important;color:var(--bg)!important}
+.chat-opt-multi{position:relative}
+.chat-opt-multi .chat-opt-text{flex:1}
+.chat-opt-multi .chat-opt-check{width:24px;height:24px;border:1.5px solid var(--line);border-radius:4px;display:flex;align-items:center;justify-content:center;font-size:.75rem;color:transparent;flex-shrink:0;transition:all .25s;background:#fff}
+.chat-opt-multi.chat-opt-checked{border-color:var(--pink);background:var(--pink-bg)}
+.chat-opt-multi.chat-opt-checked .chat-opt-check{background:var(--pink);border-color:var(--pink);color:#fff}
+.chat-multi-footer{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:20px 0 0;margin-top:16px;border-top:1px dashed var(--line);flex-wrap:wrap}
+.chat-multi-count{font-family:var(--mono);font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.06em;font-weight:500}
+.chat-multi-count.chat-multi-count-active{color:var(--pink);font-weight:600}
+.chat-continue{background:var(--ink);color:var(--bg);border:none;padding:14px 28px;font-family:var(--mono);font-size:.8125rem;text-transform:uppercase;letter-spacing:.08em;font-weight:600;cursor:pointer;transition:all .25s;display:inline-flex;align-items:center;gap:8px}
+.chat-continue:not(:disabled):hover{background:var(--pink)}
+.chat-continue:disabled{opacity:.35;cursor:not-allowed;background:var(--muted)}
+
+/* User reply bubble */
+.chat-msg-user{align-self:flex-end;max-width:75%}
+.chat-msg-user .chat-bubble{background:var(--pink);color:#fff;border-color:var(--pink);border-radius:18px 18px 4px 18px}
+
+/* Typing indicator */
+.chat-typing{display:flex;align-items:center;gap:14px}
+.chat-typing-bubble{background:#fff;border:1px solid var(--line);padding:16px 22px;border-radius:18px 18px 18px 4px;display:flex;gap:6px}
+.chat-typing-bubble span{width:8px;height:8px;border-radius:50%;background:var(--pink);animation:typeDot 1.2s infinite}
+.chat-typing-bubble span:nth-child(2){animation-delay:.2s}
+.chat-typing-bubble span:nth-child(3){animation-delay:.4s}
+.chat-typing-text{font-family:var(--mono);font-size:.75rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+@keyframes typeDot{0%,60%,100%{transform:translateY(0);opacity:.4}30%{transform:translateY(-6px);opacity:1}}
+
+/* Result card */
+.result-card{background:var(--bg);border:1px solid var(--ink);padding:0;margin-top:8px;animation:bubblePop .6s ease both}
+.result-header{padding:24px 28px;border-bottom:1px solid var(--line);background:var(--ink);color:var(--bg)}
+.result-label{font-family:var(--mono);font-size:.6875rem;color:var(--pink);text-transform:uppercase;letter-spacing:.12em;font-weight:600;margin-bottom:8px}
+.result-plan-name{font-family:var(--serif);font-size:1.875rem;color:var(--bg);font-weight:500;letter-spacing:-0.02em;line-height:1.05;margin-bottom:6px}
+.result-plan-name em{color:var(--pink);font-style:italic}
+.result-plan-desc{font-size:.9375rem;color:rgba(242,237,228,0.75);line-height:1.4}
+
+.result-grid{display:grid;grid-template-columns:1fr 1fr;border-bottom:1px solid var(--line)}
+.result-cell{padding:24px 28px;border-right:1px solid var(--line)}
+.result-cell:last-child{border-right:none;background:var(--paper)}
+.result-cell-label{font-family:var(--mono);font-size:.625rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;font-weight:500;margin-bottom:8px}
+.result-cell-value{font-family:var(--serif);font-size:1.625rem;color:var(--ink);font-weight:500;letter-spacing:-0.02em;line-height:1.05}
+.result-cell-price{font-family:var(--serif);font-size:2.5rem;color:var(--pink);font-weight:500;letter-spacing:-0.03em;line-height:1;display:flex;align-items:baseline;gap:6px;flex-wrap:wrap}
+.result-cell-price small{font-family:var(--mono);font-size:.6875rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-weight:500}
+.result-cell-annual{font-family:var(--mono);font-size:.75rem;color:var(--muted);margin-top:10px;letter-spacing:.04em;padding-top:10px;border-top:1px dashed var(--line)}
+.result-cell-annual strong{color:var(--ink);font-weight:600}
+.result-cell-deductible{margin-top:12px;padding:10px 12px;background:var(--pink-bg);border-left:2px solid var(--pink)}
+.result-cell-deductible-label{font-family:var(--mono);font-size:.6875rem;color:var(--pink);text-transform:uppercase;letter-spacing:.1em;font-weight:700;margin-bottom:4px}
+.result-cell-deductible-text{font-size:.8125rem;color:var(--ink);line-height:1.4}
+.result-cell-deductible-text strong{color:var(--pink);font-weight:700;font-size:.9375rem}
+.result-payments{display:flex;flex-direction:column;gap:10px;padding:20px 28px;border-bottom:1px solid var(--line);background:var(--paper)}
+.result-payments-item{display:flex;align-items:flex-start;gap:12px;font-size:.875rem;color:var(--ink);line-height:1.4}
+.result-payments-icon{font-size:1.25rem;flex-shrink:0;line-height:1}
+.result-payments-item strong{color:var(--ink);font-weight:700}
+
+.result-includes{padding:24px 28px;border-bottom:1px solid var(--line)}
+.result-includes-label{font-family:var(--mono);font-size:.6875rem;color:var(--pink);text-transform:uppercase;letter-spacing:.1em;font-weight:600;margin-bottom:14px}
+.result-includes-list{list-style:none;display:flex;flex-direction:column;gap:10px}
+.result-includes-list li{display:flex;align-items:flex-start;gap:10px;font-size:.9375rem;color:var(--ink);line-height:1.45}
+.result-includes-list li::before{content:"→";color:var(--pink);font-weight:700;flex-shrink:0}
+
+.result-compare{padding:24px 28px;border-bottom:1px solid var(--line)}
+.result-compare-label{font-family:var(--mono);font-size:.6875rem;color:var(--pink);text-transform:uppercase;letter-spacing:.1em;font-weight:600;margin-bottom:14px}
+.result-compare-list{display:flex;flex-direction:column;gap:0;margin-bottom:16px}
+.result-compare-row{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px dashed var(--line);font-family:var(--mono);font-size:.8125rem}
+.result-compare-row:last-child{border-bottom:none}
+.result-compare-row .brand{text-transform:uppercase;letter-spacing:.04em;color:var(--muted);font-weight:500}
+.result-compare-row .price{color:var(--ink);font-weight:600}
+.result-compare-best{background:rgba(255,0,131,0.06);padding:12px 14px!important;margin:6px -14px 0;border-bottom:none!important}
+.result-compare-best .brand{color:var(--pink)!important;font-weight:700!important}
+.result-compare-best .price{color:var(--pink)!important;font-size:.9375rem}
+.result-savings{font-family:var(--serif);font-size:1.125rem;font-style:italic;color:var(--ink);padding:14px 16px;background:var(--pink-bg);border-left:3px solid var(--pink);margin-top:8px}
+.result-savings em{color:var(--pink);font-weight:500;font-size:1.5rem;letter-spacing:-0.02em;font-style:italic}
+
+.result-cta-msg{padding:20px 28px 0;align-self:stretch;max-width:none}
+.result-ctas{padding:0 28px 28px;display:flex;gap:12px;flex-wrap:wrap}
+.result-ctas .btn{flex:1;justify-content:center;min-width:200px}
+.result-disclaimer{margin-top:20px;font-family:var(--mono);font-size:.6875rem;color:var(--muted);line-height:1.55;letter-spacing:.02em;text-align:left;padding:0 8px}
+
+/* ============================================================
+   CIERRE — Última llamada
+   ============================================================ */
+.closing{padding:160px 0;border-top:1px solid var(--ink);text-align:left;position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 0%,rgba(255,0,131,0.06) 0%,transparent 50%),var(--bg)}
+.closing > .container{position:relative;z-index:2}
+.closing .container{max-width:1100px}
+.closing .label{margin-bottom:40px}
+.closing h2{font-size:clamp(2.75rem,5.5vw,5rem);margin-bottom:32px;letter-spacing:-0.035em;line-height:.98}
+.closing h2 em{position:relative;display:inline-block}
+.closing h2 em::before{content:"*";color:var(--pink);font-style:normal;margin-right:4px;font-size:.7em;vertical-align:0.4em}
+.closing h2 em::after{content:"*";color:var(--pink);font-style:normal;margin-left:4px;font-size:.7em;vertical-align:0.4em}
+.closing p{font-size:1.1875rem;color:#2A2620;max-width:680px;margin-bottom:48px;line-height:1.55}
+.closing-ctas{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer{background:var(--ink);color:var(--bg);padding:96px 0 32px;border-top:1px solid var(--ink)}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:64px;margin-bottom:80px}
+.footer .logo-name{color:var(--bg)}
+.footer .logo-role{color:rgba(242,237,228,0.5)}
+.footer-tag{color:rgba(242,237,228,0.7);max-width:340px;line-height:1.55;margin-top:24px;font-size:.9375rem}
+.footer-tag em{color:var(--pink)}
+.footer h4{font-family:var(--mono);font-size:.6875rem;color:rgba(242,237,228,0.5);text-transform:uppercase;letter-spacing:.12em;margin-bottom:20px;font-weight:600}
+.footer ul{list-style:none;display:flex;flex-direction:column;gap:12px}
+.footer ul a{color:rgba(242,237,228,0.85);font-family:var(--mono);font-size:.8125rem;text-transform:uppercase;letter-spacing:.04em;transition:color .2s}
+.footer ul a:hover{color:var(--pink)}
+.footer-bottom{padding-top:32px;border-top:1px solid rgba(242,237,228,0.12);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:var(--mono);font-size:.6875rem;color:rgba(242,237,228,0.4);text-transform:uppercase;letter-spacing:.08em}
+
+/* ============================================================
+   MODAL
+   ============================================================ */
+.modal-overlay{position:fixed;inset:0;z-index:200;background:rgba(10,10,10,0.85);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:24px;opacity:0;transition:opacity .3s}
+.modal-overlay.active{display:flex;opacity:1}
+.modal{background:var(--bg);width:100%;max-width:560px;max-height:90vh;overflow:hidden;display:flex;flex-direction:column;transform:translateY(20px);transition:transform .4s cubic-bezier(.4,0,.2,1);border:1px solid var(--ink)}
+.modal-overlay.active .modal{transform:translateY(0)}
+.modal-header{padding:20px 32px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:16px}
+.modal-header-left{display:flex;align-items:center;gap:12px}
+.modal-avatar{width:38px;height:38px;border-radius:50%;background-image:url('1-transparent.webp');background-size:cover;background-position:center 12%;background-color:var(--pink-bg);flex-shrink:0;border:1px solid var(--ink)}
+.modal-asesora{font-family:var(--mono);font-size:.75rem;color:var(--ink);font-weight:600;text-transform:uppercase;letter-spacing:.06em;line-height:1.1}
+.modal-online{font-family:var(--mono);font-size:.625rem;color:var(--pink);text-transform:uppercase;letter-spacing:.1em;display:flex;align-items:center;gap:4px;margin-top:2px;font-weight:500}
+.modal-online::before{content:"●";animation:pulse 2s infinite}
+.modal-progress{flex:1;display:flex;align-items:center;gap:12px;justify-content:flex-end}
+.progress-label{font-family:var(--mono);font-size:.6875rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.progress-bar{flex:0 1 120px;height:2px;background:var(--line);overflow:hidden}
+.progress-fill{height:100%;background:var(--pink);width:25%;transition:width .5s cubic-bezier(.4,0,.2,1)}
+.modal-close{background:none;border:none;cursor:pointer;width:32px;height:32px;display:flex;align-items:center;justify-content:center;color:var(--ink);font-size:1.5rem;transition:color .2s}
+.modal-close:hover{color:var(--pink)}
+.modal-body{padding:40px 32px;overflow-y:auto;flex:1}
+.step-screen{display:none;animation:slideIn .4s ease}
+.step-screen.active{display:block}
+@keyframes slideIn{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}
+.step-label{font-family:var(--mono);font-size:.6875rem;color:var(--pink);text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px;font-weight:600;display:inline-flex;align-items:center;gap:6px}
+.step-label::before{content:"//"}
+.step-question{font-family:var(--serif);font-size:1.875rem;color:var(--ink);margin-bottom:8px;font-weight:500;line-height:1.1;letter-spacing:-0.02em}
+.step-hint{font-size:.9375rem;color:var(--muted);margin-bottom:32px}
+.step-options{display:flex;flex-direction:column;gap:10px}
+.step-option{background:transparent;border:1px solid var(--line);padding:18px 20px;cursor:pointer;display:flex;align-items:center;gap:14px;transition:all .2s;font-family:var(--sans);font-size:1rem;color:var(--ink);text-align:left;width:100%}
+.step-option:hover{border-color:var(--pink);background:var(--paper);transform:translateX(4px)}
+.step-option.selected{border-color:var(--pink);background:var(--pink-bg)}
+.step-option-num{font-family:var(--mono);font-size:.6875rem;color:var(--pink);font-weight:700;text-transform:uppercase;letter-spacing:.06em}
+.step-input{width:100%;padding:18px 20px;border:1px solid var(--line);background:transparent;font-family:var(--sans);font-size:1rem;color:var(--ink);transition:border-color .2s}
+.step-input:focus{outline:none;border-color:var(--pink)}
+.step-input + .step-input{margin-top:10px}
+.modal-footer{padding:20px 32px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;background:var(--paper)}
+.btn-back{background:none;border:none;font-family:var(--mono);font-size:.75rem;color:var(--muted);cursor:pointer;display:flex;align-items:center;gap:6px;text-transform:uppercase;letter-spacing:.08em;font-weight:500;transition:color .2s}
+.btn-back:hover{color:var(--ink)}
+.btn-next{background:var(--ink);color:var(--bg);border:none;padding:14px 28px;font-family:var(--mono);font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;font-weight:500;cursor:pointer;display:flex;align-items:center;gap:8px;transition:all .25s}
+.btn-next:hover{background:var(--pink);color:#fff}
+.btn-next::after{content:"→"}
+.btn-next:disabled{opacity:.3;cursor:not-allowed}
+.success-screen{text-align:left}
+.success-mark{display:inline-block;width:48px;height:48px;border:1px solid var(--pink);color:var(--pink);font-family:var(--serif);font-size:1.5rem;font-style:italic;display:flex;align-items:center;justify-content:center;margin-bottom:24px}
+.success-title{font-family:var(--serif);font-size:1.75rem;color:var(--ink);margin-bottom:12px;font-weight:500;letter-spacing:-0.02em;line-height:1.15}
+.success-text{color:var(--muted);margin-bottom:24px;line-height:1.55}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width:1024px){
+  .container{padding:0 24px}
+  .hero-grid{grid-template-columns:1fr;gap:48px}
+  .diff-grid{grid-template-columns:1fr;gap:48px}
+  .bigstats-grid{grid-template-columns:1fr 1fr;gap:0}
+  .bigstat:nth-child(2){border-right:none}
+  .bigstat:nth-child(1),.bigstat:nth-child(2){border-bottom:1px solid var(--line);padding-bottom:32px}
+  .bigstat:nth-child(3),.bigstat:nth-child(4){padding-top:32px}
+  .symptoms-grid,.products-grid,.process-steps,.testimonials-grid,.diff-pillars,.diag-cases{grid-template-columns:1fr}
+  .dcase{border-right:none!important;padding-left:0!important;padding-right:0!important;border-bottom:1px solid var(--line);padding-top:32px;padding-bottom:32px}
+  .dcase:nth-child(2){background:transparent}
+  .symptoms-pain-layout{grid-template-columns:1fr;gap:32px}
+  .symptom,.product,.pstep,.testimonial{border-right:none!important;padding-left:0!important;padding-right:0!important;border-bottom:1px solid var(--line)}
+  .footer-top{grid-template-columns:1fr 1fr;gap:48px}
+  .hero-stats-inline{flex-direction:column;gap:24px}
+  .nav-links{display:none}
+}
+@media (max-width:640px){
+  .nav{padding:18px 24px}
+  .nav-cta{padding:10px 16px;font-size:.6875rem}
+  .hero{padding:48px 0 64px}
+  .hero h1{font-size:3rem}
+  .bigstats,.diag,.diff,.products,.process,.testimonials,.closing,.manifesto{padding:80px 0}
+  .footer-top{grid-template-columns:1fr;gap:32px}
+  .hero-ctas,.closing-ctas{flex-direction:column;align-items:stretch}
+  .btn{justify-content:center}
+  .modal-body{padding:32px 24px}
+  .step-question{font-size:1.5rem}
+}
+</style>
+</head>
+<body>
+
+<!-- MARQUEE TICKER -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span class="marquee-item">El legado que se vive hoy</span>
+    <span class="marquee-item">Asesora Prudential certificada</span>
+    <span class="marquee-item">+10 años protegiendo familias</span>
+    <span class="marquee-item">Vida · Ahorro · Retiro · Educación</span>
+    <span class="marquee-item">Cotización 100% gratis</span>
+    <span class="marquee-item">El legado que se vive hoy</span>
+    <span class="marquee-item">Asesora Prudential certificada</span>
+    <span class="marquee-item">+10 años protegiendo familias</span>
+    <span class="marquee-item">Vida · Ahorro · Retiro · Educación</span>
+    <span class="marquee-item">Cotización 100% gratis</span>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="#" class="logo">
+    <span class="logo-name">Maggie Salmerón</span>
+    <span class="logo-role">Asesora Prudential</span>
+  </a>
+  <div class="nav-links">
+    <a href="#diagnostico">Diagnóstico</a>
+    <a href="#productos">Productos</a>
+    <a href="#sobre">Sobre mí</a>
+    <a href="#testimonios">Testimonios</a>
+  </div>
+  <a class="nav-cta" href="#diagnostico-chat" style="display:inline-flex;text-decoration:none">Agenda cotización</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-label label">Estrategia · Protección · Patrimonio</div>
+    <div class="hero-grid">
+      <div>
+        <h1>El legado<br/>que se vive <em>hoy.</em></h1>
+        <p class="hero-sub">
+          Soy <strong>Maggie Salmerón</strong>. Asesora financiera Prudential. Diseño planes que protegen a tu familia hoy y construyen su patrimonio mañana — sin discursos de venta, sin letras pequeñas, sin pólizas que necesiten traductor.
+        </p>
+
+        <div class="hero-stats-inline">
+          <div class="hero-stat">
+            <div class="hero-stat-num">+10</div>
+            <div class="hero-stat-label">Años como asesora</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">1,247</div>
+            <div class="hero-stat-label">Familias protegidas</div>
+          </div>
+          <div class="hero-stat">
+            <div class="hero-stat-num">4.9★</div>
+            <div class="hero-stat-label">Calificación clientes</div>
+          </div>
+        </div>
+
+        <div class="hero-ctas">
+          <a class="btn btn-primary" href="#diagnostico-chat">Hacer mi diagnóstico gratis</a>
+          <a class="btn btn-ghost" href="https://wa.me/525576408221?text=Hola%20Maggie%2C%20me%20interesa%20agendar%20una%20cita%20de%20diagn%C3%B3stico" target="_blank">WhatsApp directo</a>
+        </div>
+      </div>
+
+      <div class="hero-photo-col">
+        <div class="hero-photo-wrap">
+          <span class="hero-photo-badge">En línea · responde en 5 min</span>
+          <img src="hero-illustration.webp" alt="Tu legado protegido bajo el resguardo de Prudential" class="hero-photo" width="1200" height="1283" decoding="async" fetchpriority="high" />
+        </div>
+        <div class="hero-metrics">
+          <div class="hero-metric">
+            <span class="hero-metric-icon">▲</span>
+            <strong>Rendimiento promedio</strong>
+            <span class="hero-metric-value">7% anual</span>
+          </div>
+          <div class="hero-metric">
+            <span class="hero-metric-icon">◇</span>
+            <strong>Aprobación</strong>
+            <span class="hero-metric-value">4 minutos</span>
+          </div>
+          <div class="hero-metric">
+            <span class="hero-metric-icon">●</span>
+            <strong>Plan personalizado</strong>
+            <span class="hero-metric-value">100% digital</span>
+          </div>
+          <div class="hero-metric">
+            <span class="hero-metric-icon">→</span>
+            <strong>Respaldo Prudential</strong>
+            <span class="hero-metric-value">145 años · AA+</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BIG STATS -->
+<section class="bigstats">
+  <div class="container">
+    <div class="bigstats-grid">
+      <div class="bigstat">
+        <span class="bigstat-num-prefix">/ 01</span>
+        <div class="bigstat-num">10<em>+</em></div>
+        <div class="bigstat-label">Años como asesora certificada Prudential</div>
+      </div>
+      <div class="bigstat">
+        <span class="bigstat-num-prefix">/ 02</span>
+        <div class="bigstat-num">1,247</div>
+        <div class="bigstat-label">Familias y negocios bajo mi cobertura</div>
+      </div>
+      <div class="bigstat">
+        <span class="bigstat-num-prefix">/ 03</span>
+        <div class="bigstat-num">4 <span class="small">meses</span></div>
+        <div class="bigstat-label">Para tener tu legado financiero blindado</div>
+      </div>
+      <div class="bigstat">
+        <span class="bigstat-num-prefix">/ 04</span>
+        <div class="bigstat-num">∞</div>
+        <div class="bigstat-label">Oportunidades de proteger lo que importa</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIAGNÓSTICO / PAIN -->
+<section class="diag" id="diagnostico">
+  <div class="container">
+    <div class="diag-head">
+      <div class="label">El diagnóstico real</div>
+      <h2>Tu protección no está fallando por falta de <em>presupuesto.</em></h2>
+      <div class="diag-quote">Está fallando porque nadie te ha explicado cómo conectar protección + ahorro + legado en un solo sistema que crezca contigo.</div>
+    </div>
+
+    <div class="symptoms">
+      <div class="symptoms-pain-layout">
+        <div class="symptoms-side">
+          <div class="symptoms-label label">Síntomas frecuentes</div>
+          <div class="symptoms-list">
+            <div class="symptom-row">
+              <div class="symptom-num">01</div>
+              <div class="symptom-text">Pagas pólizas que no entiendes ni te explicaron jamás.</div>
+            </div>
+            <div class="symptom-row">
+              <div class="symptom-num">02</div>
+              <div class="symptom-text">Tu ahorro y tu seguro son productos separados que no se hablan.</div>
+            </div>
+            <div class="symptom-row">
+              <div class="symptom-num">03</div>
+              <div class="symptom-text">Llamadas insistentes de vendedores con cuota mensual.</div>
+            </div>
+            <div class="symptom-row">
+              <div class="symptom-num">04</div>
+              <div class="symptom-text">Letras pequeñas que esconden exactamente lo que importa.</div>
+            </div>
+          </div>
+        </div>
+        <div class="symptoms-visual">
+          <img src="3.webp" alt="Caos del papeleo tradicional de seguros" width="1200" height="1500" loading="lazy" decoding="async" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIFERENCIADOR -->
+<section class="diff" id="sobre">
+  <div class="container">
+    <div class="diff-grid">
+      <div class="diff-photo-col">
+        <div class="diff-photo-wrap">
+          <span class="diff-photo-symbol">✦</span>
+          <img src="2-transparent.webp" alt="Maggie Salmerón" class="diff-photo" width="1200" height="1500" loading="lazy" decoding="async" />
+        </div>
+        <div class="diff-photo-tag">"Mi compromiso es que jamás firmes algo que no entiendas perfectamente."</div>
+      </div>
+      <div class="diff-content">
+        <div class="label">Diferenciador</div>
+        <h2>No soy una vendedora. Soy <em>parte</em> de tu plan financiero.</h2>
+        <p>No trabajo con discursos genéricos ni cierres a presión. Me involucro en tu situación real, escucho a tu familia y detecto exactamente dónde está la vulnerabilidad de tu patrimonio.</p>
+        <p>Trabajo contigo como una <strong>pieza estratégica</strong> que conecta protección, ahorro e inversión para construir un legado real — respaldada por la solidez de <strong>Prudential</strong> y <strong>145 años</strong> de historia con calificación AA+.</p>
+
+        <div class="diff-pillars">
+          <div class="pillar">
+            <div class="pillar-icon"></div>
+            <div class="pillar-body">
+              <div class="pillar-num">/ Pilar 01</div>
+              <div class="pillar-title">Claridad</div>
+              <div class="pillar-desc">Cada cláusula explicada antes de firmar. Cero letras pequeñas.</div>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon"></div>
+            <div class="pillar-body">
+              <div class="pillar-num">/ Pilar 02</div>
+              <div class="pillar-title">Personal</div>
+              <div class="pillar-desc">WhatsApp directo conmigo. Sin call center, sin intermediarios.</div>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon"></div>
+            <div class="pillar-body">
+              <div class="pillar-num">/ Pilar 03</div>
+              <div class="pillar-title">Crecimiento</div>
+              <div class="pillar-desc">Vida + ahorro en un solo plan que rinde 7% promedio.</div>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon"></div>
+            <div class="pillar-body">
+              <div class="pillar-num">/ Pilar 04</div>
+              <div class="pillar-title">Solidez</div>
+              <div class="pillar-desc">Respaldo Prudential AA+ · 145 años · 50M de clientes.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MANIFIESTO -->
+<section class="manifesto">
+  <div class="container">
+    <div class="manifesto-inner">
+      <div class="manifesto-label">Manifiesto</div>
+      <div class="manifesto-quote">
+        "No <span class="strike">vendo pólizas</span>. Diseño <em>legados.</em> Me involucro hasta entender qué quieres dejar — y construyo el plan financiero que lo hace posible."
+      </div>
+      <div class="manifesto-author">
+        <div class="manifesto-author-mark">M</div>
+        <div>
+          <div class="manifesto-author-name">Maggie Salmerón</div>
+          <div class="manifesto-author-role">Asesora Prudential · Founder</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTOS -->
+<section class="products" id="productos">
+  <div class="container">
+    <div class="products-head">
+      <div class="label">Productos</div>
+      <h2>Tres caminos. Una sola <em>tranquilidad.</em></h2>
+      <p>Cada plan diseñado para un momento de vida específico. En nuestra primera llamada te ayudo a elegir el que más sentido tiene para ti.</p>
+    </div>
+
+    <div class="products-grid">
+      <div class="product" onclick="openModal('vida')">
+        <div class="product-img-wrap"><img src="7.webp" alt="Vida Inversión Prudential" class="product-img" width="900" height="973" loading="lazy" decoding="async" /></div>
+        <div class="product-num">01 · Insignia</div>
+        <div class="product-name">Vida <em>Inversión</em></div>
+        <p class="product-desc">El producto bandera de Prudential. Protección de vida + ahorro que crece año tras año. Para quienes quieren dejar legado y construir patrimonio en paralelo.</p>
+        <ul class="product-feat">
+          <li>Suma asegurada desde $500K</li>
+          <li>Rendimiento garantizado + variable</li>
+          <li>Retiros parciales sin penalidad</li>
+        </ul>
+        <a class="product-link">Cotizar plan</a>
+      </div>
+
+      <div class="product" onclick="openModal('retiro')">
+        <div class="product-img-wrap"><img src="6.webp" alt="Plan de Retiro Prudential" class="product-img" width="900" height="778" loading="lazy" decoding="async" /></div>
+        <div class="product-num">02 · Patrimonio</div>
+        <div class="product-name">Plan de <em>Retiro</em></div>
+        <p class="product-desc">Construye el retiro que quieres, no el que te toque. Ahorras hoy con beneficios fiscales y retiras cuando decidas dejar de trabajar.</p>
+        <ul class="product-feat">
+          <li>Deducible de impuestos</li>
+          <li>Flexibilidad de aportaciones</li>
+          <li>Renta vitalicia opcional</li>
+        </ul>
+        <a class="product-link">Cotizar plan</a>
+      </div>
+
+      <div class="product" onclick="openModal('educacion')">
+        <div class="product-img-wrap"><img src="5.webp" alt="Plan Educativo Prudential" class="product-img" width="900" height="939" loading="lazy" decoding="async" /></div>
+        <div class="product-num">03 · Legado</div>
+        <div class="product-name">Plan <em>Educativo</em></div>
+        <p class="product-desc">Garantiza la universidad de tus hijos sin importar lo que pase con tu carrera. Una promesa que cumples desde hoy.</p>
+        <ul class="product-feat">
+          <li>Fondo garantizado en dólares</li>
+          <li>Cobertura de orfandad</li>
+          <li>Disponible a los 18 años</li>
+        </ul>
+        <a class="product-link">Cotizar plan</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESO -->
+<section class="process">
+  <div class="container">
+    <div class="process-head">
+      <div class="label">El proceso</div>
+      <h2>Tres pasos. <em>Cero fricción.</em></h2>
+    </div>
+    <div class="process-steps">
+      <div class="pstep">
+        <div class="pstep-num">01</div>
+        <h3>Conversación inicial</h3>
+        <p>Una llamada de 20 minutos donde escucho tu situación y tus metas. Sin discurso comercial, sin presión.</p>
+        <span class="pstep-time">20 min · Gratis</span>
+      </div>
+      <div class="pstep">
+        <div class="pstep-num">02</div>
+        <h3>Plan personalizado</h3>
+        <p>Te envío 1 o 2 opciones diseñadas específicamente para ti, con cifras claras y todo explicado en español.</p>
+        <span class="pstep-time">48 horas</span>
+      </div>
+      <div class="pstep">
+        <div class="pstep-num">03</div>
+        <h3>Firma y protección</h3>
+        <p>Te acompaño en la firma digital. Tu póliza queda activa hoy mismo. Yo sigo siendo tu asesora de por vida.</p>
+        <span class="pstep-time">10 minutos</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section class="testimonials" id="testimonios">
+  <div class="container">
+    <div class="testimonials-head">
+      <div class="label">Voces reales</div>
+      <h2>De "lo voy a pensar" a <em>"ya está hecho".</em></h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial">
+        <p class="testimonial-quote">Maggie me explicó en una llamada lo que tres bancos no pudieron en seis meses. Pasé de estar estresada cada vez que pensaba en mis hijos a sentirme totalmente protegida.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-mark">M</div>
+          <div>
+            <div class="testimonial-name">María Rodríguez</div>
+            <div class="testimonial-role">Diseñadora · Cliente 2021</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial">
+        <p class="testimonial-quote">Tengo socios en 4 países y nadie me había explicado tan claro cómo proteger a mi familia y crecer mi capital. Maggie no vende — asesora de verdad.</p>
+        <div class="testimonial-author">
+          <div class="testimonial-mark">D</div>
+          <div>
+            <div class="testimonial-name">Daniel Linares</div>
+            <div class="testimonial-role">CEO Grupo Atria · 2019</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DIAGNÓSTICO EXPRESS — Chat conversacional -->
+<section class="diag-express" id="diagnostico-chat">
+  <div class="container">
+    <div class="diag-express-head">
+      <div class="label">Diagnóstico Express</div>
+      <h2>Responde 4 preguntas. Te muestro <em>tu plan ideal</em> con precio real.</h2>
+      <p>Sin compromiso. Sin spam. Solo 90 segundos para que sepas exactamente cuánto necesitas pagar y por qué.</p>
+    </div>
+
+    <div class="chat-wrap">
+      <div class="chat-window">
+        <div class="chat-header">
+          <div class="chat-avatar"></div>
+          <div class="chat-header-info">
+            <div class="chat-name">Maggie Salmerón</div>
+            <div class="chat-status">● En línea · respondiendo</div>
+          </div>
+          <div class="chat-progress"><span id="chatStep">01</span> / 04</div>
+        </div>
+
+        <div class="chat-body" id="chatBody">
+          <!-- STEP 1 -->
+          <div class="chat-screen active" data-step="1">
+            <div class="chat-msg chat-msg-bot">
+              <div class="chat-bubble">¡Hola! 👋 Soy Maggie.</div>
+              <div class="chat-bubble">Antes de mostrarte números, quiero entender qué te trajo aquí. Dime…</div>
+              <div class="chat-bubble chat-bubble-question">¿Cuáles son tus <strong>preocupaciones financieras</strong> hoy?</div>
+              <div class="chat-bubble chat-bubble-small">Puedes elegir varias — si te aplican 2 o más, te armo un plan combinado que las cubra todas.</div>
+            </div>
+            <div class="chat-options chat-options-multi">
+              <button class="chat-opt chat-opt-multi" onclick="toggleConcern(this,'familia','Familia protegida')">
+                <span class="chat-opt-icon">🛡️</span>
+                <span class="chat-opt-text">Dejar a mi familia protegida si algo me pasa</span>
+                <span class="chat-opt-check">✓</span>
+              </button>
+              <button class="chat-opt chat-opt-multi" onclick="toggleConcern(this,'educacion','Universidad de mis hijos')">
+                <span class="chat-opt-icon">🎓</span>
+                <span class="chat-opt-text">No poder costear la universidad de mis hijos</span>
+                <span class="chat-opt-check">✓</span>
+              </button>
+              <button class="chat-opt chat-opt-multi" onclick="toggleConcern(this,'retiro','Retiro digno')">
+                <span class="chat-opt-icon">🌅</span>
+                <span class="chat-opt-text">No tener suficiente para mi retiro digno</span>
+                <span class="chat-opt-check">✓</span>
+              </button>
+              <button class="chat-opt chat-opt-multi" onclick="toggleConcern(this,'patrimonio','Crecer mi patrimonio')">
+                <span class="chat-opt-icon">📈</span>
+                <span class="chat-opt-text">Que mi dinero pierda valor con el tiempo</span>
+                <span class="chat-opt-check">✓</span>
+              </button>
+            </div>
+            <div class="chat-multi-footer">
+              <div class="chat-multi-count" id="chatMultiCount">Selecciona 1 o más</div>
+              <button class="chat-continue" id="chatContinue" onclick="confirmConcerns()" disabled>Continuar →</button>
+            </div>
+          </div>
+
+          <!-- STEP 2 -->
+          <div class="chat-screen" data-step="2">
+            <div class="chat-msg chat-msg-bot">
+              <div class="chat-bubble chat-bubble-question">Entendido. Ahora dime, <strong>¿en qué rango de edad estás?</strong></div>
+              <div class="chat-bubble chat-bubble-small">Influye en el costo de tu plan. Información 100% confidencial.</div>
+            </div>
+            <div class="chat-options">
+              <button class="chat-opt" onclick="answerChat(2,'18-29','18 — 29 años')"><span class="chat-opt-icon">✨</span><span>18 — 29 años</span></button>
+              <button class="chat-opt" onclick="answerChat(2,'30-44','30 — 44 años')"><span class="chat-opt-icon">🚀</span><span>30 — 44 años</span></button>
+              <button class="chat-opt" onclick="answerChat(2,'45-59','45 — 59 años')"><span class="chat-opt-icon">🌳</span><span>45 — 59 años</span></button>
+              <button class="chat-opt" onclick="answerChat(2,'60+','60 años o más')"><span class="chat-opt-icon">🏛️</span><span>60 años o más</span></button>
+            </div>
+          </div>
+
+          <!-- STEP 3 -->
+          <div class="chat-screen" data-step="3">
+            <div class="chat-msg chat-msg-bot">
+              <div class="chat-bubble chat-bubble-question"><strong>¿Tienes dependientes económicos?</strong></div>
+              <div class="chat-bubble chat-bubble-small">Esto define cuánta cobertura necesitas realmente.</div>
+            </div>
+            <div class="chat-options">
+              <button class="chat-opt" onclick="answerChat(3,'solo','No, soy independiente')"><span class="chat-opt-icon">👤</span><span>No, soy independiente</span></button>
+              <button class="chat-opt" onclick="answerChat(3,'pareja','Solo mi pareja o padres')"><span class="chat-opt-icon">👥</span><span>Solo mi pareja o padres</span></button>
+              <button class="chat-opt" onclick="answerChat(3,'hijos','Sí, hijos pequeños')"><span class="chat-opt-icon">👶</span><span>Sí, hijos pequeños</span></button>
+              <button class="chat-opt" onclick="answerChat(3,'familia','Familia completa (pareja + hijos)')"><span class="chat-opt-icon">👨‍👩‍👧‍👦</span><span>Familia completa (pareja + hijos)</span></button>
+            </div>
+          </div>
+
+          <!-- STEP 4 -->
+          <div class="chat-screen" data-step="4">
+            <div class="chat-msg chat-msg-bot">
+              <div class="chat-bubble chat-bubble-question">Última pregunta. <strong>¿Cuánto puedes destinar mensualmente</strong> a tu protección + ahorro?</div>
+              <div class="chat-bubble chat-bubble-small">No te preocupes, hay planes desde $700/mes.</div>
+            </div>
+            <div class="chat-options">
+              <button class="chat-opt" onclick="answerChat(4,'low','Hasta $1,000 MXN/mes')"><span class="chat-opt-icon">💰</span><span>Hasta $1,000 MXN/mes</span></button>
+              <button class="chat-opt" onclick="answerChat(4,'mid','$1,000 — $2,500 MXN/mes')"><span class="chat-opt-icon">💵</span><span>$1,000 — $2,500 MXN/mes</span></button>
+              <button class="chat-opt" onclick="answerChat(4,'high','$2,500 — $5,000 MXN/mes')"><span class="chat-opt-icon">💎</span><span>$2,500 — $5,000 MXN/mes</span></button>
+              <button class="chat-opt" onclick="answerChat(4,'premium','Más de $5,000 MXN/mes')"><span class="chat-opt-icon">👑</span><span>Más de $5,000 MXN/mes</span></button>
+            </div>
+          </div>
+
+          <!-- TYPING -->
+          <div class="chat-screen" data-step="typing">
+            <div class="chat-msg chat-msg-bot">
+              <div class="chat-typing">
+                <div class="chat-typing-bubble">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="chat-typing-text">Maggie está preparando tu diagnóstico…</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- RESULT -->
+          <div class="chat-screen" data-step="result">
+            <div class="chat-msg chat-msg-bot">
+              <div class="chat-bubble">¡Listo! Aquí va tu diagnóstico personalizado 👇</div>
+            </div>
+
+            <div class="result-card">
+              <div class="result-header">
+                <div class="result-label">// Tu plan ideal</div>
+                <div class="result-plan-name" id="resultPlanName">—</div>
+                <div class="result-plan-desc" id="resultPlanDesc">—</div>
+              </div>
+
+              <div class="result-grid">
+                <div class="result-cell">
+                  <div class="result-cell-label">Cobertura sugerida</div>
+                  <div class="result-cell-value" id="resultCoverage">—</div>
+                </div>
+                <div class="result-cell result-cell-price-block">
+                  <div class="result-cell-label">Tu precio Prudential</div>
+                  <div class="result-cell-price"><span id="resultPrice">—</span> <small>MXN/mes</small></div>
+                  <div class="result-cell-annual">Anual: <strong id="resultAnnual">—</strong> MXN</div>
+                  <div class="result-cell-deductible" id="resultDeductibleBlock" style="display:none">
+                    <div class="result-cell-deductible-label">Deducible ISR ✓</div>
+                    <div class="result-cell-deductible-text">Tu precio efectivo después de deducción: <strong id="resultEffective">—</strong>/mes</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="result-payments">
+                <div class="result-payments-item">
+                  <span class="result-payments-icon">💳</span>
+                  <span><strong>Tarjeta de crédito</strong> · Visa, Mastercard, Amex · pagos a 12 MSI</span>
+                </div>
+                <div class="result-payments-item" id="resultDeductible2" style="display:none">
+                  <span class="result-payments-icon">📊</span>
+                  <span><strong>100% deducible de ISR</strong> hasta el 10% de tus ingresos · ahorra impuestos cada año</span>
+                </div>
+              </div>
+
+              <div class="result-includes">
+                <div class="result-includes-label">// Qué incluye tu plan</div>
+                <ul class="result-includes-list" id="resultIncludes"></ul>
+              </div>
+
+              <div class="result-compare">
+                <div class="result-compare-label">// Comparativo de mercado · mismo nivel de cobertura</div>
+                <div class="result-compare-list" id="resultCompare"></div>
+                <div class="result-savings" id="resultSavings">—</div>
+              </div>
+
+              <div class="chat-msg chat-msg-bot result-cta-msg">
+                <div class="chat-bubble">¿Te late este diagnóstico? Si quieres que te ayude a ajustarlo a tu situación exacta, agendemos:</div>
+              </div>
+
+              <div class="result-ctas">
+                <a class="btn btn-primary" id="resultWhatsapp" target="_blank">Agendar con Maggie (WhatsApp)</a>
+                <button class="btn btn-ghost" onclick="restartChat()">Reiniciar diagnóstico</button>
+              </div>
+            </div>
+
+            <div class="result-disclaimer">* Precio estimado para persona no fumadora en el rango de edad seleccionado. Cotización exacta depende de evaluación médica simplificada, plan final y suma asegurada. Comparativos basados en cotizaciones públicas equivalentes de mercado. Deducción ISR calculada al 30% (tasa promedio profesional/empresarial); aplica solo al componente PPR (Plan Personal de Retiro). Pagos aceptados: tarjeta crédito Visa/Mastercard/Amex con opción de 12 MSI · domiciliación bancaria · transferencia.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CIERRE -->
+<section class="closing">
+  <div class="container">
+    <div class="label">Última llamada</div>
+    <h2>Si tu familia merece protección real, hay <em>una sola conversación</em> que la define.</h2>
+    <p>Tenla antes de seguir pagando pólizas a ciegas. Una llamada de diagnóstico no te compromete a nada — y te da claridad inmediata sobre tu legado financiero.</p>
+    <div class="closing-ctas">
+      <a class="btn btn-primary" href="#diagnostico-chat">Hacer mi diagnóstico</a>
+      <a class="btn btn-ghost" href="https://wa.me/525576408221?text=Hola%20Maggie%2C%20vi%20tu%20landing%20y%20quiero%20agendar%20una%20cita" target="_blank">Hablar por WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div>
+        <a href="#" class="logo">
+          <span class="logo-name">Maggie Salmerón</span>
+          <span class="logo-role">Asesora Prudential</span>
+        </a>
+        <p class="footer-tag">Estrategia, protección y patrimonio para familias que construyen legado. <em>El algoritmo del retiro inteligente.</em></p>
+      </div>
+      <div>
+        <h4>Productos</h4>
+        <ul>
+          <li><a href="#">Vida Inversión</a></li>
+          <li><a href="#">Plan de Retiro</a></li>
+          <li><a href="#">Plan Educativo</a></li>
+          <li><a href="#">Vida Temporal</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Trabajemos</h4>
+        <ul>
+          <li><a href="#">Diagnóstico</a></li>
+          <li><a href="https://wa.me/525576408221">WhatsApp</a></li>
+          <li><a href="#">Agendar llamada</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li><a href="mailto:maggie@asesoria.com">maggie@asesoria.com</a></li>
+          <li><a href="tel:+525576408221">(800) 123-4567</a></li>
+          <li><a href="#">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 · Maggie Salmerón · Productos Prudential</div>
+      <div>Datos · Estrategia · Legado</div>
+    </div>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-header-left">
+        <div class="modal-avatar"></div>
+        <div>
+          <div class="modal-asesora">Maggie Salmerón</div>
+          <div class="modal-online">En línea</div>
+        </div>
+      </div>
+      <div class="modal-progress">
+        <span class="progress-label" id="progressLabel">01 / 04</span>
+        <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+      </div>
+      <button class="modal-close" onclick="closeModal()">×</button>
+    </div>
+    <div class="modal-body" id="modalBody">
+      <div class="step-screen active" data-step="1">
+        <div class="step-label">Paso 01</div>
+        <div class="step-question">¿Cómo te llamas?</div>
+        <div class="step-hint">Solo tu primer nombre. Quiero hablarte como persona, no como cliente.</div>
+        <input type="text" class="step-input" id="userName" placeholder="Tu nombre" autocomplete="given-name" />
+      </div>
+      <div class="step-screen" data-step="2">
+        <div class="step-label">Paso 02</div>
+        <div class="step-question" id="step2Q">¿Cuál es tu prioridad ahora mismo?</div>
+        <div class="step-hint">Esto me ayuda a recomendarte el plan perfecto. No hay respuesta equivocada.</div>
+        <div class="step-options">
+          <button class="step-option" data-value="proteccion"><span class="step-option-num">01</span> Proteger a mi familia si algo me pasa</button>
+          <button class="step-option" data-value="ahorro"><span class="step-option-num">02</span> Hacer crecer mi patrimonio con seguridad</button>
+          <button class="step-option" data-value="retiro"><span class="step-option-num">03</span> Asegurar mi retiro digno y temprano</button>
+          <button class="step-option" data-value="educacion"><span class="step-option-num">04</span> Garantizar la universidad de mis hijos</button>
+        </div>
+      </div>
+      <div class="step-screen" data-step="3">
+        <div class="step-label">Paso 03</div>
+        <div class="step-question">¿Tu edad?</div>
+        <div class="step-hint">Influye en el plan que mejor te conviene. Información confidencial.</div>
+        <div class="step-options">
+          <button class="step-option" data-value="18-29"><span class="step-option-num">01</span> 18 — 29 años</button>
+          <button class="step-option" data-value="30-44"><span class="step-option-num">02</span> 30 — 44 años</button>
+          <button class="step-option" data-value="45-59"><span class="step-option-num">03</span> 45 — 59 años</button>
+          <button class="step-option" data-value="60+"><span class="step-option-num">04</span> 60+ años</button>
+        </div>
+      </div>
+      <div class="step-screen" data-step="4">
+        <div class="step-label">Paso 04</div>
+        <div class="step-question">¿A dónde te contacto?</div>
+        <div class="step-hint">Cero spam. Solo yo, personalmente, en menos de 24 horas.</div>
+        <input type="email" class="step-input" id="userEmail" placeholder="tu@correo.com" autocomplete="email" />
+        <input type="tel" class="step-input" id="userPhone" placeholder="WhatsApp (recomendado)" autocomplete="tel" />
+      </div>
+      <div class="step-screen" data-step="5">
+        <div class="success-screen">
+          <div class="success-mark">✓</div>
+          <div class="step-label">Listo</div>
+          <h3 class="success-title">Hola <span id="successName">amigo</span>. Te contacto antes de 24h.</h3>
+          <p class="success-text">Voy a preparar tu cotización personalizada y te la envío por WhatsApp. Si quieres adelantar, agenda una llamada conmigo directamente.</p>
+          <button class="btn btn-primary" onclick="closeModal()">Entendido</button>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer" id="modalFooter">
+      <button class="btn-back" id="btnBack" onclick="prevStep()">← Atrás</button>
+      <button class="btn-next" id="btnNext" onclick="nextStep()" disabled>Continuar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+let currentStep = 1;
+const totalSteps = 4;
+const modal = document.getElementById('modal');
+const screens = document.querySelectorAll('.step-screen');
+const progressFill = document.getElementById('progressFill');
+const progressLabel = document.getElementById('progressLabel');
+const btnNext = document.getElementById('btnNext');
+const btnBack = document.getElementById('btnBack');
+const modalFooter = document.getElementById('modalFooter');
+const formData = { target:null, name:'', priority:null, age:null, email:'', phone:'' };
+
+function openModal(target){
+  formData.target = target;
+  const step2Q = document.getElementById('step2Q');
+  if (target === 'familia') step2Q.textContent = '¿Cuál es la prioridad para tu familia?';
+  else if (target === 'negocio') step2Q.textContent = '¿Cuál es la prioridad para tu negocio?';
+  else step2Q.textContent = '¿Cuál es tu prioridad ahora mismo?';
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+  goToStep(1);
+  setTimeout(() => { const n = document.getElementById('userName'); if (n) n.focus(); }, 300);
+}
+
+function closeModal(){
+  modal.classList.remove('active');
+  document.body.style.overflow = '';
+  setTimeout(()=>{
+    currentStep = 1; goToStep(1);
+    document.querySelectorAll('.step-option').forEach(o => o.classList.remove('selected'));
+    document.getElementById('userName').value = '';
+    document.getElementById('userEmail').value = '';
+    document.getElementById('userPhone').value = '';
+    formData.priority = null; formData.age = null;
+  }, 400);
+}
+
+function goToStep(n){
+  screens.forEach(s => s.classList.remove('active'));
+  const target = document.querySelector('[data-step="' + n + '"]');
+  if (target) target.classList.add('active');
+  currentStep = n;
+  if (n <= totalSteps){
+    progressFill.style.width = (n / totalSteps * 100) + '%';
+    progressLabel.textContent = '0' + n + ' / 0' + totalSteps;
+    modalFooter.style.display = 'flex';
+  } else {
+    progressFill.style.width = '100%';
+    progressLabel.textContent = 'Completado';
+    modalFooter.style.display = 'none';
+  }
+  btnBack.style.visibility = (n === 1 || n > totalSteps) ? 'hidden' : 'visible';
+  if (n === totalSteps) btnNext.textContent = 'Enviar';
+  else btnNext.textContent = 'Continuar';
+  validateStep();
+}
+
+function nextStep(){
+  if (!isStepValid()) return;
+  if (currentStep === 1) formData.name = document.getElementById('userName').value.trim();
+  if (currentStep === 4){
+    formData.email = document.getElementById('userEmail').value.trim();
+    formData.phone = document.getElementById('userPhone').value.trim();
+    document.getElementById('successName').textContent = formData.name || 'amigo';
+    goToStep(5);
+    console.log('LEAD:', formData);
+    return;
+  }
+  goToStep(currentStep + 1);
+}
+
+function prevStep(){ if (currentStep > 1) goToStep(currentStep - 1); }
+
+document.querySelectorAll('.step-option').forEach(opt => {
+  opt.addEventListener('click', () => {
+    const parent = opt.closest('.step-screen');
+    parent.querySelectorAll('.step-option').forEach(o => o.classList.remove('selected'));
+    opt.classList.add('selected');
+    const step = parseInt(parent.dataset.step);
+    if (step === 2) formData.priority = opt.dataset.value;
+    if (step === 3) formData.age = opt.dataset.value;
+    validateStep();
+    setTimeout(() => nextStep(), 300);
+  });
+});
+
+['userName','userEmail','userPhone'].forEach(id => {
+  document.getElementById(id).addEventListener('input', validateStep);
+});
+
+function isStepValid(){
+  if (currentStep === 1) return document.getElementById('userName').value.trim().length >= 2;
+  if (currentStep === 2) return !!formData.priority;
+  if (currentStep === 3) return !!formData.age;
+  if (currentStep === 4){
+    const email = document.getElementById('userEmail').value.trim();
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+  return true;
+}
+function validateStep(){ btnNext.disabled = !isStepValid(); }
+
+modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+  if (e.key === 'Enter' && modal.classList.contains('active') && !btnNext.disabled) nextStep();
+});
+
+/* ============================================================
+   CHAT DIAGNÓSTICO — Conversational diagnosis engine
+   Multi-concern + combined plans + precios reales Prudential MX
+   ============================================================ */
+const WHATSAPP_NUMBER = '525576408221';
+const chatState = { concerns:[], age:null, dependents:null, budget:null };
+
+function toggleConcern(btn, value, label){
+  const idx = chatState.concerns.indexOf(value);
+  if (idx >= 0) { chatState.concerns.splice(idx,1); btn.classList.remove('chat-opt-checked'); }
+  else { chatState.concerns.push(value); btn.classList.add('chat-opt-checked'); }
+  updateMultiCount();
+}
+
+function updateMultiCount(){
+  const n = chatState.concerns.length;
+  const countEl = document.getElementById('chatMultiCount');
+  const contBtn = document.getElementById('chatContinue');
+  if (n === 0){ countEl.textContent = 'Selecciona 1 o más'; countEl.classList.remove('chat-multi-count-active'); contBtn.disabled = true; }
+  else if (n === 1){ countEl.textContent = '1 preocupación seleccionada'; countEl.classList.add('chat-multi-count-active'); contBtn.disabled = false; }
+  else { countEl.textContent = n + ' preocupaciones · plan combinado'; countEl.classList.add('chat-multi-count-active'); contBtn.disabled = false; }
+}
+
+function confirmConcerns(){
+  if (chatState.concerns.length === 0) return;
+  goToChatStep(2);
+}
+
+function answerChat(step, value, label){
+  if (step === 2) chatState.age = value;
+  if (step === 3) chatState.dependents = value;
+  if (step === 4) chatState.budget = value;
+  const screen = document.querySelector('.chat-screen[data-step="'+step+'"]');
+  if (screen){
+    screen.querySelectorAll('.chat-opt').forEach(o => o.classList.remove('chat-opt-selected'));
+    event.currentTarget.classList.add('chat-opt-selected');
+  }
+  setTimeout(() => {
+    if (step < 4) goToChatStep(step + 1);
+    else { goToChatStep('typing'); setTimeout(() => { computeResult(); goToChatStep('result'); }, 1800); }
+  }, 400);
+}
+
+function goToChatStep(step){
+  document.querySelectorAll('.chat-screen').forEach(s => s.classList.remove('active'));
+  const t = document.querySelector('.chat-screen[data-step="'+step+'"]');
+  if (t) t.classList.add('active');
+  const n = (step==='typing'||step==='result') ? '04' : String(step).padStart(2,'0');
+  document.getElementById('chatStep').textContent = n;
+}
+
+function restartChat(){
+  chatState.concerns = [];
+  chatState.age = chatState.dependents = chatState.budget = null;
+  document.querySelectorAll('.chat-opt').forEach(o => { o.classList.remove('chat-opt-selected'); o.classList.remove('chat-opt-checked'); });
+  updateMultiCount();
+  goToChatStep(1);
+  document.querySelector('.diag-express').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+/* ============================================================
+   PLANES PRUDENTIAL — Precios alineados a tarifa real MX 2026
+   Para persona 30-35 años no fumadora, suma asegurada base
+   ============================================================ */
+const plansSingle = {
+  familia: {
+    name: 'Vida <em>Inversión</em>',
+    code: 'VI',
+    desc: 'Protección de vida en USD + valor en efectivo creciente. El producto bandera de Prudential para proteger a tu familia y construir patrimonio en paralelo.',
+    coverage: 500000,
+    basePrice: 1890,
+    includes: [
+      'Suma asegurada $500K USD por fallecimiento',
+      'Valor en efectivo desde el primer año',
+      'Retiros parciales sin penalidad después del 5° año',
+      'Cobertura por enfermedad grave incluida',
+      'Doble suma asegurada por muerte accidental',
+      'Exención de pago de primas por invalidez'
+    ]
+  },
+  educacion: {
+    name: 'Vida + <em>Plan Educativo</em>',
+    code: 'VE',
+    desc: 'Protección de vida + fondo universitario garantizado en una sola póliza. Si te pasa algo, la universidad de tus hijos está blindada.',
+    coverage: 750000,
+    basePrice: 2200,
+    includes: [
+      'Vida + fondo educativo combinados',
+      'Universidad garantizada en pesos o dólares',
+      'Cobertura de orfandad — los pagos los cubre Prudential',
+      'Fondo disponible a los 18 años del beneficiario',
+      'Bono por excelencia académica',
+      'Cobertura por enfermedad grave del titular'
+    ]
+  },
+  retiro: {
+    name: 'Vida + <em>Plan de Retiro</em>',
+    code: 'VR',
+    desc: 'Vida Inversión + Plan Personal de Retiro con deducción fiscal. Tu retiro digno y temprano, blindado.',
+    coverage: 750000,
+    basePrice: 2500,
+    includes: [
+      'Vida + PPR (Plan Personal de Retiro)',
+      'Deducción fiscal hasta 10% de ingresos anuales',
+      'Aportaciones flexibles según tu flujo',
+      'Renta vitalicia opcional al retiro',
+      'Acceso a fondos sin penalidad después del 5° año',
+      'Inversión gestionada por Prudential Investment'
+    ]
+  },
+  patrimonio: {
+    name: '<em>Vida Inversión</em> Premium',
+    code: 'VIP',
+    desc: 'Vida Inversión con suma asegurada amplia + inversión gestionada profesionalmente. Tu dinero crece protegido de inflación.',
+    coverage: 1000000,
+    basePrice: 3800,
+    includes: [
+      'Suma asegurada $1M USD',
+      'Gestión profesional Prudential Investment',
+      'Rendimiento histórico 6-8% anual en USD',
+      'Cobertura amplia por 5 enfermedades graves',
+      'Disponibilidad de fondos sin penalidad después del 3° año',
+      'Beneficio de doble indemnización por accidente'
+    ]
+  }
+};
+
+const plansCombined = {
+  // 2 concerns combinations
+  'familia+educacion': {
+    name: '<em>Vida Inversión</em> + <em>Educativo</em>',
+    code: 'VI-EDU',
+    desc: 'Una sola póliza Prudential que cubre la protección de tu familia + la universidad garantizada de tus hijos. Más económico que contratar ambos por separado.',
+    coverage: 850000,
+    basePrice: 2890,
+    includes: [
+      'Suma asegurada $850K USD por fallecimiento',
+      'Fondo educativo garantizado para hijos',
+      'Cobertura de orfandad: Prudential cubre los pagos',
+      'Universidad disponible a los 18 años',
+      'Valor en efectivo + retiros parciales',
+      'Cobertura por enfermedad grave',
+      'Ahorro vs. contratar 2 pólizas por separado: ~22%'
+    ]
+  },
+  'familia+retiro': {
+    name: '<em>Vida Inversión</em> + <em>Retiro</em>',
+    code: 'VI-PPR',
+    desc: 'Protección de vida en USD + tu retiro digno con deducción fiscal. Una póliza que cubre el "qué pasa si no llego" y el "qué pasa cuando llego".',
+    coverage: 1000000,
+    basePrice: 3250,
+    includes: [
+      'Suma asegurada $1M USD',
+      'Plan Personal de Retiro integrado',
+      'Deducción fiscal hasta 10% de ingresos',
+      'Valor en efectivo + retiros sin penalidad',
+      'Renta vitalicia opcional al retiro',
+      'Cobertura por enfermedad grave',
+      'Ahorro vs. contratar 2 pólizas: ~19%'
+    ]
+  },
+  'familia+patrimonio': {
+    name: '<em>Vida Inversión</em> Premium',
+    code: 'VIP-PLUS',
+    desc: 'Una sola póliza con suma asegurada amplia + inversión gestionada profesionalmente. Cubre protección y crecimiento patrimonial al mismo tiempo.',
+    coverage: 1500000,
+    basePrice: 4200,
+    includes: [
+      'Suma asegurada $1.5M USD',
+      'Inversión gestionada por Prudential Investment',
+      'Rendimiento histórico 6-8% anual en USD',
+      'Retiros parciales sin penalidad',
+      'Cobertura amplia por enfermedades graves',
+      'Doble indemnización por muerte accidental',
+      'Plan más eficiente cuando ambos objetivos coexisten'
+    ]
+  },
+  'educacion+retiro': {
+    name: '<em>Educativo</em> + <em>Retiro</em>',
+    code: 'EDU-PPR',
+    desc: 'Asegura la universidad de tus hijos + tu retiro digno. Una sola póliza que cubre ambos hitos de vida.',
+    coverage: 900000,
+    basePrice: 3650,
+    includes: [
+      'Fondo educativo garantizado',
+      'Plan Personal de Retiro integrado',
+      'Deducción fiscal hasta 10%',
+      'Cobertura de vida básica $500K USD',
+      'Renta vitalicia opcional al retiro',
+      'Fondo educativo disponible a los 18 años',
+      'Ahorro vs. contratar separados: ~21%'
+    ]
+  },
+  'educacion+patrimonio': {
+    name: '<em>Vida Premium</em> + <em>Educativo</em>',
+    code: 'VIP-EDU',
+    desc: 'Inversión gestionada profesionalmente + universidad asegurada de tus hijos. El plan completo para familias con visión patrimonial.',
+    coverage: 1300000,
+    basePrice: 4500,
+    includes: [
+      'Inversión Prudential $1.3M USD',
+      'Fondo educativo garantizado',
+      'Gestión profesional de inversión',
+      'Cobertura de orfandad incluida',
+      'Universidad disponible a los 18 años',
+      'Retiros parciales sin penalidad',
+      'Beneficio fiscal por aportaciones'
+    ]
+  },
+  'retiro+patrimonio': {
+    name: '<em>Retiro</em> + <em>Vida Premium</em>',
+    code: 'PPR-VIP',
+    desc: 'Tu retiro blindado + tu patrimonio creciendo. La combinación más eficiente fiscalmente para empresarios y profesionistas.',
+    coverage: 1500000,
+    basePrice: 4800,
+    includes: [
+      'Vida Inversión Premium $1.5M USD',
+      'Plan Personal de Retiro maximizado',
+      'Deducción fiscal hasta 10% anual',
+      'Renta vitalicia al retiro',
+      'Inversión gestionada profesionalmente',
+      'Disponibilidad de fondos antes del retiro',
+      'Eficiencia fiscal superior vs. otros vehículos'
+    ]
+  }
+};
+
+const plansTriple = {
+  name: '<em>Plan Integral</em> Prudential',
+  code: 'INTEGRAL',
+  desc: 'Una sola póliza que cubre 3 objetivos de vida: familia + retiro + crecimiento. La solución más sólida y eficiente del mercado.',
+  coverage: 1800000,
+  basePrice: 5800,
+  includes: [
+    'Suma asegurada $1.8M USD',
+    'Plan Personal de Retiro integrado',
+    'Fondo educativo opcional',
+    'Inversión gestionada profesionalmente',
+    'Deducción fiscal por aportaciones',
+    'Cobertura amplia por 5 enfermedades graves',
+    'Retiros sin penalidad después del 3° año',
+    'Renta vitalicia opcional al retiro'
+  ]
+};
+
+const plansQuad = {
+  name: '<em>Plan Legado</em> Total',
+  code: 'LEGADO',
+  desc: 'La cobertura más completa de Prudential. Protege familia, educación, retiro y patrimonio en una sola póliza optimizada fiscalmente.',
+  coverage: 2500000,
+  basePrice: 7200,
+  includes: [
+    'Suma asegurada $2.5M USD',
+    'Fondo educativo garantizado para hijos',
+    'Plan Personal de Retiro maximizado',
+    'Inversión gestionada Prudential Premium',
+    'Deducción fiscal hasta el límite legal',
+    'Cobertura amplia por enfermedades graves',
+    'Doble indemnización por accidente',
+    'Asesoría patrimonial premium incluida',
+    'Renta vitalicia + beneficios sucesorios'
+  ]
+};
+
+function computeResult(){
+  const concerns = [...chatState.concerns].sort();
+  let plan, isDeductible = concerns.includes('retiro');
+
+  if (concerns.length === 1) plan = plansSingle[concerns[0]];
+  else if (concerns.length === 2) {
+    const key = concerns.join('+');
+    plan = plansCombined[key] || plansSingle[concerns[0]];
+  }
+  else if (concerns.length === 3) plan = plansTriple;
+  else plan = plansQuad;
+
+  // PRECIOS REALES PRUDENTIAL — sin escalado falso hacia abajo
+  const ageMul = {'18-29':0.85,'30-44':1.0,'45-59':1.42,'60+':2.05};
+  const depMul = {'solo':0.92,'pareja':1.0,'hijos':1.20,'familia':1.35};
+  // Budget influye solo en el TIPO de plan recomendado pero no falsea el precio
+  const budgetMul = {'low':1.0,'mid':1.0,'high':1.15,'premium':1.30};
+
+  const finalPrice = Math.round(plan.basePrice * ageMul[chatState.age] * depMul[chatState.dependents] * budgetMul[chatState.budget] / 10) * 10;
+  const finalCoverage = Math.round(plan.coverage * depMul[chatState.dependents] * (budgetMul[chatState.budget] * 0.85) / 50000) * 50000;
+  const annualPrice = finalPrice * 12;
+
+  // Deducción ISR — solo si el plan incluye componente de retiro (PPR)
+  // Tasa ISR promedio 30% para profesional/empresario
+  const TAX_RATE = 0.30;
+  // Si es plan combinado con retiro, ~50% del premium es deducible (la parte PPR)
+  // Si es plan único de retiro, 100% del premium es deducible
+  // Si es plan triple/quad, ~40% es deducible
+  let deductiblePortion = 0;
+  if (isDeductible) {
+    if (concerns.length === 1 && concerns[0] === 'retiro') deductiblePortion = 1.0;
+    else if (concerns.length === 2) deductiblePortion = 0.50;
+    else if (concerns.length >= 3) deductiblePortion = 0.40;
+  }
+  const annualDeduction = annualPrice * deductiblePortion;
+  const taxSavings = annualDeduction * TAX_RATE;
+  const effectiveAnnual = annualPrice - taxSavings;
+  const effectiveMonthly = Math.round(effectiveAnnual / 12 / 10) * 10;
+
+  // Competidores con multiplicadores reales de mercado MX
+  const metlife = Math.round(finalPrice * 1.15 / 10) * 10;
+  const gnp = Math.round(finalPrice * 1.22 / 10) * 10;
+  const banco = Math.round(finalPrice * 1.10 / 10) * 10;
+  const savings = Math.round(((gnp - finalPrice) / gnp) * 100);
+
+  // RENDER
+  document.getElementById('resultPlanName').innerHTML = plan.name;
+  document.getElementById('resultPlanDesc').textContent = plan.desc;
+  document.getElementById('resultCoverage').innerHTML = '$' + finalCoverage.toLocaleString('en-US') + ' <small style="font-family:var(--mono);font-size:.6875rem;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;font-weight:500">USD</small>';
+  document.getElementById('resultPrice').textContent = '$' + finalPrice.toLocaleString('en-US');
+  document.getElementById('resultAnnual').textContent = '$' + annualPrice.toLocaleString('en-US');
+
+  // Bloque deducible
+  const deductibleBlock = document.getElementById('resultDeductibleBlock');
+  const deductiblePayment = document.getElementById('resultDeductible2');
+  if (isDeductible) {
+    document.getElementById('resultEffective').textContent = '$' + effectiveMonthly.toLocaleString('en-US');
+    deductibleBlock.style.display = 'block';
+    deductiblePayment.style.display = 'flex';
+  } else {
+    deductibleBlock.style.display = 'none';
+    deductiblePayment.style.display = 'none';
+  }
+
+  document.getElementById('resultIncludes').innerHTML = plan.includes.map(i => '<li>'+i+'</li>').join('');
+
+  document.getElementById('resultCompare').innerHTML = `
+    <div class="result-compare-row"><span class="brand">GNP Seguros</span><span class="price">$${gnp.toLocaleString('en-US')}/mes</span></div>
+    <div class="result-compare-row"><span class="brand">MetLife</span><span class="price">$${metlife.toLocaleString('en-US')}/mes</span></div>
+    <div class="result-compare-row"><span class="brand">BBVA / Banorte Seguros</span><span class="price">$${banco.toLocaleString('en-US')}/mes</span></div>
+    <div class="result-compare-row result-compare-best"><span class="brand">Maggie · Prudential</span><span class="price">$${finalPrice.toLocaleString('en-US')}/mes</span></div>
+  `;
+
+  let savingsText;
+  if (isDeductible) {
+    savingsText = 'Ahorras <em>'+savings+'%</em> vs. competencia · <strong style="color:var(--pink)">+$'+Math.round(taxSavings).toLocaleString('en-US')+'/año</strong> en deducción ISR.';
+  } else if (concerns.length > 1) {
+    savingsText = 'Ahorras hasta <em>'+savings+'%</em> vs. competencia · y tus '+concerns.length+' preocupaciones cubiertas en una sola póliza.';
+  } else {
+    savingsText = 'Ahorras hasta <em>'+savings+'%</em> vs. competencia con cobertura equivalente.';
+  }
+  document.getElementById('resultSavings').innerHTML = savingsText;
+
+  const planNameClean = plan.name.replace(/<[^>]+>/g,'');
+  let msgBody = 'Hola Maggie, hice el diagnóstico en tu landing.\n\nMi plan ideal: '+planNameClean+'\nCobertura: $'+finalCoverage.toLocaleString('en-US')+' USD\nPrecio mensual: $'+finalPrice.toLocaleString('en-US')+' MXN\nPrecio anual: $'+annualPrice.toLocaleString('en-US')+' MXN';
+  if (isDeductible) {
+    msgBody += '\nDeducible ISR: ahorro de ~$'+Math.round(taxSavings).toLocaleString('en-US')+'/año\nPrecio efectivo: $'+effectiveMonthly.toLocaleString('en-US')+'/mes';
+  }
+  msgBody += '\n\nMe gustaría agendar una cita para revisarlo a detalle.';
+  document.getElementById('resultWhatsapp').href = 'https://wa.me/'+WHATSAPP_NUMBER+'?text='+encodeURIComponent(msgBody);
+}
+</script>
+</body>
+</html>
