@@ -425,13 +425,28 @@ a{color:inherit;text-decoration:none}
 .calculators-head .label{margin-bottom:22px}
 .calculators-head h2{margin-bottom:18px}
 .calculators-intro{max-width:760px;font-size:1.0625rem;color:#3A3530;line-height:1.6}
-.calculator-tabs{display:grid;grid-template-columns:1fr 1fr;max-width:940px;margin:0 auto;border:1px solid var(--ink);background:rgba(255,255,255,.82);backdrop-filter:blur(14px)}
-.calculator-tab{appearance:none;border:0;border-right:1px solid var(--ink);background:transparent;color:var(--ink);padding:17px 22px;cursor:pointer;text-align:left;transition:background .25s,color .25s,transform .25s;font-family:var(--sans);position:relative;overflow:hidden}
-.calculator-tab:last-child{border-right:0}
-.calculator-tab.is-active{background:linear-gradient(135deg,var(--pink),var(--purple-deep));color:#fff}
-.calculator-tab.is-active::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:rgba(255,255,255,.82);animation:smartScan 3s ease-in-out infinite}
-.calculator-tab-kicker{display:block;font-size:.625rem;text-transform:uppercase;letter-spacing:.18em;opacity:.72;margin-bottom:4px;font-weight:600}
-.calculator-tab-title{display:block;font-family:var(--serif);font-size:1.18rem;line-height:1.15;font-weight:500}
+.calculator-chooser{max-width:940px;margin:0 auto;padding:38px;background:rgba(255,255,255,.88);border:1px solid var(--ink);box-shadow:0 30px 68px -38px rgba(42,23,50,.34);backdrop-filter:blur(14px)}
+.calculator-chooser[hidden],.calculator-experience[hidden]{display:none!important}
+.calculator-chooser-head{max-width:640px;margin-bottom:28px}
+.calculator-chooser-kicker{font-family:var(--mono);font-size:.625rem;text-transform:uppercase;letter-spacing:.16em;color:var(--pink);font-weight:700;margin-bottom:10px}
+.calculator-chooser h3{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);font-weight:400;letter-spacing:-.03em;line-height:1.05;color:var(--ink);margin-bottom:10px}
+.calculator-chooser-copy{font-size:.92rem;color:var(--muted);line-height:1.55}
+.calculator-choice-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.calculator-choice{appearance:none;border:1px solid rgba(26,26,26,.32);background:var(--bg);color:var(--ink);padding:26px;min-height:184px;cursor:pointer;text-align:left;display:grid;grid-template-columns:auto 1fr auto;grid-template-rows:auto auto 1fr;column-gap:18px;transition:background .25s,color .25s,border-color .25s,transform .25s,box-shadow .25s;font-family:var(--sans)}
+.calculator-choice:hover,.calculator-choice:focus-visible{background:linear-gradient(135deg,var(--pink),var(--purple-deep));color:#fff;border-color:var(--purple-deep);transform:translateY(-3px);box-shadow:0 20px 34px -24px rgba(42,23,50,.7);outline:none}
+.calculator-choice-mark{grid-row:1/4;width:45px;height:45px;border:1px solid currentColor;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:1.15rem;opacity:.82}
+.calculator-choice-kicker{font-family:var(--mono);font-size:.625rem;text-transform:uppercase;letter-spacing:.15em;opacity:.72;margin-bottom:7px}
+.calculator-choice-title{grid-column:2;font-family:var(--serif);font-size:1.65rem;line-height:1.08;font-weight:500;margin-bottom:12px}
+.calculator-choice-copy{grid-column:2;font-size:.84rem;line-height:1.5;opacity:.76;max-width:290px}
+.calculator-choice-arrow{grid-column:3;grid-row:1/4;align-self:center;font-size:1.3rem;transition:transform .25s}
+.calculator-choice:hover .calculator-choice-arrow,.calculator-choice:focus-visible .calculator-choice-arrow{transform:translateX(4px)}
+.calculator-experience{max-width:940px;margin:0 auto}
+.calculator-active-bar{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:15px 20px;border:1px solid var(--ink);background:rgba(255,255,255,.88);backdrop-filter:blur(14px)}
+.calculator-active-copy{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.calculator-active-copy span{font-family:var(--mono);font-size:.6rem;text-transform:uppercase;letter-spacing:.13em;color:var(--muted)}
+.calculator-active-copy strong{font-family:var(--serif);font-size:1.15rem;font-weight:500;color:var(--ink)}
+.calculator-change{appearance:none;border:0;background:transparent;color:var(--pink);font-family:var(--mono);font-size:.625rem;text-transform:uppercase;letter-spacing:.1em;font-weight:700;cursor:pointer;padding:8px 0}
+.calculator-change:hover,.calculator-change:focus-visible{color:var(--ink);text-decoration:underline;text-underline-offset:4px;outline:none}
 .calculator-shell{max-width:940px;margin:0 auto;border:1px solid var(--ink);border-top:0;background:var(--bg);box-shadow:0 30px 68px -38px rgba(42,23,50,.34)}
 .calculator-panel[hidden]{display:none}
 .calculator-layout{display:block}
@@ -522,7 +537,7 @@ a{color:inherit;text-decoration:none}
 @keyframes valueRefresh{0%{opacity:.35;transform:translateY(3px)}100%{opacity:1;transform:translateY(0)}}
 @keyframes questionIn{0%{opacity:0;transform:translateX(18px)}100%{opacity:1;transform:translateX(0)}}
 @keyframes resultReveal{0%{opacity:.2;transform:translateY(10px)}100%{opacity:1;transform:translateY(0)}}
-@media (prefers-reduced-motion:reduce){.calculator-tab.is-active::after,.calculator-results::before,.smart-live-dot,.metric-value.is-updating,.life-amount.is-updating,.life-budget-value.is-updating,.calculator-question,.calculator-results.is-revealed{animation:none}}
+@media (prefers-reduced-motion:reduce){.calculator-results::before,.smart-live-dot,.metric-value.is-updating,.life-amount.is-updating,.life-budget-value.is-updating,.calculator-question,.calculator-results.is-revealed{animation:none}}
 
 /* Captura de prospecto desde las calculadoras */
 .lead-modal{max-width:610px}
@@ -793,11 +808,15 @@ a{color:inherit;text-decoration:none}
   /* Calculadoras */
   .calculators{padding-top:36px}
   .calculators-head{margin-bottom:24px}
-  .calculator-tabs{grid-template-columns:1fr 1fr}
-  .calculator-tab{border-right:1px solid var(--ink);border-bottom:0;padding:12px}
-  .calculator-tab:last-child{border-right:0}
-  .calculator-tab-kicker{font-size:.55rem;letter-spacing:.12em}
-  .calculator-tab-title{font-size:1rem}
+  .calculator-chooser{padding:24px 16px}
+  .calculator-chooser-head{margin-bottom:20px}
+  .calculator-choice-grid{grid-template-columns:1fr;gap:12px}
+  .calculator-choice{min-height:148px;padding:20px 17px;column-gap:14px}
+  .calculator-choice-mark{width:40px;height:40px}
+  .calculator-choice-title{font-size:1.45rem;margin-bottom:8px}
+  .calculator-active-bar{align-items:flex-start;padding:13px 16px}
+  .calculator-active-copy{flex-direction:column;gap:2px}
+  .calculator-change{padding-top:3px;text-align:right;max-width:132px;line-height:1.45}
   .calculator-form{padding:0}
   .calculator-form-inner{min-height:auto;padding:24px 16px 20px}
   .calculator-journey-head{align-items:flex-start;flex-direction:row;gap:12px}
@@ -905,23 +924,41 @@ a{color:inherit;text-decoration:none}
   <div class="container">
     <div class="calculators-head">
       <div class="label">Tu escenario en menos de un minuto</div>
-      <h2>¿Qué quieres calcular <em>hoy?</em></h2>
-      <p class="calculators-intro">Elige una opción y responde una pregunta a la vez. Te guiaremos hasta obtener una estimación clara.</p>
+      <h2>Calcula lo que quieres <em>construir y proteger.</em></h2>
+      <p class="calculators-intro">Primero elige qué quieres calcular. Después te haré una pregunta a la vez hasta mostrarte una estimación clara.</p>
     </div>
 
-    <div class="calculator-tabs" role="tablist" aria-label="Elige una calculadora">
-      <button class="calculator-tab is-active" id="tabRetirement" type="button" role="tab" aria-selected="true" aria-controls="retirementCalculator" data-calculator-tab="retirement">
-        <span class="calculator-tab-kicker">Quiero construir</span>
-        <span class="calculator-tab-title">Mi retiro</span>
-      </button>
-      <button class="calculator-tab" id="tabLife" type="button" role="tab" aria-selected="false" aria-controls="lifeCalculator" data-calculator-tab="life">
-        <span class="calculator-tab-kicker">Quiero proteger</span>
-        <span class="calculator-tab-title">A mi familia</span>
-      </button>
+    <div class="calculator-chooser" id="calculatorChooser" tabindex="-1" aria-labelledby="calculatorChooserTitle">
+      <div class="calculator-chooser-head">
+        <div class="calculator-chooser-kicker">Elige tu escenario</div>
+        <h3 id="calculatorChooserTitle">¿Qué quieres calcular?</h3>
+        <p class="calculator-chooser-copy">Selecciona una opción para comenzar. Solo verás una pregunta a la vez.</p>
+      </div>
+      <div class="calculator-choice-grid">
+        <button class="calculator-choice" type="button" data-calculator-choice="retirement">
+          <span class="calculator-choice-mark" aria-hidden="true">R</span>
+          <span class="calculator-choice-kicker">Quiero construir</span>
+          <strong class="calculator-choice-title">Retiro</strong>
+          <span class="calculator-choice-copy">Calcula cuánto podrías acumular a los 65 años.</span>
+          <span class="calculator-choice-arrow" aria-hidden="true">→</span>
+        </button>
+        <button class="calculator-choice" type="button" data-calculator-choice="life">
+          <span class="calculator-choice-mark" aria-hidden="true">V</span>
+          <span class="calculator-choice-kicker">Quiero proteger</span>
+          <strong class="calculator-choice-title">Vida</strong>
+          <span class="calculator-choice-copy">Calcula cuánto debería quedar protegido para tu familia.</span>
+          <span class="calculator-choice-arrow" aria-hidden="true">→</span>
+        </button>
+      </div>
     </div>
 
-    <div class="calculator-shell">
-      <div class="calculator-panel" id="retirementCalculator" role="tabpanel" aria-labelledby="tabRetirement" data-calculator-panel="retirement">
+    <div class="calculator-experience" id="calculatorExperience" hidden>
+      <div class="calculator-active-bar">
+        <div class="calculator-active-copy"><span>Estás calculando</span><strong id="calculatorActiveLabel">Retiro</strong></div>
+        <button class="calculator-change" id="calculatorChange" type="button">Elegir otra calculadora</button>
+      </div>
+      <div class="calculator-shell">
+      <div class="calculator-panel" id="retirementCalculator" role="region" aria-label="Calculadora de retiro" data-calculator-panel="retirement">
         <div class="calculator-layout">
           <form class="calculator-form" id="retirementForm" data-journey-form="retirement" novalidate>
             <div class="calculator-form-inner">
@@ -1025,7 +1062,7 @@ a{color:inherit;text-decoration:none}
         </div>
       </div>
 
-      <div class="calculator-panel" id="lifeCalculator" role="tabpanel" aria-labelledby="tabLife" data-calculator-panel="life" hidden>
+      <div class="calculator-panel" id="lifeCalculator" role="region" aria-label="Calculadora de protección de vida" data-calculator-panel="life" hidden>
         <div class="calculator-layout">
           <form class="calculator-form" id="lifeForm" data-journey-form="life" novalidate>
             <div class="calculator-form-inner">
@@ -1131,6 +1168,7 @@ a{color:inherit;text-decoration:none}
           </div>
         </div>
       </div>
+    </div>
     </div>
   </div>
 </section>
@@ -1899,29 +1937,35 @@ document.querySelectorAll('[data-journey-back]').forEach(button => {
   });
 });
 
+const calculatorChooser = document.getElementById('calculatorChooser');
+const calculatorExperience = document.getElementById('calculatorExperience');
+const calculatorActiveLabel = document.getElementById('calculatorActiveLabel');
+
 function switchCalculator(type){
-  document.querySelectorAll('[data-calculator-tab]').forEach(tab => {
-    const active = tab.dataset.calculatorTab === type;
-    tab.classList.toggle('is-active', active);
-    tab.setAttribute('aria-selected', active ? 'true' : 'false');
-    tab.tabIndex = active ? 0 : -1;
-  });
   document.querySelectorAll('[data-calculator-panel]').forEach(panel => {
     panel.hidden = panel.dataset.calculatorPanel !== type;
   });
+  calculatorActiveLabel.textContent = type === 'retirement' ? 'Retiro' : 'Vida';
 }
 
-document.querySelectorAll('[data-calculator-tab]').forEach((tab, index, tabs) => {
-  tab.addEventListener('click', () => switchCalculator(tab.dataset.calculatorTab));
-  tab.addEventListener('keydown', event => {
-    if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
-    event.preventDefault();
-    const nextIndex = event.key === 'ArrowRight'
-      ? (index + 1) % tabs.length
-      : (index - 1 + tabs.length) % tabs.length;
-    tabs[nextIndex].focus();
-    switchCalculator(tabs[nextIndex].dataset.calculatorTab);
-  });
+function startCalculator(type){
+  const journey = getJourneyElements(type);
+  calculatorChooser.hidden = true;
+  calculatorExperience.hidden = false;
+  switchCalculator(type);
+  journey.results.hidden = true;
+  journey.form.hidden = false;
+  showJourneyStep(type, 0);
+}
+
+document.querySelectorAll('[data-calculator-choice]').forEach(choice => {
+  choice.addEventListener('click', () => startCalculator(choice.dataset.calculatorChoice));
+});
+
+document.getElementById('calculatorChange').addEventListener('click', () => {
+  calculatorExperience.hidden = true;
+  calculatorChooser.hidden = false;
+  calculatorChooser.focus({ preventScroll: true });
 });
 
 const leadModal = document.getElementById('leadModal');
