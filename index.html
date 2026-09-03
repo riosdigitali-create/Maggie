@@ -495,7 +495,7 @@ a{color:inherit;text-decoration:none}
 .smart-analysis p{font-size:.875rem;color:rgba(255,255,255,.88);line-height:1.58;margin:0}
 .smart-signals{display:flex;gap:7px;flex-wrap:wrap;margin-top:13px}
 .smart-signal{font-family:var(--mono);font-size:.5625rem;letter-spacing:.05em;color:rgba(255,255,255,.78);padding:6px 8px;border:1px solid rgba(255,255,255,.15);background:rgba(0,0,0,.08)}
-.metric-value.is-updating,.life-amount.is-updating{animation:valueRefresh .38s ease}
+.metric-value.is-updating,.life-amount.is-updating,.life-budget-value.is-updating{animation:valueRefresh .38s ease}
 .calculator-result-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .calculator-results .btn{background:#fff;color:var(--purple-deep);box-shadow:none;text-align:center;justify-content:center}
 .calculator-results .btn:hover{background:var(--pink-bg);color:var(--purple-deep)}
@@ -505,9 +505,14 @@ a{color:inherit;text-decoration:none}
 .life-result-copy{padding:27px 0 23px;border-bottom:1px solid rgba(255,255,255,.16);margin-bottom:22px}
 .life-dependents{font-size:1rem;color:rgba(255,255,255,.82);line-height:1.55;margin-bottom:17px}
 .life-dependents strong{color:#fff}
+.life-protection-figures{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(250px,.65fr);gap:28px;align-items:end}
 .life-need-label{font-family:var(--serif);font-size:1.25rem;color:#fff;line-height:1.4;max-width:620px;margin-bottom:10px}
 .life-amount{font-family:var(--serif);font-size:clamp(2.7rem,6vw,4.5rem);line-height:1;color:#fff;letter-spacing:-.04em;margin-bottom:12px;overflow-wrap:anywhere}
-.life-suggested{font-family:var(--mono);font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:#fff;padding:12px 14px;background:rgba(255,255,255,.1);border-left:2px solid #fff;display:inline-block}
+.life-budget-card{padding:20px 22px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-left:2px solid #fff}
+.life-budget-label{font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.75);line-height:1.45;margin-bottom:9px}
+.life-budget-amount{display:flex;align-items:baseline;gap:7px;flex-wrap:wrap;color:#fff}
+.life-budget-value{font-family:var(--serif);font-size:clamp(1.8rem,3.6vw,2.55rem);line-height:1;letter-spacing:-.025em;overflow-wrap:anywhere}
+.life-budget-period{font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.8)}
 .life-explanation{font-size:.9rem;color:rgba(255,255,255,.8);line-height:1.55;margin-bottom:20px}
 .life-promise{font-family:var(--serif);font-size:1.45rem;color:#fff;line-height:1.25;margin-bottom:8px}
 .life-promise-copy{font-size:.875rem;color:rgba(255,255,255,.72);line-height:1.55;margin-bottom:26px}
@@ -517,7 +522,7 @@ a{color:inherit;text-decoration:none}
 @keyframes valueRefresh{0%{opacity:.35;transform:translateY(3px)}100%{opacity:1;transform:translateY(0)}}
 @keyframes questionIn{0%{opacity:0;transform:translateX(18px)}100%{opacity:1;transform:translateX(0)}}
 @keyframes resultReveal{0%{opacity:.2;transform:translateY(10px)}100%{opacity:1;transform:translateY(0)}}
-@media (prefers-reduced-motion:reduce){.calculator-tab.is-active::after,.calculator-results::before,.smart-live-dot,.metric-value.is-updating,.life-amount.is-updating,.calculator-question,.calculator-results.is-revealed{animation:none}}
+@media (prefers-reduced-motion:reduce){.calculator-tab.is-active::after,.calculator-results::before,.smart-live-dot,.metric-value.is-updating,.life-amount.is-updating,.life-budget-value.is-updating,.calculator-question,.calculator-results.is-revealed{animation:none}}
 
 /* Captura de prospecto desde las calculadoras */
 .lead-modal{max-width:610px}
@@ -817,7 +822,9 @@ a{color:inherit;text-decoration:none}
   .metric-label{min-height:0}
   .calculator-results .btn{width:100%}
   .calculator-result-actions{align-items:stretch;flex-direction:column}
+  .life-protection-figures{grid-template-columns:1fr;gap:18px}
   .life-amount{font-size:clamp(2.35rem,13vw,3.6rem)}
+  .life-budget-card{padding:17px 18px}
   .lead-actions{flex-direction:column;align-items:stretch}
   .lead-actions .btn{width:100%}
   .appbanner-actions{align-items:stretch;flex-direction:column}
@@ -1085,14 +1092,21 @@ a{color:inherit;text-decoration:none}
               </div>
               <div class="calculator-result-meta">
                 <div class="smart-live"><span class="smart-live-dot" aria-hidden="true"></span>Tu resultado</div>
-                <div class="calculator-result-note">Suma asegurada sugerida · no calcula el costo de la póliza</div>
+                <div class="calculator-result-note">Protección y presupuesto orientativos · no es una cotización</div>
               </div>
             </div>
             <div class="life-result-copy">
               <p class="life-dependents" id="lifeDependentsCopy">Tienes <strong>3 personas</strong> que dependen económicamente de ti.</p>
-              <p class="life-need-label" id="lifeNeedLabel">Para proteger 10 años de tus ingresos, tu familia podría necesitar aproximadamente:</p>
-              <div class="life-amount" id="lifeCoverage">$8,400,000</div>
-              <div class="life-suggested" id="lifeSuggested">Suma asegurada sugerida: $8.4 millones</div>
+              <div class="life-protection-figures">
+                <div>
+                  <p class="life-need-label" id="lifeNeedLabel">Protección sugerida para tu familia:</p>
+                  <div class="life-amount" id="lifeCoverage">$8,400,000</div>
+                </div>
+                <div class="life-budget-card">
+                  <p class="life-budget-label">Presupuesto anual orientativo para tu protección:</p>
+                  <div class="life-budget-amount"><span class="life-budget-value" id="lifeBudget">$42,000</span><span class="life-budget-period">al año</span></div>
+                </div>
+              </div>
             </div>
             <p class="life-explanation">Esta protección busca ayudar a sustituir los ingresos que tu familia dejaría de recibir si tú llegaras a faltar.</p>
             <div class="smart-analysis" id="lifeAnalysis">
@@ -1110,10 +1124,10 @@ a{color:inherit;text-decoration:none}
             <div class="life-promise">Protege hoy lo que más importa mañana.</div>
             <p class="life-promise-copy">Con un Seguro de Vida Vitalicio puedes construir una protección de largo plazo para las personas que más amas.</p>
             <div class="calculator-result-actions">
-              <button class="btn btn-primary" type="button" onclick="openLeadForm('life')">Quiero saber cuánto me costaría esta protección</button>
+              <button class="btn btn-primary" type="button" onclick="openLeadForm('life')">Quiero conocer mi cotización personalizada</button>
               <button class="btn btn-ghost btn-result-edit" type="button" onclick="editCalculator('life')">Cambiar mis respuestas</button>
             </div>
-            <p class="calculator-disclaimer">Este cálculo es únicamente una estimación de necesidades de protección y no constituye una cotización ni una recomendación definitiva de suma asegurada. El costo, aceptación y condiciones de contratación están sujetos al producto y al proceso de suscripción correspondiente.</p>
+            <p class="calculator-disclaimer">El monto mostrado es únicamente una referencia de presupuesto y no representa el costo de una póliza ni una cotización. La prima y suma asegurada finales dependerán de las características del asegurado, producto, coberturas y proceso de suscripción.</p>
           </div>
         </div>
       </div>
@@ -1691,9 +1705,9 @@ function calculateRetirement(){
 
 function clearLifeResults(){
   document.getElementById('lifeDependentsCopy').textContent = 'Completa los datos para conocer la protección sugerida.';
-  document.getElementById('lifeNeedLabel').textContent = 'Tu familia podría necesitar aproximadamente:';
+  document.getElementById('lifeNeedLabel').textContent = 'Protección sugerida para tu familia:';
   document.getElementById('lifeCoverage').textContent = '—';
-  document.getElementById('lifeSuggested').textContent = 'Suma asegurada sugerida: —';
+  document.getElementById('lifeBudget').textContent = '—';
   document.getElementById('lifeInsight').textContent = 'Completa las preguntas para conocer qué puede representar esta protección para tu familia.';
   document.getElementById('lifeSignalAnnualIncome').textContent = 'Respaldo · —';
   document.getElementById('lifeSignalDependents').textContent = 'Personas protegidas · —';
@@ -1721,6 +1735,7 @@ function calculateLifeProtection(){
   const protectionYears = Number(yearsInput.value);
   const annualIncome = monthlyIncome * 12;
   const suggestedCoverage = annualIncome * protectionYears;
+  const annualProtectionBudget = annualIncome * 0.05;
 
   let dependentsCopy;
   if (dependents === 0){
@@ -1732,9 +1747,9 @@ function calculateLifeProtection(){
   }
 
   document.getElementById('lifeDependentsCopy').innerHTML = dependentsCopy;
-  document.getElementById('lifeNeedLabel').textContent = 'Para proteger ' + protectionYears + ' años de tus ingresos, tu familia podría necesitar aproximadamente:';
+  document.getElementById('lifeNeedLabel').textContent = 'Protección sugerida para tu familia:';
   document.getElementById('lifeCoverage').textContent = formatMXN(suggestedCoverage);
-  document.getElementById('lifeSuggested').textContent = 'Suma asegurada sugerida: ' + formatMillions(suggestedCoverage);
+  document.getElementById('lifeBudget').textContent = formatMXN(annualProtectionBudget);
   let lifeBenefitCopy;
   if(dependents === 0){
     lifeBenefitCopy = 'Una protección estimada de ' + formatMXN(suggestedCoverage) +
@@ -1749,15 +1764,17 @@ function calculateLifeProtection(){
       ' podría ayudar a que las ' + dependents + ' personas que dependen de ti mantengan continuidad económica durante ' + protectionYears +
       ' años, dando respaldo para vivienda, educación y gastos cotidianos si tú llegaras a faltar.';
   }
+  lifeBenefitCopy += ' Como referencia, podrías destinar ' + formatMXN(annualProtectionBudget) +
+    ' al año a construir esta protección; la cotización personalizada definirá el costo y alcance reales.';
   document.getElementById('lifeInsight').textContent = lifeBenefitCopy;
   document.getElementById('lifeSignalAnnualIncome').textContent = 'Respaldo · ' + formatMillions(suggestedCoverage);
   document.getElementById('lifeSignalDependents').textContent = dependents === 0
     ? 'Compromisos protegidos'
     : 'Personas protegidas · ' + dependents;
   document.getElementById('lifeSignalYears').textContent = 'Continuidad · ' + protectionYears + ' años';
-  pulseCalculatedValues(['lifeCoverage']);
+  pulseCalculatedValues(['lifeCoverage','lifeBudget']);
 
-  lifeSnapshot = { age, monthlyIncome, annualIncome, dependents, protectionYears, suggestedCoverage };
+  lifeSnapshot = { age, monthlyIncome, annualIncome, dependents, protectionYears, suggestedCoverage, annualProtectionBudget };
   return true;
 }
 
@@ -1918,9 +1935,10 @@ function openLeadForm(type){
       ' · Aportación anual: ' + formatMXN(snapshot.annualContribution) +
       ' · Ahorro fiscal estimado: hasta ' + formatMXN(snapshot.estimatedTaxSaving) + '.';
   } else {
-    title.textContent = 'Conoce cuánto costaría esta protección';
+    title.textContent = 'Recibe tu cotización personalizada';
     summary.textContent = 'Suma asegurada sugerida: ' + formatMXN(snapshot.suggestedCoverage) +
-      ' para proteger ' + snapshot.protectionYears + ' años de ingresos.';
+      ' · Presupuesto anual orientativo: ' + formatMXN(snapshot.annualProtectionBudget) +
+      ' · Protección de ingresos: ' + snapshot.protectionYears + ' años.';
   }
 
   leadModal.classList.add('active');
@@ -1978,8 +1996,9 @@ leadForm.addEventListener('submit', event => {
       '• Dependientes económicos: ' + lifeSnapshot.dependents,
       '• Años de protección: ' + lifeSnapshot.protectionYears,
       '• Suma asegurada sugerida: ' + formatMXN(lifeSnapshot.suggestedCoverage),
+      '• Presupuesto anual orientativo: ' + formatMXN(lifeSnapshot.annualProtectionBudget),
       '',
-      'Quiero saber cuánto me costaría esta protección.'
+      'Quiero conocer mi cotización personalizada.'
     );
   }
 
