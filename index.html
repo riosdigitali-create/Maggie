@@ -171,13 +171,16 @@ a{color:inherit;text-decoration:none}
 
 .symptoms{margin-top:80px}
 .symptoms-label{margin-bottom:32px}
-.symptoms-pain-layout{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start}
+.symptoms-pain-layout{display:grid;grid-template-columns:1fr 1fr;gap:76px;align-items:center}
 .symptoms-list{border-top:1px solid var(--line)}
 .symptom-row{padding:24px 0;border-bottom:1px solid var(--line);display:flex;gap:24px;align-items:flex-start}
 .symptom-num{font-family:var(--script);font-size:2.5rem;font-weight:400;color:var(--pink);font-style:normal;line-height:1;flex-shrink:0;letter-spacing:0;width:48px;text-align:center}
 .symptom-text{font-size:1.0625rem;line-height:1.5;color:var(--ink);font-weight:400;flex:1}
-.symptoms-visual{position:relative;width:100%;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center}
-.symptoms-visual img{width:100%;height:100%;object-fit:contain;display:block;filter:drop-shadow(0 24px 40px rgba(10,10,10,0.12))}
+.symptoms-visual{position:relative;width:100%;aspect-ratio:5/4;overflow:hidden;background:#DCCFC3;box-shadow:0 28px 60px -32px rgba(42,23,50,.4)}
+.symptoms-visual::after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(145deg,rgba(109,91,126,.18),transparent 48%,rgba(255,251,246,.08));mix-blend-mode:multiply}
+.symptoms-visual img{width:100%;height:100%;object-fit:cover;object-position:50% 52%;display:block;filter:saturate(.72) sepia(.08) contrast(.96);transform:scale(1.015)}
+.symptoms-photo-credit{position:absolute;right:12px;bottom:10px;z-index:2;font-family:var(--mono);font-size:.5rem;letter-spacing:.04em;color:rgba(255,255,255,.82);text-shadow:0 1px 4px rgba(0,0,0,.55)}
+.symptoms-photo-credit a{text-decoration:underline;text-underline-offset:2px}
 
 /* ============================================================
    DIFERENCIADOR — Sobre Maggie
@@ -527,43 +530,36 @@ a{color:inherit;text-decoration:none}
 .closing-ctas{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
 
 /* ============================================================
-   APP BANNER
+   ACOMPAÑAMIENTO — Seguimiento real, sin prometer una app
    ============================================================ */
 .appbanner{padding:152px 0;border-top:1px solid var(--ink);background:linear-gradient(180deg,var(--paper) 0%,#FFFCF7 100%)}
-.appbanner-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:center}
-.appbanner-content .label{margin-bottom:20px}
-.appbanner-content h2{font-size:clamp(2rem,3.5vw,3rem);letter-spacing:-0.03em;line-height:1.05;margin-bottom:18px}
-.appbanner-content h2 em{font-family:var(--script);font-style:italic;color:var(--pink);font-weight:400}
-.appbanner-content > p{font-size:1.0625rem;color:#3A3530;max-width:560px;line-height:1.55;margin-bottom:28px}
-.appbanner-list{list-style:none;display:flex;flex-direction:column;gap:14px;margin-bottom:32px}
-.appbanner-list li{display:flex;align-items:flex-start;gap:14px;font-size:.9375rem;color:var(--ink);line-height:1.5}
-.appbanner-list strong{color:var(--ink);font-weight:700}
-.appbanner-icon{font-size:1.25rem;flex-shrink:0;width:32px;height:32px;display:flex;align-items:center;justify-content:center;background:var(--pink-bg);border-radius:8px}
-.appbanner-stores{display:flex;flex-wrap:wrap;gap:14px;align-items:center;font-family:var(--mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-.appbanner-stores-label{font-weight:700;color:var(--ink)}
-.appbanner-store{padding:8px 14px;border:1px solid var(--line);border-radius:6px;color:var(--ink);background:#fff}
-.appbanner-phone{display:flex;justify-content:center;align-items:center}
-.phone-frame{position:relative;width:280px;height:560px;border-radius:42px;background:#1a1a1a;padding:14px;box-shadow:0 30px 80px -20px rgba(0,0,0,.35),0 0 0 1px rgba(0,0,0,.08)}
-.phone-notch{position:absolute;top:14px;left:50%;transform:translateX(-50%);width:120px;height:28px;background:#1a1a1a;border-radius:0 0 18px 18px;z-index:3}
-.phone-screen{width:100%;height:100%;background:#FFFCF7;border-radius:30px;padding:48px 18px 24px;display:flex;flex-direction:column;gap:14px;overflow:hidden;position:relative}
-.phone-status{font-family:var(--mono);font-size:.625rem;color:var(--muted);display:flex;justify-content:space-between;letter-spacing:.04em}
-.phone-header{margin-top:4px}
-.phone-greet{font-family:var(--serif);font-size:1.0625rem;color:var(--ink);font-weight:600;letter-spacing:-0.01em}
-.phone-policy{font-family:var(--mono);font-size:.6875rem;color:var(--muted);margin-top:2px;letter-spacing:.05em}
-.phone-card{background:linear-gradient(135deg,#6D5B7E 0%,#8E7CA0 100%);color:#fff;border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:4px}
-.phone-card-label{font-family:var(--mono);font-size:.625rem;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.75)}
-.phone-card-value{font-family:var(--serif);font-size:1.5rem;font-weight:600;letter-spacing:-0.01em}
-.phone-card-value small{font-size:.6875rem;color:rgba(255,255,255,.7);letter-spacing:.04em;margin-left:4px}
-.phone-card-trend{font-family:var(--mono);font-size:.6875rem;color:#B8FFD1;letter-spacing:.04em}
-.phone-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.phone-tile{background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px;display:flex;flex-direction:column;gap:2px}
-.phone-tile-num{font-family:var(--serif);font-size:1.125rem;color:var(--pink);font-weight:700;letter-spacing:-0.01em}
-.phone-tile-label{font-family:var(--mono);font-size:.5625rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted)}
-.phone-doc{display:flex;align-items:center;gap:10px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:12px}
-.phone-doc span:first-child{font-size:1.125rem}
-.phone-doc-title{font-size:.8125rem;color:var(--ink);font-weight:600}
-.phone-doc-meta{font-family:var(--mono);font-size:.625rem;color:var(--muted);letter-spacing:.04em}
-.phone-doc-arrow{margin-left:auto;color:var(--pink);font-weight:700}
+.appbanner-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:96px;align-items:center}
+.appbanner-content .label{margin-bottom:22px}
+.appbanner-content h2{font-size:clamp(2.2rem,4vw,3.6rem);letter-spacing:-0.035em;line-height:1.02;margin-bottom:22px}
+.appbanner-content h2 em{font-family:var(--script);font-style:normal;color:var(--pink);font-weight:400}
+.appbanner-content > p{font-size:1.0625rem;color:#3A3530;max-width:590px;line-height:1.65;margin-bottom:34px}
+.appbanner-list{list-style:none;display:flex;flex-direction:column;margin-bottom:36px;border-top:1px solid var(--line)}
+.appbanner-list li{display:grid;grid-template-columns:42px 1fr;align-items:start;gap:16px;padding:18px 0;border-bottom:1px solid var(--line);font-size:.9375rem;color:var(--ink);line-height:1.5}
+.appbanner-list strong{display:block;color:var(--ink);font-family:var(--serif);font-size:1.2rem;font-weight:500;margin-bottom:2px}
+.appbanner-icon{font-family:var(--mono);font-size:.625rem;letter-spacing:.08em;flex-shrink:0;width:38px;height:38px;display:flex;align-items:center;justify-content:center;border:1px solid var(--pink);color:var(--pink);border-radius:50%}
+.appbanner-actions{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.appbanner-microcopy{font-family:var(--mono);font-size:.625rem;line-height:1.45;letter-spacing:.04em;color:var(--muted);max-width:210px}
+.followup-card{position:relative;overflow:hidden;min-height:570px;padding:48px;background:radial-gradient(circle at 100% 0%,rgba(211,199,223,.28),transparent 32%),linear-gradient(145deg,#6D5B7E 0%,#4A2856 100%);color:#fff;box-shadow:0 38px 85px -44px rgba(42,23,50,.7);display:flex;flex-direction:column}
+.followup-card::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.12;background-image:linear-gradient(rgba(255,255,255,.25) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.25) 1px,transparent 1px);background-size:44px 44px;mask-image:linear-gradient(to bottom,black,transparent 72%)}
+.followup-card > *{position:relative;z-index:1}
+.followup-card-top{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,.2)}
+.followup-card-kicker{font-family:var(--mono);font-size:.625rem;text-transform:uppercase;letter-spacing:.16em;color:rgba(255,255,255,.72)}
+.followup-card-status{display:flex;align-items:center;gap:7px;font-family:var(--mono);font-size:.5625rem;text-transform:uppercase;letter-spacing:.1em;color:#fff}
+.followup-card-status::before{content:"";width:6px;height:6px;border-radius:50%;background:#B8FFD1;box-shadow:0 0 0 4px rgba(184,255,209,.1)}
+.followup-quote{font-family:var(--serif);font-size:clamp(1.9rem,3.2vw,2.8rem);line-height:1.08;letter-spacing:-.02em;color:#fff;margin:34px 0 38px}
+.followup-quote em{font-family:var(--script);font-style:normal;color:#E8DDF1;font-size:1.13em}
+.followup-steps{display:flex;flex-direction:column;margin-top:auto;border-top:1px solid rgba(255,255,255,.2)}
+.followup-step{display:grid;grid-template-columns:34px 1fr auto;gap:14px;align-items:center;padding:17px 0;border-bottom:1px solid rgba(255,255,255,.16)}
+.followup-step-num{font-family:var(--mono);font-size:.625rem;letter-spacing:.1em;color:rgba(255,255,255,.58)}
+.followup-step-title{font-size:.875rem;font-weight:600;color:#fff}
+.followup-step-note{font-family:var(--mono);font-size:.5625rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.6);text-align:right}
+.followup-channel{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-top:24px;font-family:var(--mono);font-size:.625rem;text-transform:uppercase;letter-spacing:.11em;color:rgba(255,255,255,.74)}
+.followup-channel strong{font-size:.6875rem;color:#fff;font-weight:600}
 
 /* ============================================================
    FOOTER
@@ -691,9 +687,7 @@ a{color:inherit;text-decoration:none}
   .diag,.diff,.products,.process,.testimonials,.closing,.manifesto,.diag-express,.appbanner,.calculators{padding:64px 0}
   .diag-express-hero{padding:32px 0 64px}
   .appbanner-grid{grid-template-columns:1fr;gap:48px}
-  .appbanner-phone{order:-1}
-  .phone-frame{width:240px;height:480px}
-  .phone-screen{padding:42px 14px 18px}
+  .followup-card{min-height:auto;padding:34px}
 
   /* H2 */
   h2{font-size:clamp(2rem,7vw,2.75rem);letter-spacing:-0.03em;line-height:1.0}
@@ -796,6 +790,15 @@ a{color:inherit;text-decoration:none}
   .life-amount{font-size:clamp(2.35rem,13vw,3.6rem)}
   .lead-actions{flex-direction:column;align-items:stretch}
   .lead-actions .btn{width:100%}
+  .appbanner-actions{align-items:stretch;flex-direction:column}
+  .appbanner-actions .btn{width:100%}
+  .appbanner-microcopy{max-width:none;text-align:center}
+  .followup-card{padding:26px 20px}
+  .followup-card-top{align-items:flex-start;flex-direction:column;gap:10px}
+  .followup-quote{margin:28px 0 30px}
+  .followup-step{grid-template-columns:28px 1fr}
+  .followup-step-note{grid-column:2;text-align:left;margin-top:-8px}
+  .followup-channel{align-items:flex-start;flex-direction:column;gap:8px}
 
   /* Closing */
   .closing h2{font-size:clamp(2rem,7vw,2.75rem);line-height:1.05}
@@ -1170,9 +1173,10 @@ a{color:inherit;text-decoration:none}
             </div>
           </div>
         </div>
-        <div class="symptoms-visual">
-          <img src="3.webp" alt="Caos del papeleo tradicional de seguros" width="1200" height="1500" loading="lazy" decoding="async" />
-        </div>
+        <figure class="symptoms-visual">
+          <img src="asesoria-documentos-unsplash.jpg" alt="Asesora revisando documentos financieros con un cliente" width="1800" height="1200" loading="lazy" decoding="async" />
+          <figcaption class="symptoms-photo-credit">Foto: <a href="https://unsplash.com/photos/MhqUBTxQ3Hw?utm_source=maggiesalmeron&amp;utm_medium=referral" target="_blank" rel="noopener">Olena Kholina · Unsplash</a></figcaption>
+        </figure>
       </div>
     </div>
   </div>
@@ -1298,54 +1302,49 @@ a{color:inherit;text-decoration:none}
   </div>
 </section>
 
-<!-- APP MÓVIL — Confianza y valor añadido -->
-<section class="appbanner" id="app-movil">
+<!-- ACOMPAÑAMIENTO — Seguimiento real -->
+<section class="appbanner" id="acompanamiento">
   <div class="container">
     <div class="appbanner-grid">
       <div class="appbanner-content">
-        <div class="label">Tu información siempre contigo</div>
-        <h2>Tu patrimonio, <em>en tu bolsillo.</em></h2>
-        <p>Todo tu plan, siempre contigo.</p>
+        <div class="label">Después de contratar, sigo contigo</div>
+        <h2>Tu plan cambia <em>cuando tu vida cambia.</em></h2>
+        <p>Una buena estrategia no se entrega y se olvida. La revisamos contigo para que siga respondiendo a tu familia, tus metas y tu momento de vida.</p>
         <ul class="appbanner-list">
-          <li><span class="appbanner-icon">📄</span><span><strong>Tus documentos</strong> · póliza y coberturas a la mano.</span></li>
-          <li><span class="appbanner-icon">📈</span><span><strong>Tus ahorros</strong> · su crecimiento, en tiempo real.</span></li>
-          <li><span class="appbanner-icon">🔔</span><span><strong>Sin sorpresas</strong> · transparencia total, sin call center.</span></li>
+          <li><span class="appbanner-icon">01</span><span><strong>Revisión anual</strong>Vemos si tu protección y tu ahorro siguen alineados con tus objetivos.</span></li>
+          <li><span class="appbanner-icon">02</span><span><strong>Recordatorios importantes</strong>Te ayudo a tener presentes renovaciones, aportaciones y momentos clave.</span></li>
+          <li><span class="appbanner-icon">03</span><span><strong>Contacto directo</strong>Hablas conmigo para resolver dudas y ajustar tu estrategia cuando lo necesites.</span></li>
         </ul>
-        <div class="appbanner-stores">
-          <span class="appbanner-stores-label">Disponible en:</span>
-          <span class="appbanner-store">App Store</span>
-          <span class="appbanner-store">Google Play</span>
+        <div class="appbanner-actions">
+          <a class="btn btn-primary" href="https://wa.me/525576408221?text=Hola%20Maggie%2C%20quiero%20conocer%20c%C3%B3mo%20funciona%20tu%20acompa%C3%B1amiento%20personalizado" target="_blank" rel="noopener">Quiero acompañamiento personalizado</a>
+          <span class="appbanner-microcopy">Respuesta directa por WhatsApp · sin call center</span>
         </div>
       </div>
-      <div class="appbanner-phone">
-        <div class="phone-frame">
-          <div class="phone-notch"></div>
-          <div class="phone-screen">
-            <div class="phone-status">9:41 · ●●●● · 🔋</div>
-            <div class="phone-header">
-              <div class="phone-greet">Hola, bienvenida</div>
-              <div class="phone-policy">Resumen de tu plan</div>
-            </div>
-            <div class="phone-card">
-              <div class="phone-card-label">Valor de tu ahorro</div>
-              <div class="phone-card-value">$184,250 <small>UDIs</small></div>
-              <div class="phone-card-trend">▲ +7.4% anual</div>
-            </div>
-            <div class="phone-row">
-              <div class="phone-tile"><div class="phone-tile-num">100%</div><div class="phone-tile-label">Cobertura activa</div></div>
-              <div class="phone-tile"><div class="phone-tile-num">24/7</div><div class="phone-tile-label">Acceso</div></div>
-            </div>
-            <div class="phone-doc">
-              <span>📄</span>
-              <div>
-                <div class="phone-doc-title">Póliza vigente</div>
-                <div class="phone-doc-meta">Descargada · vista clara</div>
-              </div>
-              <span class="phone-doc-arrow">→</span>
-            </div>
+      <aside class="followup-card" aria-label="Ruta de acompañamiento de Maggie">
+        <div class="followup-card-top">
+          <span class="followup-card-kicker">Acompañamiento Maggie</span>
+          <span class="followup-card-status">Seguimiento activo</span>
+        </div>
+        <p class="followup-quote">No te entrego una póliza y desaparezco. <em>Sigo contigo en cada etapa.</em></p>
+        <div class="followup-steps">
+          <div class="followup-step">
+            <span class="followup-step-num">01</span>
+            <span class="followup-step-title">Diagnóstico y propuesta clara</span>
+            <span class="followup-step-note">Inicio</span>
+          </div>
+          <div class="followup-step">
+            <span class="followup-step-num">02</span>
+            <span class="followup-step-title">Revisión de tu estrategia</span>
+            <span class="followup-step-note">Cada año</span>
+          </div>
+          <div class="followup-step">
+            <span class="followup-step-num">03</span>
+            <span class="followup-step-title">Ajustes cuando tu vida cambie</span>
+            <span class="followup-step-note">Contigo</span>
           </div>
         </div>
-      </div>
+        <div class="followup-channel"><span>Tu canal directo</span><strong>WhatsApp con Maggie →</strong></div>
+      </aside>
     </div>
   </div>
 </section>
