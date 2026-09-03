@@ -146,19 +146,6 @@ a{color:inherit;text-decoration:none}
 .hero-metric-value{margin-left:auto;font-weight:500;color:var(--ink)}
 
 /* ============================================================
-   BIG STATS SECTION
-   ============================================================ */
-.bigstats{padding:124px 0;border-top:1px solid var(--ink)}
-.bigstats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
-.bigstat{padding:32px 24px 32px 0;border-right:1px solid var(--line);position:relative}
-.bigstat:last-child{border-right:none}
-.bigstat-num{font-family:var(--serif);font-size:clamp(4rem,8vw,6.5rem);font-weight:400;line-height:.9;letter-spacing:-0.05em;color:var(--ink);margin-bottom:16px}
-.bigstat-num em{color:var(--pink);font-style:italic;font-weight:500}
-.bigstat-num .small{font-size:.35em;color:var(--muted);font-family:var(--mono);font-weight:400;letter-spacing:0;vertical-align:top;margin-left:6px}
-.bigstat-label{font-family:var(--sans);font-size:.75rem;color:var(--ink);text-transform:uppercase;letter-spacing:.18em;line-height:1.5;max-width:220px;font-weight:500}
-.bigstat-num-prefix{font-family:var(--sans);font-size:.625rem;color:var(--muted);letter-spacing:.22em;text-transform:uppercase;margin-bottom:8px;display:block;font-weight:500}
-
-/* ============================================================
    DIAGNÓSTICO / PAIN
    ============================================================ */
 .diag{padding:152px 0;border-top:1px solid var(--ink);background:var(--paper)}
@@ -671,10 +658,6 @@ a{color:inherit;text-decoration:none}
   .container{padding:0 24px}
   .hero-grid{grid-template-columns:1fr;gap:48px}
   .diff-grid{grid-template-columns:1fr;gap:48px}
-  .bigstats-grid{grid-template-columns:1fr 1fr;gap:0}
-  .bigstat:nth-child(2){border-right:none}
-  .bigstat:nth-child(1),.bigstat:nth-child(2){border-bottom:1px solid var(--line);padding-bottom:32px}
-  .bigstat:nth-child(3),.bigstat:nth-child(4){padding-top:32px}
   .symptoms-grid,.products-grid,.process-steps,.testimonials-grid,.diff-pillars,.diag-cases{grid-template-columns:1fr}
   .dcase{border-right:none!important;padding-left:0!important;padding-right:0!important;border-bottom:1px solid var(--line);padding-top:32px;padding-bottom:32px}
   .dcase:nth-child(2){background:transparent}
@@ -712,11 +695,6 @@ a{color:inherit;text-decoration:none}
   .hero-stat-label{flex:1;text-align:right}
   .hero-ctas{flex-direction:column;align-items:stretch;gap:10px}
   .btn{justify-content:center;padding:16px 24px;font-size:.75rem}
-
-  /* Big stats */
-  .bigstats{padding:64px 0}
-  .bigstat-num{font-size:clamp(3rem,12vw,4.5rem)}
-  .bigstat-label{font-size:.6875rem;max-width:none}
 
   /* Section paddings */
   .diag,.diff,.products,.process,.testimonials,.closing,.manifesto,.diag-express,.appbanner,.calculators{padding:64px 0}
@@ -1227,34 +1205,6 @@ a{color:inherit;text-decoration:none}
             <span class="hero-metric-value">Estrategia a tu medida</span>
           </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- BIG STATS -->
-<section class="bigstats">
-  <div class="container">
-    <div class="bigstats-grid">
-      <div class="bigstat">
-        <span class="bigstat-num-prefix">/ 01</span>
-        <div class="bigstat-num">10<em>+</em></div>
-        <div class="bigstat-label">Años de experiencia</div>
-      </div>
-      <div class="bigstat">
-        <span class="bigstat-num-prefix">/ 02</span>
-        <div class="bigstat-num">1,247</div>
-        <div class="bigstat-label">Familias protegidas</div>
-      </div>
-      <div class="bigstat">
-        <span class="bigstat-num-prefix">/ 03</span>
-        <div class="bigstat-num">2</div>
-        <div class="bigstat-label">Objetivos claros: retiro y vida</div>
-      </div>
-      <div class="bigstat">
-        <span class="bigstat-num-prefix">/ 04</span>
-        <div class="bigstat-num">1:1</div>
-        <div class="bigstat-label">Propuesta personalizada</div>
       </div>
     </div>
   </div>
