@@ -504,6 +504,14 @@ a{color:inherit;text-decoration:none}
 .calculator-results .btn-result-edit{background:transparent;color:#fff;border-color:rgba(255,255,255,.42)}
 .calculator-results .btn-result-edit:hover{background:rgba(255,255,255,.1);color:#fff;border-color:#fff}
 .calculator-disclaimer{font-family:var(--mono);font-size:.625rem;color:rgba(255,255,255,.62);line-height:1.55;letter-spacing:.01em;margin-top:18px}
+.result-lead-capture{padding:22px;margin:0 0 24px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.075)}
+.result-lead-heading{font-family:var(--serif);font-size:1.35rem;font-weight:500;color:#fff;line-height:1.2;margin-bottom:7px}
+.result-lead-copy{font-size:.82rem;color:rgba(255,255,255,.74);line-height:1.5;margin-bottom:17px}
+.result-lead-fields{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
+.result-lead-field label{display:block;font-family:var(--mono);font-size:.6rem;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.72);margin-bottom:7px}
+.result-lead-field input{width:100%;height:50px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.96);color:var(--ink);padding:0 14px;font-family:var(--sans);font-size:.95rem;border-radius:0}
+.result-lead-field input:focus{outline:none;border-color:#fff;box-shadow:0 0 0 3px rgba(255,255,255,.14)}
+.result-lead-privacy{font-family:var(--mono);font-size:.58rem;color:rgba(255,255,255,.58);line-height:1.5;margin-top:12px}
 .life-result-copy{padding:27px 0 23px;border-bottom:1px solid rgba(255,255,255,.16);margin-bottom:22px}
 .life-dependents{font-size:1rem;color:rgba(255,255,255,.82);line-height:1.55;margin-bottom:17px}
 .life-dependents strong{color:#fff}
@@ -525,18 +533,6 @@ a{color:inherit;text-decoration:none}
 @keyframes questionIn{0%{opacity:0;transform:translateX(18px)}100%{opacity:1;transform:translateX(0)}}
 @keyframes resultReveal{0%{opacity:.2;transform:translateY(10px)}100%{opacity:1;transform:translateY(0)}}
 @media (prefers-reduced-motion:reduce){.calculator-results::before,.smart-live-dot,.metric-value.is-updating,.life-amount.is-updating,.life-budget-value.is-updating,.calculator-question,.calculator-results.is-revealed{animation:none}}
-
-/* Captura de prospecto desde las calculadoras */
-.lead-modal{max-width:610px}
-.lead-modal .modal-body{overflow-y:auto}
-.lead-summary{padding:14px 16px;background:var(--pink-bg);border-left:2px solid var(--pink);font-size:.875rem;color:var(--ink);line-height:1.5;margin:18px 0 24px}
-.lead-form{display:flex;flex-direction:column;gap:16px}
-.lead-field label{display:block;font-size:.8125rem;font-weight:600;color:var(--ink);margin-bottom:7px}
-.lead-field input{width:100%;height:50px;border:1px solid rgba(26,26,26,.25);background:#fff;padding:0 14px;font-family:var(--sans);font-size:1rem}
-.lead-field input:focus{outline:none;border-color:var(--pink);box-shadow:0 0 0 3px rgba(var(--purple-rgb),.1)}
-.lead-actions{display:flex;gap:12px;align-items:center;margin-top:5px;flex-wrap:wrap}
-.lead-actions .btn{justify-content:center}
-.lead-privacy{font-family:var(--mono);font-size:.625rem;color:var(--muted);line-height:1.5;letter-spacing:.01em}
 
 /* ============================================================
    CIERRE — Última llamada
@@ -603,53 +599,6 @@ a{color:inherit;text-decoration:none}
 .footer-social a:hover{background:#fff;color:#4F4263;border-color:#fff;transform:translateY(-2px)}
 .footer-social svg{width:20px;height:20px}
 .footer-bottom{padding-top:32px;border-top:1px solid rgba(255,255,255,0.18);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:var(--sans);font-size:.6875rem;color:rgba(255,255,255,0.6);text-transform:uppercase;letter-spacing:.18em;font-weight:400}
-
-/* ============================================================
-   MODAL
-   ============================================================ */
-.modal-overlay{position:fixed;inset:0;z-index:200;background:rgba(10,10,10,0.85);backdrop-filter:blur(8px);display:none;align-items:center;justify-content:center;padding:24px;opacity:0;transition:opacity .3s}
-.modal-overlay.active{display:flex;opacity:1}
-.modal{background:var(--bg);width:100%;max-width:560px;max-height:90vh;overflow:hidden;display:flex;flex-direction:column;transform:translateY(20px);transition:transform .4s cubic-bezier(.4,0,.2,1);border:1px solid var(--ink)}
-.modal-overlay.active .modal{transform:translateY(0)}
-.modal-header{padding:20px 32px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:16px}
-.modal-header-left{display:flex;align-items:center;gap:12px}
-.modal-avatar{width:38px;height:38px;border-radius:50%;background-image:url('1-transparent.webp');background-size:cover;background-position:center 12%;background-color:var(--pink-bg);flex-shrink:0;border:1px solid var(--ink)}
-.modal-asesora{font-family:var(--mono);font-size:.75rem;color:var(--ink);font-weight:600;text-transform:uppercase;letter-spacing:.06em;line-height:1.1}
-.modal-online{font-family:var(--mono);font-size:.625rem;color:var(--pink);text-transform:uppercase;letter-spacing:.1em;display:flex;align-items:center;gap:4px;margin-top:2px;font-weight:500}
-.modal-online::before{content:"●";animation:pulse 2s infinite}
-.modal-progress{flex:1;display:flex;align-items:center;gap:12px;justify-content:flex-end}
-.progress-label{font-family:var(--mono);font-size:.6875rem;color:var(--muted);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
-.progress-bar{flex:0 1 120px;height:2px;background:var(--line);overflow:hidden}
-.progress-fill{height:100%;background:var(--pink);width:25%;transition:width .5s cubic-bezier(.4,0,.2,1)}
-.modal-close{background:none;border:none;cursor:pointer;width:32px;height:32px;display:flex;align-items:center;justify-content:center;color:var(--ink);font-size:1.5rem;transition:color .2s}
-.modal-close:hover{color:var(--pink)}
-.modal-body{padding:40px 32px;overflow-y:auto;flex:1}
-.step-screen{display:none;animation:slideIn .4s ease}
-.step-screen.active{display:block}
-@keyframes slideIn{from{opacity:0;transform:translateX(20px)}to{opacity:1;transform:translateX(0)}}
-.step-label{font-family:var(--mono);font-size:.6875rem;color:var(--pink);text-transform:uppercase;letter-spacing:.12em;margin-bottom:12px;font-weight:600;display:inline-flex;align-items:center;gap:6px}
-.step-label::before{content:"";display:inline-block;width:18px;height:1px;background:var(--pink);opacity:.6}
-.step-question{font-family:var(--serif);font-size:1.875rem;color:var(--ink);margin-bottom:8px;font-weight:500;line-height:1.1;letter-spacing:-0.02em}
-.step-hint{font-size:.9375rem;color:var(--muted);margin-bottom:32px}
-.step-options{display:flex;flex-direction:column;gap:10px}
-.step-option{background:transparent;border:1px solid var(--line);padding:18px 20px;cursor:pointer;display:flex;align-items:center;gap:14px;transition:all .2s;font-family:var(--sans);font-size:1rem;color:var(--ink);text-align:left;width:100%}
-.step-option:hover{border-color:var(--pink);background:var(--paper);transform:translateX(4px)}
-.step-option.selected{border-color:var(--pink);background:var(--pink-bg)}
-.step-option-num{font-family:var(--mono);font-size:.6875rem;color:var(--pink);font-weight:700;text-transform:uppercase;letter-spacing:.06em}
-.step-input{width:100%;padding:18px 20px;border:1px solid var(--line);background:transparent;font-family:var(--sans);font-size:1rem;color:var(--ink);transition:border-color .2s}
-.step-input:focus{outline:none;border-color:var(--pink)}
-.step-input + .step-input{margin-top:10px}
-.modal-footer{padding:20px 32px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;background:var(--paper)}
-.btn-back{background:none;border:none;font-family:var(--mono);font-size:.75rem;color:var(--muted);cursor:pointer;display:flex;align-items:center;gap:6px;text-transform:uppercase;letter-spacing:.08em;font-weight:500;transition:color .2s}
-.btn-back:hover{color:var(--ink)}
-.btn-next{background:var(--pink);color:#fff;border:none;border-radius:999px;padding:14px 32px;font-family:var(--sans);font-size:.75rem;text-transform:uppercase;letter-spacing:.18em;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:8px;transition:all .25s;box-shadow:0 6px 16px -6px rgba(109,91,126,.4)}
-.btn-next:hover{background:var(--purple-deep);color:#fff;transform:translateY(-1px)}
-.btn-next::after{content:"→"}
-.btn-next:disabled{opacity:.3;cursor:not-allowed}
-.success-screen{text-align:left}
-.success-mark{display:inline-block;width:48px;height:48px;border:1px solid var(--pink);color:var(--pink);font-family:var(--serif);font-size:1.5rem;font-style:italic;display:flex;align-items:center;justify-content:center;margin-bottom:24px}
-.success-title{font-family:var(--serif);font-size:1.75rem;color:var(--ink);margin-bottom:12px;font-weight:500;letter-spacing:-0.02em;line-height:1.15}
-.success-text{color:var(--muted);margin-bottom:24px;line-height:1.55}
 
 /* ============================================================
    RESPONSIVE
@@ -819,11 +768,11 @@ a{color:inherit;text-decoration:none}
   .metric-label{min-height:0}
   .calculator-results .btn{width:100%}
   .calculator-result-actions{align-items:stretch;flex-direction:column}
+  .result-lead-capture{padding:18px 16px}
+  .result-lead-fields{grid-template-columns:1fr}
   .life-protection-figures{grid-template-columns:1fr;gap:18px}
   .life-amount{font-size:clamp(2.35rem,13vw,3.6rem)}
   .life-budget-card{padding:17px 18px}
-  .lead-actions{flex-direction:column;align-items:stretch}
-  .lead-actions .btn{width:100%}
   .appbanner-actions{align-items:stretch;flex-direction:column}
   .appbanner-actions .btn{width:100%}
   .appbanner-microcopy{max-width:none;text-align:center}
@@ -844,12 +793,6 @@ a{color:inherit;text-decoration:none}
   .footer-top{grid-template-columns:1fr;gap:32px;margin-bottom:48px}
   .footer-bottom{flex-direction:column;gap:8px;text-align:left}
 
-  /* Modal */
-  .modal-body{padding:24px 18px}
-  .step-question{font-size:1.375rem;line-height:1.25}
-  .modal-header{padding:14px 18px}
-  .modal-footer{padding:14px 18px}
-  .progress-bar{flex:0 1 80px}
 }
 
 @media (max-width:380px){
@@ -1031,10 +974,25 @@ a{color:inherit;text-decoration:none}
                 <span class="smart-signal">Meta · mayor tranquilidad</span>
               </div>
             </div>
-            <div class="calculator-result-actions">
-              <button class="btn btn-primary" type="button" onclick="openLeadForm('retirement')">Quiero una propuesta personalizada</button>
-              <button class="btn btn-ghost btn-result-edit" type="button" onclick="editCalculator('retirement')">Cambiar mis respuestas</button>
-            </div>
+            <form class="result-lead-capture" data-result-lead-form="retirement">
+              <div class="result-lead-heading">Recibe una propuesta basada en tu resultado</div>
+              <p class="result-lead-copy">Déjame tu nombre y teléfono para preparar una asesoría personalizada.</p>
+              <div class="result-lead-fields">
+                <div class="result-lead-field">
+                  <label for="retirementLeadName">Nombre</label>
+                  <input id="retirementLeadName" name="name" type="text" autocomplete="name" required minlength="2" placeholder="Tu nombre" />
+                </div>
+                <div class="result-lead-field">
+                  <label for="retirementLeadPhone">Número de teléfono / WhatsApp</label>
+                  <input id="retirementLeadPhone" name="phone" type="tel" autocomplete="tel" required inputmode="tel" pattern="[0-9+() -]{10,}" title="Escribe un número de al menos 10 dígitos" placeholder="Tu número a 10 dígitos" />
+                </div>
+              </div>
+              <div class="calculator-result-actions">
+                <button class="btn btn-primary" type="submit">Quiero una propuesta personalizada</button>
+                <button class="btn btn-ghost btn-result-edit" type="button" onclick="editCalculator('retirement')">Cambiar mis respuestas</button>
+              </div>
+              <p class="result-lead-privacy">Al continuar, se abrirá WhatsApp con tu nombre, teléfono y resultado listos para enviar a Maggie.</p>
+            </form>
             <p class="calculator-disclaimer">Esta herramienta proporciona una simulación ilustrativa. Las proyecciones y beneficios fiscales son estimados y pueden variar. No representan rendimientos ni devoluciones garantizadas. Los beneficios fiscales están sujetos a la situación particular del contribuyente y a la legislación vigente. Tope fiscal usado: cinco UMA anuales de 2026.</p>
           </div>
         </div>
@@ -1138,10 +1096,25 @@ a{color:inherit;text-decoration:none}
             </div>
             <div class="life-promise">Protege hoy lo que más importa mañana.</div>
             <p class="life-promise-copy">Con un Seguro de Vida Vitalicio puedes construir una protección de largo plazo para las personas que más amas.</p>
-            <div class="calculator-result-actions">
-              <button class="btn btn-primary" type="button" onclick="openLeadForm('life')">Quiero conocer mi cotización personalizada</button>
-              <button class="btn btn-ghost btn-result-edit" type="button" onclick="editCalculator('life')">Cambiar mis respuestas</button>
-            </div>
+            <form class="result-lead-capture" data-result-lead-form="life">
+              <div class="result-lead-heading">Conoce tu cotización personalizada</div>
+              <p class="result-lead-copy">Déjame tu nombre y teléfono para preparar una asesoría basada en esta protección.</p>
+              <div class="result-lead-fields">
+                <div class="result-lead-field">
+                  <label for="lifeLeadName">Nombre</label>
+                  <input id="lifeLeadName" name="name" type="text" autocomplete="name" required minlength="2" placeholder="Tu nombre" />
+                </div>
+                <div class="result-lead-field">
+                  <label for="lifeLeadPhone">Número de teléfono / WhatsApp</label>
+                  <input id="lifeLeadPhone" name="phone" type="tel" autocomplete="tel" required inputmode="tel" pattern="[0-9+() -]{10,}" title="Escribe un número de al menos 10 dígitos" placeholder="Tu número a 10 dígitos" />
+                </div>
+              </div>
+              <div class="calculator-result-actions">
+                <button class="btn btn-primary" type="submit">Quiero conocer mi cotización personalizada</button>
+                <button class="btn btn-ghost btn-result-edit" type="button" onclick="editCalculator('life')">Cambiar mis respuestas</button>
+              </div>
+              <p class="result-lead-privacy">Al continuar, se abrirá WhatsApp con tu nombre, teléfono y resultado listos para enviar a Maggie.</p>
+            </form>
             <p class="calculator-disclaimer">El monto mostrado es únicamente una referencia de presupuesto y no representa el costo de una póliza ni una cotización. La prima y suma asegurada finales dependerán de las características del asegurado, producto, coberturas y proceso de suscripción.</p>
           </div>
         </div>
@@ -1495,47 +1468,6 @@ a{color:inherit;text-decoration:none}
   </div>
 </footer>
 
-<!-- CAPTURA DE PROSPECTO — Calculadoras -->
-<div class="modal-overlay" id="leadModal" role="dialog" aria-modal="true" aria-labelledby="leadTitle" aria-hidden="true">
-  <div class="modal lead-modal">
-    <div class="modal-header">
-      <div class="modal-header-left">
-        <div class="modal-avatar"></div>
-        <div>
-          <div class="modal-asesora">Maggie Salmerón</div>
-          <div class="modal-online">Propuesta personalizada</div>
-        </div>
-      </div>
-      <button class="modal-close" type="button" onclick="closeLeadForm()" aria-label="Cerrar formulario">×</button>
-    </div>
-    <div class="modal-body">
-      <div class="step-label" id="leadEyebrow">Tu siguiente paso</div>
-      <div class="step-question" id="leadTitle">Recibe una propuesta personalizada</div>
-      <div class="step-hint">Déjame tus datos y revisamos tu estimación de acuerdo con tu situación.</div>
-      <div class="lead-summary" id="leadSummary"></div>
-      <form class="lead-form" id="leadForm">
-        <div class="lead-field">
-          <label for="leadName">Nombre</label>
-          <input id="leadName" name="name" type="text" autocomplete="name" required minlength="2" placeholder="Tu nombre" />
-        </div>
-        <div class="lead-field">
-          <label for="leadPhone">WhatsApp</label>
-          <input id="leadPhone" name="phone" type="tel" autocomplete="tel" required inputmode="tel" pattern="[0-9+() -]{10,}" placeholder="Tu número a 10 dígitos" />
-        </div>
-        <div class="lead-field">
-          <label for="leadEmail">Correo electrónico <span style="font-weight:400;color:var(--muted)">(opcional)</span></label>
-          <input id="leadEmail" name="email" type="email" autocomplete="email" placeholder="tu@correo.com" />
-        </div>
-        <div class="lead-actions">
-          <button class="btn btn-primary" type="submit">Enviar mis datos por WhatsApp</button>
-          <button class="btn btn-ghost" type="button" onclick="closeLeadForm()">Ahora no</button>
-        </div>
-        <p class="lead-privacy">Al enviar, se abrirá WhatsApp con tus datos y el resultado de la calculadora listos para compartir directamente con Maggie.</p>
-      </form>
-    </div>
-  </div>
-</div>
-
 <script>
 /* ============================
    CALCULADORAS — Retiro y vida
@@ -1562,7 +1494,6 @@ const ISR_BRACKETS = [
 
 let retirementSnapshot = null;
 let lifeSnapshot = null;
-let activeLeadType = null;
 const journeyState = { retirement: 0, life: 0 };
 
 function formatMXN(value){
@@ -1918,93 +1849,64 @@ document.getElementById('calculatorChange').addEventListener('click', () => {
   calculatorChooser.focus({ preventScroll: true });
 });
 
-const leadModal = document.getElementById('leadModal');
-const leadForm = document.getElementById('leadForm');
+document.querySelectorAll('[data-result-lead-form]').forEach(form => {
+  const phoneField = form.elements.namedItem('phone');
+  phoneField.addEventListener('input', () => phoneField.setCustomValidity(''));
 
-function openLeadForm(type){
-  const snapshot = type === 'retirement' ? retirementSnapshot : lifeSnapshot;
-  if (!snapshot) return;
+  form.addEventListener('submit', event => {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
 
-  activeLeadType = type;
-  const title = document.getElementById('leadTitle');
-  const summary = document.getElementById('leadSummary');
+    const type = form.dataset.resultLeadForm;
+    const snapshot = type === 'retirement' ? retirementSnapshot : lifeSnapshot;
+    if (!snapshot) return;
 
-  if (type === 'retirement'){
-    title.textContent = 'Recibe una propuesta para tu retiro';
-    summary.textContent = 'Retiro estimado a los 65: ' + formatMXN(snapshot.projectedRetirement) +
-      ' · Aportación anual: ' + formatMXN(snapshot.annualContribution) +
-      ' · Ahorro fiscal estimado: hasta ' + formatMXN(snapshot.estimatedTaxSaving) + '.';
-  } else {
-    title.textContent = 'Recibe tu cotización personalizada';
-    summary.textContent = 'Suma asegurada sugerida: ' + formatMXN(snapshot.suggestedCoverage) +
-      ' · Presupuesto anual orientativo: ' + formatMXN(snapshot.annualProtectionBudget) +
-      ' · Protección de ingresos: ' + snapshot.protectionYears + ' años.';
-  }
+    const name = form.elements.namedItem('name').value.trim();
+    const phone = phoneField.value.trim();
+    if (phone.replace(/\D/g, '').length < 10){
+      phoneField.setCustomValidity('Escribe un número de teléfono de al menos 10 dígitos.');
+      phoneField.reportValidity();
+      return;
+    }
+    const lines = [
+      'Hola Maggie 👋 Soy ' + name + '.',
+      'Mi teléfono / WhatsApp: ' + phone,
+      ''
+    ];
 
-  leadModal.classList.add('active');
-  leadModal.setAttribute('aria-hidden', 'false');
-  document.body.style.overflow = 'hidden';
-  setTimeout(() => document.getElementById('leadName').focus(), 200);
-}
+    if (type === 'retirement'){
+      lines.push(
+        'INTERÉS: PLAN DE RETIRO',
+        '',
+        'Datos del cálculo:',
+        '• Edad actual: ' + snapshot.age + ' años',
+        '• Aportación anual: ' + formatMXN(snapshot.annualContribution),
+        '• Ingreso mensual aproximado: ' + formatMXN(snapshot.monthlyIncome),
+        '• Retiro estimado a los 65: ' + formatMXN(snapshot.projectedRetirement),
+        '• Aportación potencialmente deducible: hasta ' + formatMXN(snapshot.potentiallyDeductible),
+        '• Ahorro fiscal estimado: hasta ' + formatMXN(snapshot.estimatedTaxSaving),
+        '',
+        'Quiero recibir una propuesta personalizada.'
+      );
+    } else {
+      lines.push(
+        'INTERÉS: SEGURO DE VIDA VITALICIO',
+        '',
+        'Datos del cálculo:',
+        '• Edad: ' + snapshot.age + ' años',
+        '• Ingreso mensual aproximado: ' + formatMXN(snapshot.monthlyIncome),
+        '• Dependientes económicos: ' + snapshot.dependents,
+        '• Años de protección: ' + snapshot.protectionYears,
+        '• Suma asegurada sugerida: ' + formatMXN(snapshot.suggestedCoverage),
+        '• Presupuesto anual orientativo: ' + formatMXN(snapshot.annualProtectionBudget),
+        '',
+        'Quiero conocer mi cotización personalizada.'
+      );
+    }
 
-function closeLeadForm(){
-  leadModal.classList.remove('active');
-  leadModal.setAttribute('aria-hidden', 'true');
-  document.body.style.overflow = '';
-}
-
-leadModal.addEventListener('click', event => {
-  if (event.target === leadModal) closeLeadForm();
-});
-
-document.addEventListener('keydown', event => {
-  if (event.key === 'Escape' && leadModal.classList.contains('active')) closeLeadForm();
-});
-
-leadForm.addEventListener('submit', event => {
-  event.preventDefault();
-  if (!leadForm.reportValidity()) return;
-
-  const name = document.getElementById('leadName').value.trim();
-  const phone = document.getElementById('leadPhone').value.trim();
-  const email = document.getElementById('leadEmail').value.trim();
-  const lines = [
-    'Hola Maggie 👋 Soy ' + name + '.',
-    'WhatsApp: ' + phone
-  ];
-  if (email) lines.push('Correo: ' + email);
-
-  if (activeLeadType === 'retirement' && retirementSnapshot){
-    lines.push(
-      '',
-      'Calculé mi retiro en tu landing:',
-      '• Edad actual: ' + retirementSnapshot.age + ' años',
-      '• Aportación anual: ' + formatMXN(retirementSnapshot.annualContribution),
-      '• Ingreso mensual aproximado: ' + formatMXN(retirementSnapshot.monthlyIncome),
-      '• Retiro estimado a los 65: ' + formatMXN(retirementSnapshot.projectedRetirement),
-      '• Aportación potencialmente deducible: hasta ' + formatMXN(retirementSnapshot.potentiallyDeductible),
-      '• Ahorro fiscal estimado: hasta ' + formatMXN(retirementSnapshot.estimatedTaxSaving),
-      '',
-      'Quiero recibir una propuesta personalizada.'
-    );
-  } else if (activeLeadType === 'life' && lifeSnapshot){
-    lines.push(
-      '',
-      'Calculé mi protección de vida en tu landing:',
-      '• Edad: ' + lifeSnapshot.age + ' años',
-      '• Ingreso mensual aproximado: ' + formatMXN(lifeSnapshot.monthlyIncome),
-      '• Dependientes económicos: ' + lifeSnapshot.dependents,
-      '• Años de protección: ' + lifeSnapshot.protectionYears,
-      '• Suma asegurada sugerida: ' + formatMXN(lifeSnapshot.suggestedCoverage),
-      '• Presupuesto anual orientativo: ' + formatMXN(lifeSnapshot.annualProtectionBudget),
-      '',
-      'Quiero conocer mi cotización personalizada.'
-    );
-  }
-
-  const whatsappUrl = 'https://wa.me/525576408221?text=' + encodeURIComponent(lines.join('\n'));
-  window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
-  closeLeadForm();
+    const whatsappUrl = 'https://wa.me/525576408221?text=' + encodeURIComponent(lines.join('\n'));
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+  });
 });
 
 document.querySelectorAll('[data-restart-page]').forEach(link => {
