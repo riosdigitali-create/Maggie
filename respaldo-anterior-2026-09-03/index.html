@@ -4,12 +4,12 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="theme-color" content="#6D5B7E" />
-<title>Maggie Salmerón — Asesora financiera · El legado que se vive hoy</title>
-<meta name="description" content="Maggie Salmerón, asesora financiera. Calcula cuánto podrías acumular para tu retiro o cuánto debería quedar protegido para tu familia." />
-<meta name="keywords" content="Maggie Salmerón, asesora financiera, seguro de vida, plan de retiro, plan educativo, vida inversión" />
+<title>Maggie Salmerón — Asesora Prudential · El legado que se vive hoy</title>
+<meta name="description" content="Maggie Salmerón, asesora financiera Prudential certificada. Diseño planes de vida + ahorro 100% personalizados. Diagnóstico gratis en 90 segundos." />
+<meta name="keywords" content="Maggie Salmerón, Prudential México, asesora financiera, seguro de vida, plan de retiro, plan educativo, vida inversión" />
 <meta property="og:type" content="website" />
-<meta property="og:title" content="Maggie Salmerón — Asesora financiera" />
-<meta property="og:description" content="Calcula tu retiro estimado o la protección sugerida para tu familia y recibe una propuesta personalizada." />
+<meta property="og:title" content="Maggie Salmerón — Asesora Prudential" />
+<meta property="og:description" content="Diagnóstico gratis en 90 segundos. Tu plan ideal con precio real y comparativo de mercado." />
 <meta property="og:image" content="hero-illustration.webp" />
 <meta property="og:locale" content="es_MX" />
 <meta name="twitter:card" content="summary_large_image" />
@@ -413,84 +413,6 @@ a{color:inherit;text-decoration:none}
 .result-disclaimer{margin-top:20px;font-family:var(--mono);font-size:.6875rem;color:var(--muted);line-height:1.55;letter-spacing:.02em;text-align:left;padding:0 8px}
 
 /* ============================================================
-   CALCULADORAS — Retiro y protección de vida
-   ============================================================ */
-.calculators{padding:88px 0 104px;background:linear-gradient(180deg,var(--paper) 0%,var(--bg-deep) 100%);border-bottom:1px solid var(--ink)}
-.calculators-head{max-width:900px;margin-bottom:42px}
-.calculators-head .label{margin-bottom:22px}
-.calculators-head h2{margin-bottom:18px}
-.calculators-intro{max-width:760px;font-size:1.0625rem;color:#3A3530;line-height:1.6}
-.calculator-difference{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:920px;margin-bottom:28px}
-.calculator-difference-item{display:flex;align-items:center;gap:13px;padding:16px 18px;background:rgba(255,255,255,.65);border:1px solid var(--line)}
-.calculator-difference-icon{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--pink-bg);color:var(--pink);font-family:var(--serif);font-size:1.125rem;font-weight:600;flex-shrink:0}
-.calculator-difference-copy{font-size:.875rem;line-height:1.4;color:var(--ink)}
-.calculator-difference-copy strong{display:block;color:var(--pink);font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:2px}
-.calculator-tabs{display:grid;grid-template-columns:1fr 1fr;max-width:760px;border:1px solid var(--ink);background:var(--paper)}
-.calculator-tab{appearance:none;border:0;border-right:1px solid var(--ink);background:transparent;color:var(--ink);padding:18px 20px;cursor:pointer;text-align:left;transition:background .2s,color .2s;font-family:var(--sans)}
-.calculator-tab:last-child{border-right:0}
-.calculator-tab.is-active{background:var(--pink);color:#fff}
-.calculator-tab-kicker{display:block;font-size:.625rem;text-transform:uppercase;letter-spacing:.18em;opacity:.72;margin-bottom:4px;font-weight:600}
-.calculator-tab-title{display:block;font-family:var(--serif);font-size:1.3rem;line-height:1.15;font-weight:500}
-.calculator-shell{border:1px solid var(--ink);border-top:0;background:var(--bg);box-shadow:0 28px 60px -28px rgba(10,10,10,.24)}
-.calculator-panel[hidden]{display:none}
-.calculator-layout{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr)}
-.calculator-form{padding:38px;border-right:1px solid var(--line);background:#fff}
-.calculator-form-head{margin-bottom:28px}
-.calculator-form-label{font-family:var(--mono);font-size:.6875rem;text-transform:uppercase;letter-spacing:.15em;color:var(--pink);font-weight:700;margin-bottom:8px}
-.calculator-form h3{font-size:1.75rem;margin-bottom:10px}
-.calculator-form p{font-size:.9rem;color:var(--muted);line-height:1.55}
-.calculator-fields{display:flex;flex-direction:column;gap:19px}
-.calculator-field label{display:block;font-size:.8125rem;color:var(--ink);font-weight:600;margin-bottom:8px;line-height:1.35}
-.calculator-input-wrap{position:relative}
-.calculator-prefix,.calculator-suffix{position:absolute;top:50%;transform:translateY(-50%);color:var(--muted);font-family:var(--mono);font-size:.875rem;pointer-events:none}
-.calculator-prefix{left:15px}
-.calculator-suffix{right:15px}
-.calculator-input,.calculator-select{width:100%;height:52px;border:1px solid rgba(26,26,26,.25);background:var(--bg);color:var(--ink);padding:0 15px;font-family:var(--sans);font-size:1rem;border-radius:0;transition:border-color .2s,box-shadow .2s}
-.calculator-input.has-prefix{padding-left:34px}
-.calculator-input.has-suffix{padding-right:62px}
-.calculator-input:focus,.calculator-select:focus{outline:none;border-color:var(--pink);box-shadow:0 0 0 3px rgba(var(--purple-rgb),.1)}
-.calculator-input[aria-invalid="true"]{border-color:#A54242}
-.calculator-field-help{font-family:var(--mono);font-size:.625rem;color:var(--muted);line-height:1.45;margin-top:6px;letter-spacing:.01em}
-.calculator-results{padding:38px;background:linear-gradient(145deg,#5A4A6B 0%,#4A2856 100%);color:#fff;display:flex;flex-direction:column}
-.calculator-results-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,.18)}
-.calculator-results-kicker{font-family:var(--mono);font-size:.6875rem;text-transform:uppercase;letter-spacing:.16em;color:rgba(255,255,255,.68);margin-bottom:8px}
-.calculator-results h3{color:#fff;font-size:1.75rem}
-.calculator-result-note{font-family:var(--mono);font-size:.625rem;text-transform:uppercase;letter-spacing:.09em;color:rgba(255,255,255,.7);text-align:right;max-width:190px;line-height:1.5}
-.retirement-results-grid{display:grid;grid-template-columns:1fr 1fr;margin:12px 0 24px}
-.retirement-metric{padding:22px 18px;border-bottom:1px solid rgba(255,255,255,.16);min-width:0}
-.retirement-metric:nth-child(odd){border-right:1px solid rgba(255,255,255,.16);padding-left:0}
-.retirement-metric:nth-child(even){padding-right:0}
-.metric-label{font-family:var(--mono);font-size:.625rem;text-transform:uppercase;letter-spacing:.11em;color:rgba(255,255,255,.68);line-height:1.4;min-height:2.8em;margin-bottom:8px}
-.metric-value{font-family:var(--serif);font-size:clamp(1.55rem,3vw,2.25rem);font-weight:500;letter-spacing:-.02em;line-height:1.05;color:#fff;overflow-wrap:anywhere}
-.metric-value-main{color:#fff;font-size:clamp(2.15rem,4.4vw,3.45rem)}
-.metric-prefix-word{display:block;font-family:var(--sans);font-size:.625rem;text-transform:uppercase;letter-spacing:.14em;color:rgba(255,255,255,.62);margin-bottom:5px}
-.calculator-context{font-size:.875rem;color:rgba(255,255,255,.78);line-height:1.55;margin-bottom:22px}
-.calculator-results .btn{align-self:flex-start;background:#fff;color:var(--purple-deep);box-shadow:none;text-align:center;justify-content:center}
-.calculator-results .btn:hover{background:var(--pink-bg);color:var(--purple-deep)}
-.calculator-disclaimer{font-family:var(--mono);font-size:.625rem;color:rgba(255,255,255,.62);line-height:1.55;letter-spacing:.01em;margin-top:18px}
-.life-result-copy{padding:27px 0 23px;border-bottom:1px solid rgba(255,255,255,.16);margin-bottom:22px}
-.life-dependents{font-size:1rem;color:rgba(255,255,255,.82);line-height:1.55;margin-bottom:17px}
-.life-dependents strong{color:#fff}
-.life-need-label{font-family:var(--serif);font-size:1.25rem;color:#fff;line-height:1.4;max-width:620px;margin-bottom:10px}
-.life-amount{font-family:var(--serif);font-size:clamp(2.7rem,6vw,4.5rem);line-height:1;color:#fff;letter-spacing:-.04em;margin-bottom:12px;overflow-wrap:anywhere}
-.life-suggested{font-family:var(--mono);font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:#fff;padding:12px 14px;background:rgba(255,255,255,.1);border-left:2px solid #fff;display:inline-block}
-.life-explanation{font-size:.9rem;color:rgba(255,255,255,.8);line-height:1.55;margin-bottom:22px}
-.life-promise{font-family:var(--serif);font-size:1.45rem;color:#fff;line-height:1.25;margin-bottom:8px}
-.life-promise-copy{font-size:.875rem;color:rgba(255,255,255,.72);line-height:1.55;margin-bottom:22px}
-
-/* Captura de prospecto desde las calculadoras */
-.lead-modal{max-width:610px}
-.lead-modal .modal-body{overflow-y:auto}
-.lead-summary{padding:14px 16px;background:var(--pink-bg);border-left:2px solid var(--pink);font-size:.875rem;color:var(--ink);line-height:1.5;margin:18px 0 24px}
-.lead-form{display:flex;flex-direction:column;gap:16px}
-.lead-field label{display:block;font-size:.8125rem;font-weight:600;color:var(--ink);margin-bottom:7px}
-.lead-field input{width:100%;height:50px;border:1px solid rgba(26,26,26,.25);background:#fff;padding:0 14px;font-family:var(--sans);font-size:1rem}
-.lead-field input:focus{outline:none;border-color:var(--pink);box-shadow:0 0 0 3px rgba(var(--purple-rgb),.1)}
-.lead-actions{display:flex;gap:12px;align-items:center;margin-top:5px;flex-wrap:wrap}
-.lead-actions .btn{justify-content:center}
-.lead-privacy{font-family:var(--mono);font-size:.625rem;color:var(--muted);line-height:1.5;letter-spacing:.01em}
-
-/* ============================================================
    CIERRE — Última llamada
    ============================================================ */
 .closing{padding:160px 0;border-top:1px solid var(--ink);text-align:left;position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 0%,rgba(109,91,126,0.10) 0%,transparent 55%),var(--bg)}
@@ -629,8 +551,6 @@ a{color:inherit;text-decoration:none}
   .footer-top{grid-template-columns:1fr 1fr;gap:48px}
   .hero-stats-inline{flex-direction:column;gap:24px}
   .nav-links{display:none}
-  .calculator-layout{grid-template-columns:1fr}
-  .calculator-form{border-right:0;border-bottom:1px solid var(--line)}
 }
 @media (max-width:640px){
   .container{padding:0 18px}
@@ -666,7 +586,7 @@ a{color:inherit;text-decoration:none}
   .bigstat-label{font-size:.6875rem;max-width:none}
 
   /* Section paddings */
-  .diag,.diff,.products,.process,.testimonials,.closing,.manifesto,.diag-express,.appbanner,.calculators{padding:64px 0}
+  .diag,.diff,.products,.process,.testimonials,.closing,.manifesto,.diag-express,.appbanner{padding:64px 0}
   .diag-express-hero{padding:32px 0 64px}
   .appbanner-grid{grid-template-columns:1fr;gap:48px}
   .appbanner-phone{order:-1}
@@ -754,24 +674,6 @@ a{color:inherit;text-decoration:none}
   .result-ctas{padding:0 18px 24px;flex-direction:column}
   .result-ctas .btn{min-width:auto;width:100%}
 
-  /* Calculadoras */
-  .calculators{padding-top:40px}
-  .calculators-head{margin-bottom:30px}
-  .calculator-difference{grid-template-columns:1fr;gap:8px}
-  .calculator-tabs{grid-template-columns:1fr}
-  .calculator-tab{border-right:0;border-bottom:1px solid var(--ink);padding:14px 16px}
-  .calculator-tab:last-child{border-bottom:0}
-  .calculator-form,.calculator-results{padding:26px 18px}
-  .calculator-results-head{flex-direction:column;gap:8px}
-  .calculator-result-note{text-align:left;max-width:none}
-  .retirement-results-grid{grid-template-columns:1fr}
-  .retirement-metric{padding:18px 0;border-right:0!important}
-  .metric-label{min-height:0}
-  .calculator-results .btn{width:100%}
-  .life-amount{font-size:clamp(2.35rem,13vw,3.6rem)}
-  .lead-actions{flex-direction:column;align-items:stretch}
-  .lead-actions .btn{width:100%}
-
   /* Closing */
   .closing h2{font-size:clamp(2rem,7vw,2.75rem);line-height:1.05}
   .closing p{font-size:1.0625rem}
@@ -805,12 +707,12 @@ a{color:inherit;text-decoration:none}
 <div class="marquee">
   <div class="marquee-track">
     <span class="marquee-item">El legado que se vive hoy</span>
-    <span class="marquee-item">Asesoría financiera personalizada</span>
+    <span class="marquee-item">Asesora Prudential certificada</span>
     <span class="marquee-item">+10 años protegiendo familias</span>
     <span class="marquee-item">Vida · Ahorro · Retiro · Educación</span>
     <span class="marquee-item">Cotización 100% gratis</span>
     <span class="marquee-item">El legado que se vive hoy</span>
-    <span class="marquee-item">Asesoría financiera personalizada</span>
+    <span class="marquee-item">Asesora Prudential certificada</span>
     <span class="marquee-item">+10 años protegiendo familias</span>
     <span class="marquee-item">Vida · Ahorro · Retiro · Educación</span>
     <span class="marquee-item">Cotización 100% gratis</span>
@@ -823,179 +725,181 @@ a{color:inherit;text-decoration:none}
     <span class="logo-mark">MS.</span>
     <span class="logo-text">
       <span class="logo-name">Maggie Salmerón</span>
-      <span class="logo-role">Asesora financiera</span>
+      <span class="logo-role">Asesora Prudential</span>
     </span>
   </a>
   <div class="nav-links">
-    <a href="#calculadoras">Calculadoras</a>
+    <a href="#diagnostico">Diagnóstico</a>
     <a href="#sobre">Sobre mí</a>
-    <a href="#diagnostico">Cómo te ayudo</a>
+    <a href="#diagnostico-chat">Cotizar</a>
     <a href="#testimonios">Testimonios</a>
   </div>
-  <a class="nav-cta" href="#calculadoras" style="display:inline-flex;text-decoration:none">Calcular ahora</a>
+  <a class="nav-cta" href="#diagnostico-chat" style="display:inline-flex;text-decoration:none">Haz tu diagnóstico</a>
 </nav>
 
-<!-- CALCULADORAS — Retiro y protección de vida -->
-<section class="calculators" id="calculadoras">
+<!-- DIAGNÓSTICO EXPRESS — Chat conversacional (PRIMERO: lo que ve el usuario al entrar) -->
+<section class="diag-express diag-express-hero" id="diagnostico-chat">
   <div class="container">
-    <div class="calculators-head">
-      <div class="label">Dos cálculos · Dos objetivos</div>
-      <h2>Calcula lo que quieres <em>construir</em> y proteger.</h2>
-      <p class="calculators-intro">Elige el escenario que quieres explorar. En menos de un minuto tendrás una estimación clara para dar el siguiente paso.</p>
+    <div class="diag-express-head">
+      <div class="label">Diagnóstico Express · 90 segundos</div>
+      <h2>4 preguntas. <em>Tu plan ideal</em> al instante.</h2>
     </div>
 
-    <div class="calculator-difference" aria-label="Diferencia entre las calculadoras">
-      <div class="calculator-difference-item">
-        <span class="calculator-difference-icon" aria-hidden="true">R</span>
-        <span class="calculator-difference-copy"><strong>Retiro</strong>Calcula cuánto podrías acumular a los 65 años.</span>
-      </div>
-      <div class="calculator-difference-item">
-        <span class="calculator-difference-icon" aria-hidden="true">V</span>
-        <span class="calculator-difference-copy"><strong>Vida</strong>Calcula cuánto debería quedar protegido para tu familia.</span>
-      </div>
-    </div>
+    <div class="chat-wrap">
+      <div class="chat-window">
+        <div class="chat-header">
+          <div class="chat-avatar"></div>
+          <div class="chat-header-info">
+            <div class="chat-name">Maggie Salmerón</div>
+            <div class="chat-status">● En línea · respondiendo</div>
+          </div>
+          <div class="chat-progress"><span id="chatStep">01</span> / 04</div>
+        </div>
 
-    <div class="calculator-tabs" role="tablist" aria-label="Elige una calculadora">
-      <button class="calculator-tab is-active" id="tabRetirement" type="button" role="tab" aria-selected="true" aria-controls="retirementCalculator" data-calculator-tab="retirement">
-        <span class="calculator-tab-kicker">Quiero construir</span>
-        <span class="calculator-tab-title">Mi retiro</span>
-      </button>
-      <button class="calculator-tab" id="tabLife" type="button" role="tab" aria-selected="false" aria-controls="lifeCalculator" data-calculator-tab="life">
-        <span class="calculator-tab-kicker">Quiero proteger</span>
-        <span class="calculator-tab-title">A mi familia</span>
-      </button>
-    </div>
+        <div class="chat-body" id="chatBody">
+          <!-- STEP 1 -->
+          <div class="chat-screen active" data-step="1">
+            <div class="chat-msg chat-msg-bot">
+              <div class="chat-bubble">¡Hola! 👋 Soy Maggie.</div>
+              <div class="chat-bubble chat-bubble-question">¿Qué te preocupa <strong>hoy</strong>?</div>
+              <div class="chat-bubble chat-bubble-small">Elige las que quieras. Te armo un plan que las cubra todas.</div>
+            </div>
+            <div class="chat-options chat-options-multi">
+              <button class="chat-opt chat-opt-multi" onclick="toggleConcern(this,'familia','Familia protegida')">
+                <span class="chat-opt-icon">🛡️</span>
+                <span class="chat-opt-text">Dejar a mi familia protegida si algo me pasa</span>
+                <span class="chat-opt-check">✓</span>
+              </button>
+              <button class="chat-opt chat-opt-multi" onclick="toggleConcern(this,'educacion','Universidad de mis hijos')">
+                <span class="chat-opt-icon">🎓</span>
+                <span class="chat-opt-text">No poder costear la universidad de mis hijos</span>
+                <span class="chat-opt-check">✓</span>
+              </button>
+              <button class="chat-opt chat-opt-multi" onclick="toggleConcern(this,'retiro','Retiro digno')">
+                <span class="chat-opt-icon">🌅</span>
+                <span class="chat-opt-text">No tener suficiente para mi retiro digno</span>
+                <span class="chat-opt-check">✓</span>
+              </button>
+              <button class="chat-opt chat-opt-multi" onclick="toggleConcern(this,'patrimonio','Crecer mi patrimonio')">
+                <span class="chat-opt-icon">📈</span>
+                <span class="chat-opt-text">Que mi dinero pierda valor con el tiempo</span>
+                <span class="chat-opt-check">✓</span>
+              </button>
+            </div>
+            <div class="chat-multi-footer">
+              <div class="chat-multi-count" id="chatMultiCount">Selecciona 1 o más</div>
+              <button class="chat-continue" id="chatContinue" onclick="confirmConcerns()" disabled>Continuar →</button>
+            </div>
+          </div>
 
-    <div class="calculator-shell">
-      <div class="calculator-panel" id="retirementCalculator" role="tabpanel" aria-labelledby="tabRetirement" data-calculator-panel="retirement">
-        <div class="calculator-layout">
-          <form class="calculator-form" id="retirementForm" novalidate>
-            <div class="calculator-form-head">
-              <div class="calculator-form-label">Calculadora de retiro</div>
-              <h3>¿Cuánto podrías acumular?</h3>
-              <p>Captura tres datos. La simulación se actualiza al instante.</p>
+          <!-- STEP 2 -->
+          <div class="chat-screen" data-step="2">
+            <div class="chat-msg chat-msg-bot">
+              <div class="chat-bubble chat-bubble-question">Entendido. Ahora dime, <strong>¿en qué rango de edad estás?</strong></div>
+              <div class="chat-bubble chat-bubble-small">Influye en el costo de tu plan. Información 100% confidencial.</div>
             </div>
-            <div class="calculator-fields">
-              <div class="calculator-field">
-                <label for="retirementAge">Edad actual</label>
-                <div class="calculator-input-wrap">
-                  <input class="calculator-input has-suffix" id="retirementAge" name="retirementAge" type="number" min="18" max="64" step="1" value="35" inputmode="numeric" />
-                  <span class="calculator-suffix">años</span>
-                </div>
-                <div class="calculator-field-help">Consideramos aportaciones hasta por 15 años y crecimiento hasta los 65.</div>
-              </div>
-              <div class="calculator-field">
-                <label for="retirementContribution">¿Cuánto te gustaría aportar al año para tu retiro?</label>
-                <div class="calculator-input-wrap">
-                  <span class="calculator-prefix">$</span>
-                  <input class="calculator-input has-prefix" id="retirementContribution" name="retirementContribution" type="number" min="1" step="1000" value="60000" inputmode="decimal" />
-                </div>
-              </div>
-              <div class="calculator-field">
-                <label for="retirementIncome">Ingreso mensual aproximado</label>
-                <div class="calculator-input-wrap">
-                  <span class="calculator-prefix">$</span>
-                  <input class="calculator-input has-prefix" id="retirementIncome" name="retirementIncome" type="number" min="1" step="1000" value="80000" inputmode="decimal" />
-                </div>
-              </div>
+            <div class="chat-options">
+              <button class="chat-opt" onclick="answerChat(2,'18-29','18 — 29 años')"><span class="chat-opt-icon">✨</span><span>18 — 29 años</span></button>
+              <button class="chat-opt" onclick="answerChat(2,'30-44','30 — 44 años')"><span class="chat-opt-icon">🚀</span><span>30 — 44 años</span></button>
+              <button class="chat-opt" onclick="answerChat(2,'45-59','45 — 59 años')"><span class="chat-opt-icon">🌳</span><span>45 — 59 años</span></button>
+              <button class="chat-opt" onclick="answerChat(2,'60+','60 años o más')"><span class="chat-opt-icon">🏛️</span><span>60 años o más</span></button>
             </div>
-          </form>
+          </div>
 
-          <div class="calculator-results" aria-live="polite">
-            <div class="calculator-results-head">
-              <div>
-                <div class="calculator-results-kicker">Tu estimación</div>
-                <h3>Un vistazo a tu retiro</h3>
-              </div>
-              <div class="calculator-result-note">Proyección a los 65 años · rendimiento anual estimado 7.635%</div>
+          <!-- STEP 3 -->
+          <div class="chat-screen" data-step="3">
+            <div class="chat-msg chat-msg-bot">
+              <div class="chat-bubble chat-bubble-question"><strong>¿Tienes dependientes económicos?</strong></div>
+              <div class="chat-bubble chat-bubble-small">Esto define cuánta cobertura necesitas realmente.</div>
             </div>
-            <div class="retirement-results-grid">
-              <div class="retirement-metric">
-                <div class="metric-label">Tu retiro estimado a los 65 años</div>
-                <div class="metric-value metric-value-main" id="retirementTotal">$4,775,000</div>
-              </div>
-              <div class="retirement-metric">
-                <div class="metric-label">Tu aportación anual</div>
-                <div class="metric-value" id="retirementAnnual">$60,000</div>
-              </div>
-              <div class="retirement-metric">
-                <div class="metric-label">Aportación potencialmente deducible</div>
-                <span class="metric-prefix-word">Hasta</span>
-                <div class="metric-value" id="retirementDeductible">$60,000</div>
-              </div>
-              <div class="retirement-metric">
-                <div class="metric-label">Ahorro fiscal estimado</div>
-                <span class="metric-prefix-word">Hasta</span>
-                <div class="metric-value" id="retirementTaxSaving">$18,000</div>
+            <div class="chat-options">
+              <button class="chat-opt" onclick="answerChat(3,'solo','No, soy independiente')"><span class="chat-opt-icon">👤</span><span>No, soy independiente</span></button>
+              <button class="chat-opt" onclick="answerChat(3,'pareja','Solo mi pareja o padres')"><span class="chat-opt-icon">👥</span><span>Solo mi pareja o padres</span></button>
+              <button class="chat-opt" onclick="answerChat(3,'hijos','Sí, hijos pequeños')"><span class="chat-opt-icon">👶</span><span>Sí, hijos pequeños</span></button>
+              <button class="chat-opt" onclick="answerChat(3,'familia','Familia completa (pareja + hijos)')"><span class="chat-opt-icon">👨‍👩‍👧‍👦</span><span>Familia completa (pareja + hijos)</span></button>
+            </div>
+          </div>
+
+          <!-- STEP 4 -->
+          <div class="chat-screen" data-step="4">
+            <div class="chat-msg chat-msg-bot">
+              <div class="chat-bubble chat-bubble-question">Última pregunta. <strong>¿Cuánto puedes destinar anualmente</strong> a tu protección + ahorro?</div>
+              <div class="chat-bubble chat-bubble-small">No te preocupes, hay planes desde $8,400/año.</div>
+            </div>
+            <div class="chat-options">
+              <button class="chat-opt" onclick="answerChat(4,'low','Hasta $12,000 MXN/año')"><span class="chat-opt-icon">💰</span><span>Hasta $12,000 MXN/año</span></button>
+              <button class="chat-opt" onclick="answerChat(4,'mid','$12,000 — $30,000 MXN/año')"><span class="chat-opt-icon">💵</span><span>$12,000 — $30,000 MXN/año</span></button>
+              <button class="chat-opt" onclick="answerChat(4,'high','$30,000 — $60,000 MXN/año')"><span class="chat-opt-icon">💎</span><span>$30,000 — $60,000 MXN/año</span></button>
+              <button class="chat-opt" onclick="answerChat(4,'premium','Más de $60,000 MXN/año')"><span class="chat-opt-icon">👑</span><span>Más de $60,000 MXN/año</span></button>
+            </div>
+          </div>
+
+          <!-- TYPING -->
+          <div class="chat-screen" data-step="typing">
+            <div class="chat-msg chat-msg-bot">
+              <div class="chat-typing">
+                <div class="chat-typing-bubble">
+                  <span></span><span></span><span></span>
+                </div>
+                <div class="chat-typing-text">Maggie está preparando tu diagnóstico…</div>
               </div>
             </div>
-            <p class="calculator-context" id="retirementContext">Aportarías durante 15 años; después, el capital acumulado continuaría creciendo hasta tus 65 años.</p>
-            <button class="btn btn-primary" type="button" onclick="openLeadForm('retirement')">Quiero una propuesta personalizada</button>
-            <p class="calculator-disclaimer">Esta herramienta proporciona una simulación ilustrativa. Las proyecciones y beneficios fiscales son estimados y pueden variar. No representan rendimientos ni devoluciones garantizadas. Los beneficios fiscales están sujetos a la situación particular del contribuyente y a la legislación vigente. Tope fiscal usado: cinco UMA anuales de 2026.</p>
+          </div>
+
+          <!-- RESULT -->
+          <div class="chat-screen" data-step="result">
+            <div class="chat-msg chat-msg-bot">
+              <div class="chat-bubble">¡Listo! Aquí va tu diagnóstico personalizado 👇</div>
+            </div>
+
+            <div class="result-card">
+              <div class="result-header">
+                <div class="result-label">// Tu plan ideal</div>
+                <div class="result-plan-name" id="resultPlanName">—</div>
+                <div class="result-plan-desc" id="resultPlanDesc">—</div>
+              </div>
+
+              <div class="result-grid">
+                <div class="result-cell">
+                  <div class="result-cell-label">Cobertura sugerida</div>
+                  <div class="result-cell-value" id="resultCoverage">—</div>
+                </div>
+                <div class="result-cell result-cell-price-block">
+                  <div class="result-cell-label">Tu prima anual Prudential</div>
+                  <div class="result-cell-price"><span id="resultPrice">—</span> <small>MXN/año</small></div>
+                  <div class="result-cell-annual">Prima única anual · sin cargos por fraccionamiento</div>
+                  <div class="result-cell-deductible" id="resultDeductibleBlock" style="display:none">
+                    <div class="result-cell-deductible-label">Deducible ISR ✓</div>
+                    <div class="result-cell-deductible-text">Tu precio efectivo después de deducción: <strong id="resultEffective">—</strong>/año</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="result-includes">
+                <div class="result-includes-label">// Vista rápida de tu plan</div>
+                <ul class="result-includes-list" id="resultIncludes"></ul>
+                <div class="result-includes-more" id="resultIncludesMore">+ Cobertura completa, beneficios aplicables y comparativo de mercado · te lo muestro al agendar.</div>
+              </div>
+
+              <div class="chat-msg chat-msg-bot result-cta-msg">
+                <div class="chat-bubble">Esto es solo el resumen. ¿Vemos juntos tu plan completo?</div>
+              </div>
+
+              <div class="result-ctas">
+                <a class="btn btn-primary" id="resultWhatsapp" target="_blank">Agendar con Maggie (WhatsApp)</a>
+                <button class="btn btn-ghost" onclick="restartChat()">Reiniciar diagnóstico</button>
+              </div>
+            </div>
+
+            <div class="result-disclaimer">* Diagnóstico estimado y digerible — la cotización exacta depende de evaluación, plan final y suma asegurada. Pagos: tarjeta Visa/Mastercard/Amex (12 MSI) · domiciliación · transferencia.</div>
           </div>
         </div>
       </div>
+    </div>
 
-      <div class="calculator-panel" id="lifeCalculator" role="tabpanel" aria-labelledby="tabLife" data-calculator-panel="life" hidden>
-        <div class="calculator-layout">
-          <form class="calculator-form" id="lifeForm" novalidate>
-            <div class="calculator-form-head">
-              <div class="calculator-form-label">Calculadora de protección de vida</div>
-              <h3>¿Cuánto debería quedar protegido?</h3>
-              <p>Esta estimación calcula una suma asegurada sugerida, no el costo de la póliza.</p>
-            </div>
-            <div class="calculator-fields">
-              <div class="calculator-field">
-                <label for="lifeAge">Edad</label>
-                <div class="calculator-input-wrap">
-                  <input class="calculator-input has-suffix" id="lifeAge" name="lifeAge" type="number" min="18" max="80" step="1" value="38" inputmode="numeric" />
-                  <span class="calculator-suffix">años</span>
-                </div>
-              </div>
-              <div class="calculator-field">
-                <label for="lifeIncome">Ingreso mensual aproximado</label>
-                <div class="calculator-input-wrap">
-                  <span class="calculator-prefix">$</span>
-                  <input class="calculator-input has-prefix" id="lifeIncome" name="lifeIncome" type="number" min="1" step="1000" value="70000" inputmode="decimal" />
-                </div>
-              </div>
-              <div class="calculator-field">
-                <label for="lifeDependents">Número de dependientes económicos</label>
-                <input class="calculator-input" id="lifeDependents" name="lifeDependents" type="number" min="0" max="20" step="1" value="3" inputmode="numeric" />
-              </div>
-              <div class="calculator-field">
-                <label for="lifeYears">¿Cuántos años quisieras proteger los ingresos de tu familia?</label>
-                <select class="calculator-select" id="lifeYears" name="lifeYears">
-                  <option value="5">5 años</option>
-                  <option value="10" selected>10 años</option>
-                  <option value="15">15 años</option>
-                </select>
-              </div>
-            </div>
-          </form>
-
-          <div class="calculator-results" aria-live="polite">
-            <div class="calculator-results-head">
-              <div>
-                <div class="calculator-results-kicker">Tu estimación</div>
-                <h3>Protección para tu familia</h3>
-              </div>
-              <div class="calculator-result-note">Suma asegurada sugerida · no calcula el costo de la póliza</div>
-            </div>
-            <div class="life-result-copy">
-              <p class="life-dependents" id="lifeDependentsCopy">Tienes <strong>3 personas</strong> que dependen económicamente de ti.</p>
-              <p class="life-need-label" id="lifeNeedLabel">Para proteger 10 años de tus ingresos, tu familia podría necesitar aproximadamente:</p>
-              <div class="life-amount" id="lifeCoverage">$8,400,000</div>
-              <div class="life-suggested" id="lifeSuggested">Suma asegurada sugerida: $8.4 millones</div>
-            </div>
-            <p class="life-explanation">Esta protección busca ayudar a sustituir los ingresos que tu familia dejaría de recibir si tú llegaras a faltar.</p>
-            <div class="life-promise">Protege hoy lo que más importa mañana.</div>
-            <p class="life-promise-copy">Con un Seguro de Vida Vitalicio puedes construir una protección de largo plazo para las personas que más amas.</p>
-            <button class="btn btn-primary" type="button" onclick="openLeadForm('life')">Quiero saber cuánto me costaría esta protección</button>
-            <p class="calculator-disclaimer">Este cálculo es únicamente una estimación de necesidades de protección y no constituye una cotización ni una recomendación definitiva de suma asegurada. El costo, aceptación y condiciones de contratación están sujetos al producto y al proceso de suscripción correspondiente.</p>
-          </div>
-        </div>
-      </div>
+    <div class="diag-scroll-hint">
+      <span>Conoce a Maggie</span>
+      <span class="diag-scroll-arrow">↓</span>
     </div>
   </div>
 </section>
@@ -1027,7 +931,7 @@ a{color:inherit;text-decoration:none}
         </div>
 
         <div class="hero-ctas">
-          <a class="btn btn-primary" href="#calculadoras">Calcular mi escenario</a>
+          <a class="btn btn-primary" href="#diagnostico-chat">Hacer mi diagnóstico gratis</a>
           <a class="btn btn-ghost" href="https://wa.me/525576408221?text=Hola%20Maggie%2C%20me%20interesa%20agendar%20una%20cita%20de%20diagn%C3%B3stico" target="_blank">WhatsApp directo</a>
         </div>
       </div>
@@ -1035,7 +939,7 @@ a{color:inherit;text-decoration:none}
       <div class="hero-photo-col">
         <div class="hero-photo-wrap">
           <span class="hero-photo-badge">En línea · responde en 5 min</span>
-          <img src="hero-illustration.webp" alt="Tu legado y el futuro de tu familia protegidos" class="hero-photo" width="1200" height="1283" decoding="async" fetchpriority="high" />
+          <img src="hero-illustration.webp" alt="Tu legado protegido bajo el resguardo de Prudential" class="hero-photo" width="1200" height="1283" decoding="async" fetchpriority="high" />
         </div>
         <div class="hero-metrics">
           <div class="hero-metric">
@@ -1050,8 +954,8 @@ a{color:inherit;text-decoration:none}
           </div>
           <div class="hero-metric">
             <span class="hero-metric-icon">→</span>
-            <strong>Asesoría cercana</strong>
-            <span class="hero-metric-value">Estrategia a tu medida</span>
+            <strong>Respaldo Prudential</strong>
+            <span class="hero-metric-value">151 años · AA+</span>
           </div>
         </div>
       </div>
@@ -1075,13 +979,13 @@ a{color:inherit;text-decoration:none}
       </div>
       <div class="bigstat">
         <span class="bigstat-num-prefix">/ 03</span>
-        <div class="bigstat-num">2</div>
-        <div class="bigstat-label">Objetivos claros: retiro y vida</div>
+        <div class="bigstat-num">151</div>
+        <div class="bigstat-label">Años de respaldo Prudential</div>
       </div>
       <div class="bigstat">
         <span class="bigstat-num-prefix">/ 04</span>
-        <div class="bigstat-num">1:1</div>
-        <div class="bigstat-label">Propuesta personalizada</div>
+        <div class="bigstat-num">AA+</div>
+        <div class="bigstat-label">Máxima calificación de solidez</div>
       </div>
     </div>
   </div>
@@ -1137,7 +1041,7 @@ a{color:inherit;text-decoration:none}
       <div class="diff-content">
         <div class="label">Sobre mí</div>
         <h2>No vendo pólizas. Soy <em>parte</em> de tu plan.</h2>
-        <p>Sin discursos. Sin presión. Diseño estrategias de protección, ahorro e inversión hechas a tu medida, comparando opciones según tus necesidades y objetivos.</p>
+        <p>Sin discursos. Sin presión. Diseño protección, ahorro e inversión hechos a tu medida — con el respaldo de <strong>Prudential</strong>, 151 años y calificación AA+.</p>
       </div>
     </div>
   </div>
@@ -1155,7 +1059,7 @@ a{color:inherit;text-decoration:none}
         <div class="manifesto-author-mark">MS.</div>
         <div>
           <div class="manifesto-author-name">Maggie Salmerón</div>
-          <div class="manifesto-author-role">Asesora financiera · Founder</div>
+          <div class="manifesto-author-role">Asesora Prudential · Founder</div>
         </div>
       </div>
     </div>
@@ -1248,7 +1152,7 @@ a{color:inherit;text-decoration:none}
   <div class="container">
     <div class="appbanner-grid">
       <div class="appbanner-content">
-        <div class="label">Tu información siempre contigo</div>
+        <div class="label">App Prudential</div>
         <h2>Tu patrimonio, <em>en tu bolsillo.</em></h2>
         <p>Todo tu plan, siempre contigo.</p>
         <ul class="appbanner-list">
@@ -1268,8 +1172,8 @@ a{color:inherit;text-decoration:none}
           <div class="phone-screen">
             <div class="phone-status">9:41 · ●●●● · 🔋</div>
             <div class="phone-header">
-              <div class="phone-greet">Hola, bienvenida</div>
-              <div class="phone-policy">Resumen de tu plan</div>
+              <div class="phone-greet">Hola, cliente Prudential</div>
+              <div class="phone-policy">Póliza #PR-2026-0421</div>
             </div>
             <div class="phone-card">
               <div class="phone-card-label">Valor de tu ahorro</div>
@@ -1302,7 +1206,7 @@ a{color:inherit;text-decoration:none}
     <h2>Una conversación lo <em class="script">cambia todo.</em></h2>
     <p>Diagnóstico gratis. Sin compromiso. Claridad inmediata.</p>
     <div class="closing-ctas">
-      <a class="btn btn-primary" href="#calculadoras">Calcular mi escenario</a>
+      <a class="btn btn-primary" href="#diagnostico-chat">Hacer mi diagnóstico gratis</a>
       <a class="btn btn-ghost" href="https://wa.me/525576408221?text=Hola%20Maggie%2C%20vi%20tu%20landing%20y%20quiero%20agendar%20una%20cita" target="_blank">WhatsApp directo</a>
     </div>
   </div>
@@ -1317,7 +1221,7 @@ a{color:inherit;text-decoration:none}
           <span class="logo-mark">MS.</span>
           <span class="logo-text">
             <span class="logo-name">Maggie Salmerón</span>
-            <span class="logo-role">Asesora financiera</span>
+            <span class="logo-role">Asesora Prudential</span>
           </span>
         </a>
         <p class="footer-tag">Estrategia, protección y patrimonio para familias que construyen legado. <em>El algoritmo del retiro inteligente.</em></p>
@@ -1338,7 +1242,7 @@ a{color:inherit;text-decoration:none}
       <div>
         <h4>Trabajemos</h4>
         <ul>
-          <li><a href="#calculadoras">Calculadoras</a></li>
+          <li><a href="#">Diagnóstico</a></li>
           <li><a href="https://wa.me/525576408221">WhatsApp</a></li>
           <li><a href="#">Agendar llamada</a></li>
           <li><a href="https://finanzology.com/taller-finanzas-personales/" target="_blank" rel="noopener">Taller de finanzas personales</a></li>
@@ -1361,7 +1265,7 @@ a{color:inherit;text-decoration:none}
       </div>
     </div>
     <div class="footer-bottom">
-      <div>© 2026 · Maggie Salmerón · Asesora financiera</div>
+      <div>© 2026 · Maggie Salmerón · Asesora Prudential</div>
       <div>Datos · Estrategia · Legado · <a href="video-promo.html?mode=4k" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:3px">📥 Descargar promo 4K</a></div>
     </div>
     <div style="text-align:center;padding-top:20px;font-family:var(--sans);font-size:.625rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,0.35);font-weight:400">
@@ -1370,346 +1274,412 @@ a{color:inherit;text-decoration:none}
   </div>
 </footer>
 
-<!-- CAPTURA DE PROSPECTO — Calculadoras -->
-<div class="modal-overlay" id="leadModal" role="dialog" aria-modal="true" aria-labelledby="leadTitle" aria-hidden="true">
-  <div class="modal lead-modal">
+<!-- MODAL -->
+<div class="modal-overlay" id="modal">
+  <div class="modal">
     <div class="modal-header">
       <div class="modal-header-left">
         <div class="modal-avatar"></div>
         <div>
           <div class="modal-asesora">Maggie Salmerón</div>
-          <div class="modal-online">Propuesta personalizada</div>
+          <div class="modal-online">En línea</div>
         </div>
       </div>
-      <button class="modal-close" type="button" onclick="closeLeadForm()" aria-label="Cerrar formulario">×</button>
+      <div class="modal-progress">
+        <span class="progress-label" id="progressLabel">01 / 04</span>
+        <div class="progress-bar"><div class="progress-fill" id="progressFill"></div></div>
+      </div>
+      <button class="modal-close" onclick="closeModal()">×</button>
     </div>
-    <div class="modal-body">
-      <div class="step-label" id="leadEyebrow">Tu siguiente paso</div>
-      <div class="step-question" id="leadTitle">Recibe una propuesta personalizada</div>
-      <div class="step-hint">Déjame tus datos y revisamos tu estimación de acuerdo con tu situación.</div>
-      <div class="lead-summary" id="leadSummary"></div>
-      <form class="lead-form" id="leadForm">
-        <div class="lead-field">
-          <label for="leadName">Nombre</label>
-          <input id="leadName" name="name" type="text" autocomplete="name" required minlength="2" placeholder="Tu nombre" />
+    <div class="modal-body" id="modalBody">
+      <div class="step-screen active" data-step="1">
+        <div class="step-label">Paso 01</div>
+        <div class="step-question">¿Cómo te llamas?</div>
+        <div class="step-hint">Solo tu primer nombre. Quiero hablarte como persona, no como cliente.</div>
+        <input type="text" class="step-input" id="userName" placeholder="Tu nombre" autocomplete="given-name" />
+      </div>
+      <div class="step-screen" data-step="2">
+        <div class="step-label">Paso 02</div>
+        <div class="step-question" id="step2Q">¿Cuál es tu prioridad ahora mismo?</div>
+        <div class="step-hint">Esto me ayuda a recomendarte el plan perfecto. No hay respuesta equivocada.</div>
+        <div class="step-options">
+          <button class="step-option" data-value="proteccion"><span class="step-option-num">01</span> Proteger a mi familia si algo me pasa</button>
+          <button class="step-option" data-value="ahorro"><span class="step-option-num">02</span> Hacer crecer mi patrimonio con seguridad</button>
+          <button class="step-option" data-value="retiro"><span class="step-option-num">03</span> Asegurar mi retiro digno y temprano</button>
+          <button class="step-option" data-value="educacion"><span class="step-option-num">04</span> Garantizar la universidad de mis hijos</button>
         </div>
-        <div class="lead-field">
-          <label for="leadPhone">WhatsApp</label>
-          <input id="leadPhone" name="phone" type="tel" autocomplete="tel" required inputmode="tel" pattern="[0-9+() -]{10,}" placeholder="Tu número a 10 dígitos" />
+      </div>
+      <div class="step-screen" data-step="3">
+        <div class="step-label">Paso 03</div>
+        <div class="step-question">¿Tu edad?</div>
+        <div class="step-hint">Influye en el plan que mejor te conviene. Información confidencial.</div>
+        <div class="step-options">
+          <button class="step-option" data-value="18-29"><span class="step-option-num">01</span> 18 — 29 años</button>
+          <button class="step-option" data-value="30-44"><span class="step-option-num">02</span> 30 — 44 años</button>
+          <button class="step-option" data-value="45-59"><span class="step-option-num">03</span> 45 — 59 años</button>
+          <button class="step-option" data-value="60+"><span class="step-option-num">04</span> 60+ años</button>
         </div>
-        <div class="lead-field">
-          <label for="leadEmail">Correo electrónico <span style="font-weight:400;color:var(--muted)">(opcional)</span></label>
-          <input id="leadEmail" name="email" type="email" autocomplete="email" placeholder="tu@correo.com" />
+      </div>
+      <div class="step-screen" data-step="4">
+        <div class="step-label">Paso 04</div>
+        <div class="step-question">¿A dónde te contacto?</div>
+        <div class="step-hint">Cero spam. Solo yo, personalmente, en menos de 24 horas.</div>
+        <input type="tel" class="step-input" id="userPhone" placeholder="WhatsApp (recomendado)" autocomplete="tel" />
+      </div>
+      <div class="step-screen" data-step="5">
+        <div class="success-screen">
+          <div class="success-mark">✓</div>
+          <div class="step-label">Listo</div>
+          <h3 class="success-title">Hola <span id="successName">amigo</span>. Te contacto antes de 24h.</h3>
+          <p class="success-text">Voy a preparar tu cotización personalizada y te la envío por WhatsApp. Si quieres adelantar, agenda una llamada conmigo directamente.</p>
+          <button class="btn btn-primary" onclick="closeModal()">Entendido</button>
         </div>
-        <div class="lead-actions">
-          <button class="btn btn-primary" type="submit">Enviar mis datos por WhatsApp</button>
-          <button class="btn btn-ghost" type="button" onclick="closeLeadForm()">Ahora no</button>
-        </div>
-        <p class="lead-privacy">Al enviar, se abrirá WhatsApp con tus datos y el resultado de la calculadora listos para compartir directamente con Maggie.</p>
-      </form>
+      </div>
+    </div>
+    <div class="modal-footer" id="modalFooter">
+      <button class="btn-back" id="btnBack" onclick="prevStep()">← Atrás</button>
+      <button class="btn-next" id="btnNext" onclick="nextStep()" disabled>Continuar</button>
     </div>
   </div>
 </div>
 
 <script>
-/* ============================
-   CALCULADORAS — Retiro y vida
-   ============================ */
-const RETIREMENT_RATE = 0.07635;
-const MAX_CONTRIBUTION_YEARS = 15;
-const RETIREMENT_AGE = 65;
-const UMA_ANNUAL_2026 = 42794.64;
-const RETIREMENT_TAX_CAP_2026 = UMA_ANNUAL_2026 * 5;
+let currentStep = 1;
+const totalSteps = 4;
+const modal = document.getElementById('modal');
+const screens = document.querySelectorAll('.step-screen');
+const progressFill = document.getElementById('progressFill');
+const progressLabel = document.getElementById('progressLabel');
+const btnNext = document.getElementById('btnNext');
+const btnBack = document.getElementById('btnBack');
+const modalFooter = document.getElementById('modalFooter');
+const formData = { target:null, name:'', priority:null, age:null, email:'', phone:'' };
 
-const ISR_BRACKETS = [
-  { limit: 10135.11, rate: 0.0192 },
-  { limit: 86022.11, rate: 0.0640 },
-  { limit: 151176.19, rate: 0.1088 },
-  { limit: 175735.66, rate: 0.1600 },
-  { limit: 210403.69, rate: 0.1792 },
-  { limit: 424353.97, rate: 0.2136 },
-  { limit: 668840.14, rate: 0.2352 },
-  { limit: 1276925.98, rate: 0.3000 },
-  { limit: 1702567.97, rate: 0.3200 },
-  { limit: 5107703.92, rate: 0.3400 },
-  { limit: Infinity, rate: 0.3500 }
-];
-
-let retirementSnapshot = null;
-let lifeSnapshot = null;
-let activeLeadType = null;
-
-function formatMXN(value){
-  return '$' + Math.round(value).toLocaleString('es-MX');
-}
-
-function formatMillions(value){
-  if (value >= 1000000){
-    const millions = value / 1000000;
-    const label = millions.toLocaleString('es-MX', { maximumFractionDigits: 1 });
-    return '$' + label + (Math.abs(millions - 1) < 0.001 ? ' millón' : ' millones');
-  }
-  if (value >= 1000){
-    return '$' + (value / 1000).toLocaleString('es-MX', { maximumFractionDigits: 1 }) + ' mil';
-  }
-  return formatMXN(value);
-}
-
-function estimateAnnualIsr(income){
-  const taxableIncome = Math.max(0, income);
-  let tax = 0;
-  let lowerLimit = 0;
-
-  for (const bracket of ISR_BRACKETS){
-    if (taxableIncome <= lowerLimit) break;
-    const taxableSlice = Math.min(taxableIncome, bracket.limit) - lowerLimit;
-    tax += taxableSlice * bracket.rate;
-    lowerLimit = bracket.limit;
-  }
-
-  return tax;
-}
-
-function isValidNumberInput(input, min, max){
-  const value = Number(input.value);
-  const valid = Number.isFinite(value) && value >= min && value <= max;
-  input.setAttribute('aria-invalid', valid ? 'false' : 'true');
-  return valid;
-}
-
-function clearRetirementResults(){
-  ['retirementTotal','retirementAnnual','retirementDeductible','retirementTaxSaving'].forEach(id => {
-    document.getElementById(id).textContent = '—';
-  });
-  document.getElementById('retirementContext').textContent = 'Completa los tres datos para ver tu estimación.';
-  retirementSnapshot = null;
-}
-
-function calculateRetirement(){
-  const ageInput = document.getElementById('retirementAge');
-  const contributionInput = document.getElementById('retirementContribution');
-  const incomeInput = document.getElementById('retirementIncome');
-
-  const ageValid = isValidNumberInput(ageInput, 18, 64);
-  const contributionValid = isValidNumberInput(contributionInput, 1, 100000000);
-  const incomeValid = isValidNumberInput(incomeInput, 1, 100000000);
-  if (!ageValid || !contributionValid || !incomeValid){
-    clearRetirementResults();
-    return;
-  }
-
-  const age = Math.floor(Number(ageInput.value));
-  const annualContribution = Number(contributionInput.value);
-  const monthlyIncome = Number(incomeInput.value);
-  const yearsToRetirement = RETIREMENT_AGE - age;
-  const contributionYears = Math.min(MAX_CONTRIBUTION_YEARS, yearsToRetirement);
-  const growthOnlyYears = yearsToRetirement - contributionYears;
-
-  const valueAtLastContribution = annualContribution *
-    ((Math.pow(1 + RETIREMENT_RATE, contributionYears) - 1) / RETIREMENT_RATE);
-  const projectedRetirement = valueAtLastContribution *
-    Math.pow(1 + RETIREMENT_RATE, growthOnlyYears);
-
-  const annualIncome = monthlyIncome * 12;
-  const potentiallyDeductible = Math.min(
-    annualContribution,
-    annualIncome * 0.10,
-    RETIREMENT_TAX_CAP_2026
-  );
-  const estimatedTaxSaving = Math.max(0,
-    estimateAnnualIsr(annualIncome) - estimateAnnualIsr(annualIncome - potentiallyDeductible)
-  );
-
-  const roundedProjection = Math.round(projectedRetirement / 1000) * 1000;
-  document.getElementById('retirementTotal').textContent = formatMXN(roundedProjection);
-  document.getElementById('retirementAnnual').textContent = formatMXN(annualContribution);
-  document.getElementById('retirementDeductible').textContent = formatMXN(potentiallyDeductible);
-  document.getElementById('retirementTaxSaving').textContent = formatMXN(estimatedTaxSaving);
-
-  const yearWord = contributionYears === 1 ? 'año' : 'años';
-  const context = growthOnlyYears > 0
-    ? 'Aportarías durante ' + contributionYears + ' ' + yearWord + '; después, el capital acumulado continuaría creciendo ' + growthOnlyYears + ' años más hasta tus 65 años.'
-    : 'Aportarías durante los ' + contributionYears + ' ' + yearWord + ' disponibles hasta cumplir 65 años.';
-  document.getElementById('retirementContext').textContent = context;
-
-  retirementSnapshot = {
-    age,
-    annualContribution,
-    monthlyIncome,
-    contributionYears,
-    projectedRetirement: roundedProjection,
-    potentiallyDeductible,
-    estimatedTaxSaving
-  };
-}
-
-function clearLifeResults(){
-  document.getElementById('lifeDependentsCopy').textContent = 'Completa los datos para conocer la protección sugerida.';
-  document.getElementById('lifeNeedLabel').textContent = 'Tu familia podría necesitar aproximadamente:';
-  document.getElementById('lifeCoverage').textContent = '—';
-  document.getElementById('lifeSuggested').textContent = 'Suma asegurada sugerida: —';
-  lifeSnapshot = null;
-}
-
-function calculateLifeProtection(){
-  const ageInput = document.getElementById('lifeAge');
-  const incomeInput = document.getElementById('lifeIncome');
-  const dependentsInput = document.getElementById('lifeDependents');
-  const yearsInput = document.getElementById('lifeYears');
-
-  const ageValid = isValidNumberInput(ageInput, 18, 80);
-  const incomeValid = isValidNumberInput(incomeInput, 1, 100000000);
-  const dependentsValid = isValidNumberInput(dependentsInput, 0, 20);
-  if (!ageValid || !incomeValid || !dependentsValid){
-    clearLifeResults();
-    return;
-  }
-
-  const age = Math.floor(Number(ageInput.value));
-  const monthlyIncome = Number(incomeInput.value);
-  const dependents = Math.floor(Number(dependentsInput.value));
-  const protectionYears = Number(yearsInput.value);
-  const suggestedCoverage = monthlyIncome * 12 * protectionYears;
-
-  let dependentsCopy;
-  if (dependents === 0){
-    dependentsCopy = 'No indicaste dependientes económicos. Aun así, puedes explorar una referencia de protección de ingresos.';
-  } else if (dependents === 1){
-    dependentsCopy = 'Tienes <strong>1 persona</strong> que depende económicamente de ti.';
-  } else {
-    dependentsCopy = 'Tienes <strong>' + dependents + ' personas</strong> que dependen económicamente de ti.';
-  }
-
-  document.getElementById('lifeDependentsCopy').innerHTML = dependentsCopy;
-  document.getElementById('lifeNeedLabel').textContent = 'Para proteger ' + protectionYears + ' años de tus ingresos, tu familia podría necesitar aproximadamente:';
-  document.getElementById('lifeCoverage').textContent = formatMXN(suggestedCoverage);
-  document.getElementById('lifeSuggested').textContent = 'Suma asegurada sugerida: ' + formatMillions(suggestedCoverage);
-
-  lifeSnapshot = { age, monthlyIncome, dependents, protectionYears, suggestedCoverage };
-}
-
-function switchCalculator(type){
-  document.querySelectorAll('[data-calculator-tab]').forEach(tab => {
-    const active = tab.dataset.calculatorTab === type;
-    tab.classList.toggle('is-active', active);
-    tab.setAttribute('aria-selected', active ? 'true' : 'false');
-    tab.tabIndex = active ? 0 : -1;
-  });
-  document.querySelectorAll('[data-calculator-panel]').forEach(panel => {
-    panel.hidden = panel.dataset.calculatorPanel !== type;
-  });
-}
-
-document.querySelectorAll('[data-calculator-tab]').forEach((tab, index, tabs) => {
-  tab.addEventListener('click', () => switchCalculator(tab.dataset.calculatorTab));
-  tab.addEventListener('keydown', event => {
-    if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
-    event.preventDefault();
-    const nextIndex = event.key === 'ArrowRight'
-      ? (index + 1) % tabs.length
-      : (index - 1 + tabs.length) % tabs.length;
-    tabs[nextIndex].focus();
-    switchCalculator(tabs[nextIndex].dataset.calculatorTab);
-  });
-});
-
-['retirementAge','retirementContribution','retirementIncome'].forEach(id => {
-  document.getElementById(id).addEventListener('input', calculateRetirement);
-});
-['lifeAge','lifeIncome','lifeDependents','lifeYears'].forEach(id => {
-  document.getElementById(id).addEventListener('input', calculateLifeProtection);
-  document.getElementById(id).addEventListener('change', calculateLifeProtection);
-});
-
-const leadModal = document.getElementById('leadModal');
-const leadForm = document.getElementById('leadForm');
-
-function openLeadForm(type){
-  const snapshot = type === 'retirement' ? retirementSnapshot : lifeSnapshot;
-  if (!snapshot) return;
-
-  activeLeadType = type;
-  const title = document.getElementById('leadTitle');
-  const summary = document.getElementById('leadSummary');
-
-  if (type === 'retirement'){
-    title.textContent = 'Recibe una propuesta para tu retiro';
-    summary.textContent = 'Retiro estimado a los 65: ' + formatMXN(snapshot.projectedRetirement) +
-      ' · Aportación anual: ' + formatMXN(snapshot.annualContribution) +
-      ' · Ahorro fiscal estimado: hasta ' + formatMXN(snapshot.estimatedTaxSaving) + '.';
-  } else {
-    title.textContent = 'Conoce cuánto costaría esta protección';
-    summary.textContent = 'Suma asegurada sugerida: ' + formatMXN(snapshot.suggestedCoverage) +
-      ' para proteger ' + snapshot.protectionYears + ' años de ingresos.';
-  }
-
-  leadModal.classList.add('active');
-  leadModal.setAttribute('aria-hidden', 'false');
+function openModal(target){
+  formData.target = target;
+  const step2Q = document.getElementById('step2Q');
+  if (target === 'familia') step2Q.textContent = '¿Cuál es la prioridad para tu familia?';
+  else if (target === 'negocio') step2Q.textContent = '¿Cuál es la prioridad para tu negocio?';
+  else step2Q.textContent = '¿Cuál es tu prioridad ahora mismo?';
+  modal.classList.add('active');
   document.body.style.overflow = 'hidden';
-  setTimeout(() => document.getElementById('leadName').focus(), 200);
+  goToStep(1);
+  setTimeout(() => { const n = document.getElementById('userName'); if (n) n.focus(); }, 300);
 }
 
-function closeLeadForm(){
-  leadModal.classList.remove('active');
-  leadModal.setAttribute('aria-hidden', 'true');
+function closeModal(){
+  modal.classList.remove('active');
   document.body.style.overflow = '';
+  setTimeout(()=>{
+    currentStep = 1; goToStep(1);
+    document.querySelectorAll('.step-option').forEach(o => o.classList.remove('selected'));
+    document.getElementById('userName').value = '';
+    document.getElementById('userPhone').value = '';
+    formData.priority = null; formData.age = null;
+  }, 400);
 }
 
-leadModal.addEventListener('click', event => {
-  if (event.target === leadModal) closeLeadForm();
+function goToStep(n){
+  screens.forEach(s => s.classList.remove('active'));
+  const target = document.querySelector('[data-step="' + n + '"]');
+  if (target) target.classList.add('active');
+  currentStep = n;
+  if (n <= totalSteps){
+    progressFill.style.width = (n / totalSteps * 100) + '%';
+    progressLabel.textContent = '0' + n + ' / 0' + totalSteps;
+    modalFooter.style.display = 'flex';
+  } else {
+    progressFill.style.width = '100%';
+    progressLabel.textContent = 'Completado';
+    modalFooter.style.display = 'none';
+  }
+  btnBack.style.visibility = (n === 1 || n > totalSteps) ? 'hidden' : 'visible';
+  if (n === totalSteps) btnNext.textContent = 'Enviar';
+  else btnNext.textContent = 'Continuar';
+  validateStep();
+}
+
+function nextStep(){
+  if (!isStepValid()) return;
+  if (currentStep === 1) formData.name = document.getElementById('userName').value.trim();
+  if (currentStep === 4){
+    formData.phone = document.getElementById('userPhone').value.trim();
+    document.getElementById('successName').textContent = formData.name || 'amigo';
+    goToStep(5);
+    console.log('LEAD:', formData);
+    return;
+  }
+  goToStep(currentStep + 1);
+}
+
+function prevStep(){ if (currentStep > 1) goToStep(currentStep - 1); }
+
+document.querySelectorAll('.step-option').forEach(opt => {
+  opt.addEventListener('click', () => {
+    const parent = opt.closest('.step-screen');
+    parent.querySelectorAll('.step-option').forEach(o => o.classList.remove('selected'));
+    opt.classList.add('selected');
+    const step = parseInt(parent.dataset.step);
+    if (step === 2) formData.priority = opt.dataset.value;
+    if (step === 3) formData.age = opt.dataset.value;
+    validateStep();
+    setTimeout(() => nextStep(), 300);
+  });
 });
 
-document.addEventListener('keydown', event => {
-  if (event.key === 'Escape' && leadModal.classList.contains('active')) closeLeadForm();
+['userName','userPhone'].forEach(id => {
+  document.getElementById(id).addEventListener('input', validateStep);
 });
 
-leadForm.addEventListener('submit', event => {
-  event.preventDefault();
-  if (!leadForm.reportValidity()) return;
+function isStepValid(){
+  if (currentStep === 1) return document.getElementById('userName').value.trim().length >= 2;
+  if (currentStep === 2) return !!formData.priority;
+  if (currentStep === 3) return !!formData.age;
+  if (currentStep === 4){
+    const phone = document.getElementById('userPhone').value.replace(/\D/g,'');
+    return phone.length >= 10;
+  }
+  return true;
+}
+function validateStep(){ btnNext.disabled = !isStepValid(); }
 
-  const name = document.getElementById('leadName').value.trim();
-  const phone = document.getElementById('leadPhone').value.trim();
-  const email = document.getElementById('leadEmail').value.trim();
-  const lines = [
-    'Hola Maggie 👋 Soy ' + name + '.',
-    'WhatsApp: ' + phone
-  ];
-  if (email) lines.push('Correo: ' + email);
+modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && modal.classList.contains('active')) closeModal();
+  if (e.key === 'Enter' && modal.classList.contains('active') && !btnNext.disabled) nextStep();
+});
 
-  if (activeLeadType === 'retirement' && retirementSnapshot){
-    lines.push(
-      '',
-      'Calculé mi retiro en tu landing:',
-      '• Edad actual: ' + retirementSnapshot.age + ' años',
-      '• Aportación anual: ' + formatMXN(retirementSnapshot.annualContribution),
-      '• Ingreso mensual aproximado: ' + formatMXN(retirementSnapshot.monthlyIncome),
-      '• Retiro estimado a los 65: ' + formatMXN(retirementSnapshot.projectedRetirement),
-      '• Aportación potencialmente deducible: hasta ' + formatMXN(retirementSnapshot.potentiallyDeductible),
-      '• Ahorro fiscal estimado: hasta ' + formatMXN(retirementSnapshot.estimatedTaxSaving),
-      '',
-      'Quiero recibir una propuesta personalizada.'
-    );
-  } else if (activeLeadType === 'life' && lifeSnapshot){
-    lines.push(
-      '',
-      'Calculé mi protección de vida en tu landing:',
-      '• Edad: ' + lifeSnapshot.age + ' años',
-      '• Ingreso mensual aproximado: ' + formatMXN(lifeSnapshot.monthlyIncome),
-      '• Dependientes económicos: ' + lifeSnapshot.dependents,
-      '• Años de protección: ' + lifeSnapshot.protectionYears,
-      '• Suma asegurada sugerida: ' + formatMXN(lifeSnapshot.suggestedCoverage),
-      '',
-      'Quiero saber cuánto me costaría esta protección.'
-    );
+/* ============================
+   DIAGNÓSTICO CHAT — Maggie
+   ============================ */
+const chatState = { concerns: [], concernLabels: [], age: null, ageLabel: '', dependents: null, dependentsLabel: '', budget: null, budgetLabel: '' };
+
+function toggleConcern(btn, key, label){
+  const idx = chatState.concerns.indexOf(key);
+  if (idx === -1){
+    chatState.concerns.push(key);
+    chatState.concernLabels.push(label);
+    btn.classList.add('chat-opt-checked');
+  } else {
+    chatState.concerns.splice(idx, 1);
+    chatState.concernLabels.splice(idx, 1);
+    btn.classList.remove('chat-opt-checked');
+  }
+  const cnt = document.getElementById('chatMultiCount');
+  const cont = document.getElementById('chatContinue');
+  const n = chatState.concerns.length;
+  if (cnt){
+    if (n === 0){ cnt.textContent = 'Selecciona 1 o más'; cnt.classList.remove('chat-multi-count-active'); }
+    else { cnt.textContent = n + ' seleccionada' + (n>1?'s':''); cnt.classList.add('chat-multi-count-active'); }
+  }
+  if (cont) cont.disabled = (n === 0);
+}
+
+function confirmConcerns(){
+  if (chatState.concerns.length === 0) return;
+  goChatStep(2);
+}
+
+function answerChat(step, value, label){
+  if (step === 2){ chatState.age = value; chatState.ageLabel = label; goChatStep(3); }
+  else if (step === 3){ chatState.dependents = value; chatState.dependentsLabel = label; goChatStep(4); }
+  else if (step === 4){
+    chatState.budget = value; chatState.budgetLabel = label;
+    goChatStep('typing');
+    setTimeout(() => { renderResult(); goChatStep('result'); }, 1400);
+  }
+}
+
+function goChatStep(n){
+  document.querySelectorAll('.chat-screen').forEach(s => s.classList.remove('active'));
+  const target = document.querySelector('.chat-screen[data-step="' + n + '"]');
+  if (target) target.classList.add('active');
+  const stepEl = document.getElementById('chatStep');
+  if (stepEl){
+    if (n === 'typing' || n === 'result') stepEl.textContent = '04';
+    else stepEl.textContent = '0' + n;
+  }
+}
+
+function restartChat(){
+  chatState.concerns = []; chatState.concernLabels = [];
+  chatState.age = null; chatState.ageLabel = '';
+  chatState.dependents = null; chatState.dependentsLabel = '';
+  chatState.budget = null; chatState.budgetLabel = '';
+  document.querySelectorAll('.chat-opt-multi').forEach(b => b.classList.remove('chat-opt-checked'));
+  const cnt = document.getElementById('chatMultiCount');
+  if (cnt){ cnt.textContent = 'Selecciona 1 o más'; cnt.classList.remove('chat-multi-count-active'); }
+  const cont = document.getElementById('chatContinue'); if (cont) cont.disabled = true;
+  goChatStep(1);
+}
+
+/* ---------- Plan generation ---------- */
+function fmtMXN(n){ return '$' + Math.round(n).toLocaleString('es-MX'); }
+function fmtUDI(n){ return Math.round(n).toLocaleString('es-MX') + ' UDIs'; }
+function fmtUSD(n){ return 'USD $' + Math.round(n).toLocaleString('en-US'); }
+// Approximate reference rates (Mayo 2026)
+const UDI_RATE = 8.55;   // 1 UDI ≈ 8.55 MXN
+const USD_RATE = 18.20;  // 1 USD ≈ 18.20 MXN
+
+function pickPlan(){
+  const c = chatState.concerns;
+  const has = (k) => c.includes(k);
+  // Decide plan family
+  let name, desc, includes;
+  const ppr = has('retiro') || has('patrimonio');
+
+  if (c.length >= 3){
+    name = 'Plan Integral <em>Legado 360</em>';
+    desc = 'Combinación estratégica de protección de vida + ahorro deducible + plan educativo. Cubre las 3+ áreas que marcaste.';
+    includes = [
+      'Vida con cobertura vitalicia · suma asegurada robusta',
+      'PPR (Plan Personal de Retiro) deducible 100% de ISR',
+      'Componente educativo blindado contra inflación',
+      'Cobertura por invalidez total y permanente',
+      'Componente de inversión en UDIs o USD',
+      'Revisión anual de portafolio con Maggie'
+    ];
+  } else if (has('retiro') && has('patrimonio')){
+    name = 'PPR <em>Inversión Plus</em>';
+    desc = 'Plan Personal de Retiro con componente de inversión en UDIs y dólares. Pensión real sin depender de instituciones gubernamentales.';
+    includes = [
+      'PPR deducible hasta el 10% de tus ingresos anuales',
+      'Inversión balanceada: renta fija + variable',
+      'Retiros parciales después de los 65 años',
+      'Exención de ISR aplicable hasta cumplir los 65 años',
+      'Beneficiarios designados sin juicio sucesorio'
+    ];
+  } else if (has('educacion')){
+    name = 'Plan <em>Educativo Prudential</em>';
+    desc = 'Garantiza la universidad de tus hijos aunque tú no estés. Pago programado al ingreso a la universidad.';
+    includes = [
+      'Suma garantizada al cumplir 18 años del beneficiario',
+      'Cobertura de vida del titular incluida',
+      'Exoneración de primas en caso de invalidez',
+      'Liquidez parcial a partir del año 10',
+      'Acceso a universidades nacionales y extranjeras'
+    ];
+  } else if (has('retiro')){
+    name = 'PPR <em>Retiro Plus</em>';
+    desc = 'Plan Personal de Retiro 100% deducible de ISR. Construye tu pensión real sin depender de instituciones gubernamentales.';
+    includes = [
+      'Aportación anual deducible hasta el 10% de ingresos',
+      'Rendimiento histórico 7% anual promedio',
+      'Disponibilidad total a los 65 años',
+      'Exención de ISR aplicable hasta cumplir los 65 años',
+      'Bonificaciones por permanencia · Beneficiarios directos'
+    ];
+  } else if (has('patrimonio')){
+    name = 'Vida <em>Inversión Prudential</em>';
+    desc = 'Personaliza tu plan: protección + inversión cotizada exclusivamente en UDIs o Dólares (USD).';
+    includes = [
+      'Suma asegurada',
+      'Valor en efectivo',
+      'Rescate parcial disponible desde el año 5',
+      'Rendimientos garantizados',
+      'Interés compuesto'
+    ];
+  } else { // familia only or default
+    name = 'Vida <em>Cobertura Vitalicia</em>';
+    desc = 'Protección pura de vida con suma asegurada · vigencia vitalicia. Cobertura exclusiva para el asegurado principal (no aplica al grupo familiar).';
+    includes = [
+      'Vigencia vitalicia (cobertura de por vida)',
+      'Suma asegurada por fallecimiento del titular',
+      'Cobertura por muerte accidental (doble indemnización)',
+      'Invalidez total y permanente del asegurado',
+      'Pago a beneficiarios en 72 hrs sin juicio'
+    ];
+  }
+  return { name, desc, includes, ppr };
+}
+
+function pickCoverage(){
+  const d = chatState.dependents;
+  if (d === 'solo')   return { coverage: 1000000, label: '$1,000,000 MXN' };
+  if (d === 'pareja') return { coverage: 2000000, label: '$2,000,000 MXN' };
+  if (d === 'hijos')  return { coverage: 3500000, label: '$3,500,000 MXN' };
+  return { coverage: 5000000, label: '$5,000,000 MXN' }; // familia
+}
+
+function pickBasePrice(){
+  // anchor annual price per budget bucket
+  const map = { low: 10800, mid: 22800, high: 45600, premium: 84000 };
+  return map[chatState.budget] || 22800;
+}
+
+function ageMultiplier(){
+  const m = { '18-29': 0.78, '30-44': 1.0, '45-59': 1.35, '60+': 1.75 };
+  return m[chatState.age] || 1.0;
+}
+
+function renderResult(){
+  const plan = pickPlan();
+  const cov  = pickCoverage();
+  const base = pickBasePrice();
+  const mul  = ageMultiplier();
+  let priceAnnual = base * mul;
+  // Round to nearest 100
+  priceAnnual = Math.round(priceAnnual / 100) * 100;
+
+  // Currency selection per plan
+  // - "Vida Inversión Prudential" (patrimonio only) → UDIs (no MXN)
+  // - default → MXN
+  const isInversion = /Inversión Prudential/i.test(plan.name);
+  const currencyMode = isInversion ? 'UDI' : 'MXN';
+  const fmtPrice = (n) => {
+    if (currencyMode === 'UDI') return fmtUDI(n / UDI_RATE);
+    return fmtMXN(n);
+  };
+  const unitLabel = currencyMode === 'UDI' ? '/año' : 'MXN/año';
+
+  // Coverage label override for UDIS plan (no pesos)
+  let coverageLabel = cov.label;
+  if (currencyMode === 'UDI'){
+    coverageLabel = fmtUDI(cov.coverage / UDI_RATE) + ' · USD $' + Math.round(cov.coverage/USD_RATE).toLocaleString('en-US');
   }
 
-  const whatsappUrl = 'https://wa.me/525576408221?text=' + encodeURIComponent(lines.join('\n'));
-  window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
-  closeLeadForm();
-});
+  document.getElementById('resultPlanName').innerHTML = plan.name;
+  document.getElementById('resultPlanDesc').textContent = plan.desc;
+  document.getElementById('resultCoverage').textContent = coverageLabel;
+  document.getElementById('resultPrice').textContent = fmtPrice(priceAnnual);
+  // Adjust currency suffix in DOM
+  const priceCell = document.getElementById('resultPrice').parentElement;
+  const small = priceCell ? priceCell.querySelector('small') : null;
+  if (small) small.textContent = unitLabel;
 
-calculateRetirement();
-calculateLifeProtection();
+  // Deducible ISR — only for PPR retiro plans, NEVER for Vida Inversión (investment) plan
+  const dedBlock = document.getElementById('resultDeductibleBlock');
+  const showDeductible = plan.ppr && !isInversion;
+  if (showDeductible){
+    const effective = priceAnnual * 0.70; // 30% ISR back
+    document.getElementById('resultEffective').textContent = fmtMXN(effective);
+    if (dedBlock) dedBlock.style.display = '';
+  } else {
+    if (dedBlock) dedBlock.style.display = 'none';
+  }
+
+  // Includes list — show only top 3 to keep it digerible (curiosity hook)
+  const ul = document.getElementById('resultIncludes');
+  ul.innerHTML = '';
+  plan.includes.slice(0, 3).forEach(t => {
+    const li = document.createElement('li');
+    li.textContent = t;
+    ul.appendChild(li);
+  });
+
+  // WhatsApp CTA
+  const msg = encodeURIComponent(
+    'Hola Maggie 👋 Hice el diagnóstico en tu landing:\n' +
+    '• Preocupaciones: ' + chatState.concernLabels.join(', ') + '\n' +
+    '• Edad: ' + chatState.ageLabel + '\n' +
+    '• Dependientes: ' + chatState.dependentsLabel + '\n' +
+    '• Presupuesto: ' + chatState.budgetLabel + '\n' +
+    '• Plan sugerido: ' + plan.name.replace(/<[^>]+>/g,'') + '\n' +
+    '• Prima anual: ' + fmtPrice(priceAnnual) + ' ' + unitLabel + '\n\n' +
+    'Quiero agendar para revisarlo contigo.'
+  );
+  document.getElementById('resultWhatsapp').href = 'https://wa.me/525576408221?text=' + msg;
+}
 </script>
 </body>
 </html>

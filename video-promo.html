@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Promo · Landing para agentes de seguros · Maggie Salmerón</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --bg:#F2EDE4;
+  --paper:#FAF6EE;
+  --ink:#0A0A0A;
+  --pink:#FF0083;
+  --pink-soft:#FFB3D9;
+  --pink-bg:#FFE0F0;
+  --serif:'Fraunces',Georgia,serif;
+  --mono:'JetBrains Mono',monospace;
+  --sans:'Inter',sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{overflow:hidden;background:#000;font-family:var(--sans)}
+body{display:flex;align-items:center;justify-content:center;min-height:100vh;padding:16px}
+
+/* TikTok format 9:16 — fit max possible on screen */
+.video{
+  height:min(96vh, 100vw * 16/9);
+  width:calc(min(96vh, 100vw * 16/9) * 9/16);
+  background:var(--bg);
+  position:relative;overflow:hidden;
+  box-shadow:0 30px 80px rgba(0,0,0,.5);
+  border-radius:24px;
+  container-type:inline-size;
+}
+
+/* Top progress bar */
+.timeline{
+  position:absolute;top:3cqw;left:5cqw;right:5cqw;
+  height:2px;background:rgba(10,10,10,0.10);border-radius:2px;
+  z-index:50;overflow:hidden;
+}
+.timeline-fill{
+  position:absolute;left:0;top:0;height:100%;
+  background:var(--pink);width:0%;
+  animation:timeline 30s linear infinite;
+}
+@keyframes timeline{0%{width:0%}100%{width:100%}}
+
+/* Logo header — always visible */
+.brand-mark{
+  position:absolute;top:6cqw;left:5cqw;right:5cqw;
+  z-index:40;
+  display:flex;justify-content:space-between;align-items:center;
+  font-family:var(--mono);font-size:2.4cqw;
+  text-transform:uppercase;letter-spacing:.08em;
+  color:var(--ink);font-weight:600;
+  gap:8px;
+}
+.brand-mark .pink{color:var(--pink)}
+.brand-mark::before{content:"●";color:var(--pink);margin-right:6px;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+/* SCENES — center aligned */
+.scene{
+  position:absolute;inset:0;
+  padding:18cqw 6cqw 10cqw;
+  display:flex;flex-direction:column;
+  justify-content:center;align-items:center;
+  text-align:center;
+  opacity:0;
+  pointer-events:none;
+  background:var(--bg);
+}
+.scene > *{width:100%;text-align:center}
+.label{justify-content:center}
+
+/* Phone scenes — tighter padding for maximum phone size */
+.scene-phone{padding:13cqw 3cqw 7cqw;justify-content:flex-start;gap:0}
+.scene.visible{opacity:1}
+
+/* 7 scenes — 30/7 = 4.28s per scene
+   Each scene has --start custom property for text animation sync */
+.scene-1 { animation: show 30s 0s infinite; --start: 0s }
+.scene-2 { animation: show 30s 4.28s infinite; --start: 4.28s }
+.scene-3 { animation: show 30s 8.57s infinite; --start: 8.57s }
+.scene-4 { animation: show 30s 12.86s infinite; --start: 12.86s }
+.scene-5 { animation: show 30s 17.14s infinite; --start: 17.14s }
+.scene-7 { animation: show 30s 21.43s infinite; --start: 21.43s }
+.scene-8 { animation: show 30s 25.71s infinite; --start: 25.71s }
+
+@keyframes show{
+  0%{opacity:0;transform:translateY(20px)}
+  2%{opacity:1;transform:translateY(0)}
+  13%{opacity:1;transform:translateY(0)}
+  14.5%{opacity:0;transform:translateY(-20px)}
+  100%{opacity:0}
+}
+
+/* TRUE TYPEWRITER REVEAL — letter by letter via steps()
+   Critical: animation-fill-mode:backwards keeps text HIDDEN during delay
+   (so it doesn't flash visible before typing starts) */
+.t-in, .t-in-2, .t-in-3, .t-in-4, .t-grow, .t-rise, .line {
+  animation: typeReveal 30s linear infinite both;
+  display:inline-block;
+  width:100%;
+  overflow:hidden;
+}
+.t-in   { animation-delay: calc(var(--start, 0s) + 0s) }
+.t-in-2 { animation-delay: calc(var(--start, 0s) + .65s) }
+.t-in-3 { animation-delay: calc(var(--start, 0s) + 1.30s) }
+.t-in-4 { animation-delay: calc(var(--start, 0s) + 1.90s) }
+.t-grow { animation-delay: calc(var(--start, 0s) + .30s) }
+.t-rise { animation-delay: calc(var(--start, 0s) + .45s) }
+
+/* Line-by-line — block for h1/h2 spans, but keep flex for items */
+h1 > .line, h2 > .line{display:block}
+.t-line-1{animation-delay:calc(var(--start, 0s) + .15s)}
+.t-line-2{animation-delay:calc(var(--start, 0s) + .95s)}
+.t-line-3{animation-delay:calc(var(--start, 0s) + 1.70s)}
+.t-line-4{animation-delay:calc(var(--start, 0s) + 2.40s)}
+
+/* Each line types out in 14 discrete steps — feels like real typewriter
+   Negative insets on all sides prevent cutting italic/serif letters */
+@keyframes typeReveal{
+  0%   { clip-path: inset(-15% 102% -15% -4%); opacity: 1; animation-timing-function: steps(14, end); }
+  4%   { clip-path: inset(-15% -4% -15% -4%); opacity: 1; animation-timing-function: linear; }
+  13%  { clip-path: inset(-15% -4% -15% -4%); opacity: 1; }
+  14.5%{ opacity: 0; }
+  100% { opacity: 0; clip-path: inset(-15% 102% -15% -4%); }
+}
+
+/* Lines need a bit of right padding to fit italic/serif overflow */
+.line, h1 .line, h2 .line{padding:0.5cqw 1.5cqw 0.5cqw 0}
+
+/* Pop with scale — for badges, buttons, iPhone, decorative elements */
+.t-pop {
+  animation: tPop 30s linear infinite both;
+  animation-delay: calc(var(--start, 0s) + .55s);
+}
+@keyframes tPop{
+  0%   { opacity: 0; transform: scale(.7) }
+  2.5% { opacity: 1; transform: scale(1.06) }
+  4%   { transform: scale(1) }
+  13%  { opacity: 1; transform: scale(1) }
+  14.5%{ opacity: 0 }
+  100% { opacity: 0 }
+}
+
+/* Headline with split word-up reveal */
+h1, h2{text-wrap:balance}
+
+/* Typography — scaled to container width */
+h1{font-family:var(--serif);font-size:11cqw;font-weight:500;line-height:.95;letter-spacing:-0.035em;color:var(--ink);margin-bottom:3.5cqw;word-break:break-word}
+h1 em{font-style:italic;color:var(--pink);font-weight:500}
+h2{font-family:var(--serif);font-size:8cqw;font-weight:500;line-height:1;letter-spacing:-0.03em;color:var(--ink);margin-bottom:3cqw;word-break:break-word}
+h2 em{font-style:italic;color:var(--pink)}
+.label{font-family:var(--mono);font-size:2.6cqw;text-transform:uppercase;letter-spacing:.15em;color:var(--ink);font-weight:600;margin-bottom:3cqw;display:inline-flex;align-items:center;gap:6px}
+.label.pink{color:var(--pink)}
+.label::before{content:"//";color:var(--pink);font-weight:700}
+.text{font-family:var(--sans);font-size:3.4cqw;color:#2A2620;line-height:1.45;font-weight:400}
+
+/* SCENE 2 — Pain list (centered block, left-aligned items) */
+.s2-list{margin:3cqw auto 0;display:flex;flex-direction:column;gap:2.4cqw;width:fit-content;text-align:left}
+.s2-list .item{font-family:var(--mono);font-size:3cqw;color:var(--ink);display:flex;align-items:center;gap:2cqw;letter-spacing:-0.01em;line-height:1.3;text-align:left}
+.s2-list .item::before{content:"×";color:var(--pink);font-size:5cqw;font-weight:700;width:4.5cqw;text-align:center;flex-shrink:0}
+
+/* SCENE 3 — Dark */
+.s3-bg{background:var(--ink)!important;color:var(--bg)}
+.s3-bg h1,.s3-bg h2{color:var(--bg)}
+.s3-tag{display:inline-block;padding:1.4cqw 2.6cqw;background:var(--pink);color:#fff;font-family:var(--mono);font-size:2.4cqw;text-transform:uppercase;letter-spacing:.12em;font-weight:700;margin-bottom:4cqw}
+.s3-bg .text{color:rgba(242,237,228,0.78)}
+
+/* SCENE 4 — Features */
+.s4-features{display:flex;flex-direction:column;gap:2.5cqw;margin-top:3cqw}
+.s4-feat{display:flex;align-items:flex-start;gap:2.6cqw;padding:2.8cqw 3cqw;background:#fff;border:1px solid rgba(10,10,10,.1)}
+.s4-feat-icon{width:6.4cqw;height:6.4cqw;background:var(--pink-bg);color:var(--pink);font-family:var(--mono);font-weight:700;font-size:2.6cqw;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.s4-feat-text{font-family:var(--sans);font-size:3cqw;color:var(--ink);font-weight:600;line-height:1.3}
+.s4-feat-text small{display:block;font-family:var(--mono);font-size:2.2cqw;color:#6B655C;font-weight:500;text-transform:uppercase;letter-spacing:.05em;margin-top:0.6cqw}
+
+/* SCENE 5 — Numbers */
+.s5-stats{display:flex;flex-direction:column;gap:4cqw;margin-top:3cqw}
+.s5-stat{border-top:1px solid rgba(10,10,10,.15);padding-top:3cqw}
+.s5-num{font-family:var(--serif);font-size:16cqw;font-weight:500;color:var(--ink);line-height:.95;letter-spacing:-0.04em;margin-bottom:1cqw}
+.s5-num em{font-style:italic;color:var(--pink)}
+.s5-num .small-unit{font-size:0.4em;color:#6B655C;font-family:var(--mono);font-style:normal;letter-spacing:0;margin-left:1cqw;vertical-align:0.8em}
+.s5-label{font-family:var(--mono);font-size:2.6cqw;color:var(--ink);text-transform:uppercase;letter-spacing:.08em;font-weight:500;line-height:1.3}
+
+/* ============================================
+   iPhone MOCKUP
+   ============================================ */
+.iphone{
+  position:relative;
+  width:74cqw;
+  aspect-ratio:9/15.5;
+  background:linear-gradient(140deg,#2b2b2b 0%,#0a0a0a 100%);
+  border-radius:8cqw;
+  padding:1.4cqw;
+  box-shadow:
+    0 8cqw 18cqw rgba(0,0,0,0.4),
+    0 3cqw 8cqw rgba(255,0,131,0.10),
+    inset 0 0 0 0.5cqw rgba(255,255,255,0.07),
+    inset 0 0 1cqw rgba(0,0,0,0.4);
+  margin:0 auto;
+}
+.iphone::before{
+  content:"";position:absolute;
+  top:2.2cqw;left:50%;transform:translateX(-50%);
+  width:18cqw;height:2.8cqw;
+  background:#000;border-radius:100px;z-index:10;
+  box-shadow:inset 0 0 0 0.3cqw rgba(255,255,255,0.04);
+}
+.iphone-screen{
+  width:100%;height:100%;
+  background:var(--bg);
+  border-radius:7cqw;
+  overflow:hidden;
+  position:relative;
+  display:flex;flex-direction:column;
+}
+.ip-status{
+  padding:1.4cqw 5cqw 1cqw;
+  font-family:var(--mono);font-size:2cqw;
+  color:var(--ink);font-weight:700;
+  display:flex;justify-content:space-between;align-items:center;
+  letter-spacing:.04em;
+}
+.ip-status-icons{font-size:1.8cqw;letter-spacing:.4cqw}
+.ip-content{flex:1;overflow:hidden;display:flex;flex-direction:column}
+
+/* Chat header inside phone */
+.ip-chat-header{
+  background:var(--ink);color:var(--bg);
+  padding:2cqw 3cqw;display:flex;align-items:center;gap:2cqw;
+  font-family:var(--mono);
+}
+.ip-avatar{
+  width:5.5cqw;height:5.5cqw;border-radius:50%;
+  background:var(--pink);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--serif);font-style:italic;
+  font-size:3cqw;color:#fff;font-weight:600;
+  flex-shrink:0;border:1px solid var(--pink);
+}
+.ip-avatar::before{content:"A"}
+.ip-asesora{font-size:2.2cqw;color:var(--bg);font-weight:600;text-transform:uppercase;letter-spacing:.04em;line-height:1.1}
+.ip-online{font-size:1.7cqw;color:var(--pink);font-weight:500;margin-top:0.3cqw;letter-spacing:.05em}
+.ip-progress{margin-left:auto;font-size:1.8cqw;color:rgba(242,237,228,0.7);letter-spacing:.1em}
+
+.ip-body{padding:3cqw 3cqw;flex:1;display:flex;flex-direction:column;gap:1.6cqw;justify-content:center}
+.ip-bubble{
+  background:#fff;border:1px solid rgba(10,10,10,.08);
+  padding:2cqw 2.4cqw;border-radius:3cqw 3cqw 3cqw 0.6cqw;
+  font-family:var(--sans);font-size:2.2cqw;
+  color:var(--ink);line-height:1.4;
+}
+.ip-bubble strong{color:var(--pink)}
+.ip-opts{display:flex;flex-direction:column;gap:1.2cqw;margin-top:1cqw}
+.ip-opt{
+  background:#fff;border:1px solid rgba(10,10,10,.08);
+  padding:1.6cqw 2cqw;font-family:var(--sans);font-size:2cqw;
+  color:var(--ink);font-weight:500;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.ip-opt::after{
+  content:"";width:2.6cqw;height:2.6cqw;
+  border:1px solid rgba(10,10,10,.15);border-radius:0.4cqw;
+}
+.ip-opt-active{background:var(--pink-bg);border-color:var(--pink)}
+.ip-opt-active::after{background:var(--pink);border-color:var(--pink);
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='4'><polyline points='20 6 9 17 4 12'/></svg>");
+  background-size:70%;background-position:center;background-repeat:no-repeat;
+}
+.ip-continue{
+  background:var(--ink);color:var(--bg);
+  padding:2cqw;text-align:center;
+  font-family:var(--mono);font-size:2.2cqw;
+  text-transform:uppercase;letter-spacing:.08em;
+  font-weight:600;margin-top:1.5cqw;
+}
+
+/* Result screen inside phone */
+.ip-result-header{
+  background:var(--ink);color:var(--bg);
+  padding:3cqw 3.5cqw 3.5cqw;
+}
+.ip-result-label{
+  font-family:var(--mono);font-size:1.6cqw;
+  color:var(--pink);text-transform:uppercase;
+  letter-spacing:.1em;font-weight:600;margin-bottom:1cqw;
+}
+.ip-result-name{
+  font-family:var(--serif);font-size:5cqw;
+  color:var(--bg);font-weight:500;line-height:1;
+  letter-spacing:-0.02em;
+}
+.ip-result-name em{color:var(--pink);font-style:italic}
+
+.ip-result-body{padding:2.4cqw 3.5cqw 3cqw;flex:1;display:flex;flex-direction:column;gap:1.8cqw;justify-content:center}
+.ip-result-row{display:flex;gap:3cqw;padding-bottom:2cqw;border-bottom:1px solid rgba(10,10,10,.1)}
+.ip-result-side{flex:1}
+.ip-sub{font-family:var(--mono);font-size:1.5cqw;color:#6B655C;text-transform:uppercase;letter-spacing:.08em;margin-bottom:0.5cqw}
+.ip-cov{font-family:var(--serif);font-size:3.6cqw;color:var(--ink);font-weight:500;letter-spacing:-0.02em;line-height:1}
+.ip-cov span{font-family:var(--mono);font-size:1.5cqw;color:#6B655C;text-transform:uppercase;letter-spacing:.06em;margin-left:0.4cqw;font-weight:500}
+.ip-price{font-family:var(--serif);font-size:4cqw;color:var(--pink);font-weight:500;letter-spacing:-0.02em;line-height:1}
+.ip-price span{font-family:var(--mono);font-size:1.5cqw;color:#6B655C;text-transform:uppercase;letter-spacing:.06em;margin-left:0.2cqw;font-weight:500}
+
+.ip-deduct{
+  background:var(--pink-bg);padding:1.6cqw 2cqw;
+  border-left:0.4cqw solid var(--pink);
+  font-family:var(--sans);font-size:1.8cqw;
+  color:var(--ink);line-height:1.4;
+}
+.ip-deduct strong{color:var(--pink);font-weight:700}
+
+.ip-vs{display:flex;flex-direction:column;gap:0.5cqw}
+.ip-vs-row{
+  display:flex;justify-content:space-between;align-items:center;
+  font-family:var(--mono);font-size:1.7cqw;
+  padding:1cqw 0;border-bottom:1px dashed rgba(10,10,10,.1);
+  color:#6B655C;
+}
+.ip-vs-row span:first-child{text-transform:uppercase;letter-spacing:.04em;font-weight:500}
+.ip-vs-row span:last-child{font-weight:600;color:var(--ink)}
+.ip-vs-best{background:var(--pink-bg);padding:1.2cqw 1.4cqw!important;border-bottom:none!important;margin:0.4cqw -1.4cqw 0}
+.ip-vs-best span{color:var(--pink)!important;font-weight:700!important}
+
+.ip-wa{
+  background:#25D366;color:#fff;
+  padding:2.4cqw;text-align:center;
+  font-family:var(--mono);font-size:2cqw;
+  text-transform:uppercase;letter-spacing:.06em;
+  font-weight:700;margin-top:1cqw;
+  display:flex;align-items:center;justify-content:center;gap:1cqw;
+  box-shadow:0 1cqw 2cqw rgba(37,211,102,0.3);
+}
+
+/* SCENE 6 — Brands */
+.s6-brands-label{margin-top:4cqw;font-family:var(--mono);font-size:2.4cqw;color:#6B655C;text-transform:uppercase;letter-spacing:.12em;margin-bottom:2.6cqw}
+.s6-brands{display:flex;flex-wrap:wrap;gap:2cqw 2.4cqw;font-family:var(--serif);font-size:3.2cqw;color:var(--ink);font-weight:500;letter-spacing:-0.01em}
+.s6-brands span{padding:1.2cqw 2.4cqw;border:1px solid rgba(10,10,10,.2)}
+.s6-brands .pink-border{border-color:var(--pink);color:var(--pink)}
+
+/* SCENE 7 — CTA */
+.s7-bg{background:linear-gradient(160deg,var(--pink-bg) 0%,var(--pink-soft) 100%)!important}
+.s7-arrow{font-family:var(--serif);font-style:italic;font-size:14cqw;color:var(--pink);line-height:.85;margin-bottom:2cqw}
+
+/* SCENE 8 — Outro */
+.s8-bg{background:var(--ink)!important;color:var(--bg)}
+.s8-bg h1,.s8-bg h2{color:var(--bg)}
+.s8-bg h1 em,.s8-bg h2 em{color:var(--pink)}
+.s8-bg .label{color:var(--pink)}
+.s8-handle{font-family:var(--mono);font-size:3.2cqw;color:var(--pink);margin-top:4cqw;letter-spacing:.04em;text-transform:uppercase;font-weight:700}
+.s8-tag{font-family:var(--mono);font-size:2.3cqw;color:rgba(242,237,228,0.65);text-transform:uppercase;letter-spacing:.1em;margin-top:1.4cqw}
+.s8-deco{position:absolute;top:14cqw;left:50%;transform:translateX(-50%);font-family:var(--serif);font-size:38cqw;color:var(--pink);opacity:.12;line-height:1;z-index:1;animation:floatM 6s ease-in-out infinite}
+@keyframes floatM{0%,100%{transform:translateX(-50%) translateY(0) rotate(0deg)}50%{transform:translateX(-50%) translateY(-1.5cqw) rotate(8deg)}}
+
+/* Bottom watermark */
+.watermark{
+  position:absolute;bottom:5cqw;left:5cqw;right:5cqw;
+  z-index:40;
+  font-family:var(--mono);font-size:2.2cqw;
+  text-transform:uppercase;letter-spacing:.1em;
+  color:var(--ink);opacity:.55;font-weight:500;
+  display:flex;justify-content:space-between;gap:2cqw;flex-wrap:wrap;
+  animation:colorAdapt 30s infinite;
+}
+.watermark .right{color:var(--pink);opacity:.85}
+
+/* Adapt header + footer color to scene background
+   7 scenes · dark scenes are 3 (28.57-42.86%) and 8 (85.71-100%) */
+.brand-mark{animation:brandAdapt 30s infinite}
+@keyframes brandAdapt{
+  0%,27%{color:var(--ink);opacity:1}
+  29%,42%{color:var(--bg);opacity:1}
+  44%,84%{color:var(--ink);opacity:1}
+  86%,100%{color:var(--bg);opacity:1}
+}
+@keyframes colorAdapt{
+  0%,27%{color:var(--ink);opacity:.55}
+  29%,42%{color:var(--bg);opacity:.55}
+  44%,84%{color:var(--ink);opacity:.55}
+  86%,100%{color:var(--bg);opacity:.55}
+}
+.timeline{animation:timelineBg 30s infinite}
+@keyframes timelineBg{
+  0%,27%{background:rgba(10,10,10,0.10)}
+  29%,42%{background:rgba(255,255,255,0.18)}
+  44%,84%{background:rgba(10,10,10,0.10)}
+  86%,100%{background:rgba(255,255,255,0.18)}
+}
+
+/* ============================
+   TOOLBAR 4K (no aparece en grabación)
+   ============================ */
+.toolbar{
+  position:fixed;top:16px;right:16px;z-index:9999;
+  display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end;
+  font-family:'JetBrains Mono',monospace;
+}
+.toolbar button{
+  background:rgba(255,255,255,0.94);color:#0A0A0A;border:1px solid rgba(10,10,10,0.12);
+  border-radius:10px;padding:10px 16px;font-size:12px;font-weight:600;
+  text-transform:uppercase;letter-spacing:.06em;cursor:pointer;
+  box-shadow:0 6px 18px -8px rgba(0,0,0,.4);transition:all .2s;
+  display:inline-flex;align-items:center;gap:6px;
+}
+.toolbar button:hover{background:#FF0083;color:#fff;border-color:#FF0083;transform:translateY(-1px)}
+.toolbar button.primary{background:#FF0083;color:#fff;border-color:#FF0083}
+.toolbar button.primary:hover{background:#0A0A0A;border-color:#0A0A0A}
+.toolbar button.recording{background:#d11;color:#fff;border-color:#d11;animation:recPulse 1.2s infinite}
+@keyframes recPulse{0%,100%{opacity:1}50%{opacity:.65}}
+.toolbar .badge{display:inline-block;width:8px;height:8px;border-radius:50%;background:#FF0083;animation:pulse 1.5s infinite}
+
+/* 4K mode: video se vuelve 2160x3840 escalado a viewport */
+body.mode-4k{overflow:hidden;background:#000}
+body.mode-4k .video{
+  width:2160px!important;height:3840px!important;border-radius:0!important;
+  position:fixed!important;top:50%!important;left:50%!important;
+  transform-origin:center center!important;
+  box-shadow:none!important;
+}
+
+/* Estado "grabando": esconder toolbar para que no aparezca en captura */
+body.recording .toolbar{opacity:0;pointer-events:none}
+body.recording .rec-overlay{display:flex}
+.rec-overlay{
+  display:none;position:fixed;bottom:24px;left:50%;transform:translateX(-50%);
+  z-index:99999;background:rgba(220,20,40,0.95);color:#fff;
+  font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;
+  padding:12px 22px;border-radius:999px;text-transform:uppercase;letter-spacing:.08em;
+  box-shadow:0 8px 24px rgba(220,20,40,.45);
+  display:none;align-items:center;gap:10px;
+}
+body.recording .rec-overlay{display:inline-flex}
+.rec-overlay::before{content:"●";animation:pulse 1s infinite}
+</style>
+</head>
+<body>
+
+<!-- Toolbar 4K (no aparece en grabación) -->
+<div class="toolbar" id="toolbar">
+  <button onclick="toggle4KMode()" id="btn4K" title="Escala el video a 2160×3840 reales (4K vertical TikTok)">📐 Modo 4K</button>
+  <button class="primary" onclick="recordPromo()" id="btnRec" title="Graba 30s del loop completo y descarga .webm 4K">📥 Descargar 4K</button>
+</div>
+<div class="rec-overlay" id="recOverlay">Grabando 30s…</div>
+
+<div class="video">
+
+  <!-- Progress bar timeline -->
+  <div class="timeline"><div class="timeline-fill"></div></div>
+
+  <!-- Brand header -->
+  <div class="brand-mark">
+    <span>AGENTE DE SEGUROS</span>
+    <span class="pink">LANDING · 2026</span>
+  </div>
+
+  <!-- Watermark footer -->
+  <div class="watermark">
+    <span>LINK EN LA BIO</span>
+    <span class="right">DEMO · COTIZADOR</span>
+  </div>
+
+  <!-- ============================================
+       SCENE 1 — Hook (0-3.75s)
+       ============================================ -->
+  <div class="scene scene-1">
+    <div class="label t-in">Pregunta seria</div>
+    <h1>
+      <span class="line t-line-1">¿Eres agente</span>
+      <span class="line t-line-2">de <em>seguros</em>?</span>
+    </h1>
+    <div class="text t-in-4" style="max-width:78%;margin:0 auto">Si vendes vida, ahorro o retiro — esto te va a interesar.</div>
+  </div>
+
+  <!-- ============================================
+       SCENE 2 — Pain (3.75-7.5s)
+       ============================================ -->
+  <div class="scene scene-2">
+    <div class="label t-in">El problema real</div>
+    <h2>
+      <span class="line t-line-1">Tus prospects</span>
+      <span class="line t-line-2">se enfrían entre</span>
+      <span class="line t-line-3"><em>"lo pienso"</em> y <em>"te aviso".</em></span>
+    </h2>
+    <div class="s2-list" style="margin-left:auto;margin-right:auto;max-width:80%;align-items:flex-start;display:inline-flex">
+      <div class="item" style="animation:typeReveal 30s linear infinite both;animation-delay:calc(var(--start) + 2.2s)">No saben cuánto cuesta</div>
+      <div class="item" style="animation:typeReveal 30s linear infinite both;animation-delay:calc(var(--start) + 2.5s)">No comparan precios</div>
+      <div class="item" style="animation:typeReveal 30s linear infinite both;animation-delay:calc(var(--start) + 2.8s)">No entienden la deducción</div>
+    </div>
+  </div>
+
+  <!-- ============================================
+       SCENE 3 — Solution intro (7.5-11.25s)
+       ============================================ -->
+  <div class="scene scene-3 s3-bg">
+    <div class="s3-tag t-pop">La solución</div>
+    <h1>
+      <span class="line t-line-1">Una landing</span>
+      <span class="line t-line-2">que los <em>cierra</em></span>
+      <span class="line t-line-3">por ti.</span>
+    </h1>
+    <div class="text t-in-4" style="color:rgba(242,237,228,0.78);max-width:80%;margin:0 auto">Chat diagnóstico · Precio real · WhatsApp pre-llenado.</div>
+  </div>
+
+  <!-- ============================================
+       SCENE 4 — iPhone con cotizador (pregunta) (12.86-17.14s)
+       ============================================ -->
+  <div class="scene scene-4 scene-phone">
+    <div class="label t-in" style="margin-bottom:3cqw">Tu prospect responde así</div>
+
+    <div class="iphone t-pop" style="animation-delay:calc(var(--start) + .55s)">
+        <div class="iphone-screen">
+          <div class="ip-status">9:41 <span class="ip-status-icons">▮ 􏊨 ◐</span></div>
+          <div class="ip-content">
+            <div class="ip-chat-header">
+              <div class="ip-avatar"></div>
+              <div>
+                <div class="ip-asesora">Tu Agente</div>
+                <div class="ip-online">● En línea</div>
+              </div>
+              <div class="ip-progress">01/04</div>
+            </div>
+            <div class="ip-body">
+              <div class="ip-bubble">¡Hola! 👋 ¿Cuál es tu <strong>mayor preocupación</strong>?</div>
+              <div class="ip-opts">
+                <div class="ip-opt ip-opt-active">🛡️ Familia protegida</div>
+                <div class="ip-opt ip-opt-active">🌅 Mi retiro digno</div>
+                <div class="ip-opt">🎓 Universidad hijos</div>
+                <div class="ip-opt">📈 Patrimonio</div>
+              </div>
+              <div class="ip-continue">Continuar →</div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <!-- ============================================
+       SCENE 5 — iPhone con resultado (17.14-21.43s)
+       ============================================ -->
+  <div class="scene scene-5 scene-phone">
+    <div class="label t-in" style="margin-bottom:3cqw">Ve su precio · agenda contigo</div>
+
+    <div class="iphone t-pop" style="animation-delay:calc(var(--start) + .55s)">
+        <div class="iphone-screen">
+          <div class="ip-status">9:42 <span class="ip-status-icons">▮ 􏊨 ◐</span></div>
+          <div class="ip-content">
+            <div class="ip-result-header">
+              <div class="ip-result-label">// Tu plan ideal</div>
+              <div class="ip-result-name">Vida + <em>Retiro</em></div>
+            </div>
+            <div class="ip-result-body">
+              <div class="ip-result-row">
+                <div class="ip-result-side">
+                  <div class="ip-sub">Cobertura</div>
+                  <div class="ip-cov">$1M <span>USD</span></div>
+                </div>
+                <div class="ip-result-side">
+                  <div class="ip-sub">Desde</div>
+                  <div class="ip-price">$2,500<span>/mes</span></div>
+                </div>
+              </div>
+              <div class="ip-deduct">
+                <strong>Deducible ISR ✓</strong> Precio efectivo: <strong>$2,125/mes</strong>
+              </div>
+              <div class="ip-vs">
+                <div class="ip-vs-row"><span>Aseguradora A</span><span>$3,050</span></div>
+                <div class="ip-vs-row"><span>Aseguradora B</span><span>$2,875</span></div>
+                <div class="ip-vs-row ip-vs-best"><span>Tu Agente</span><span>$2,500</span></div>
+              </div>
+              <div class="ip-wa">📱 Agendar cita · WhatsApp</div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <!-- ============================================
+       SCENE 7 — CTA (22.5-26.25s)
+       ============================================ -->
+  <div class="scene scene-7 s7-bg">
+    <div class="s7-arrow t-pop">→</div>
+    <h1>
+      <span class="line t-line-1">¿Quieres</span>
+      <span class="line t-line-2">una landing</span>
+      <span class="line t-line-3">así para <em>ti</em>?</span>
+    </h1>
+    <div class="text t-in-4" style="margin-top:3cqw;max-width:80%;margin-left:auto;margin-right:auto">Tu marca · tus productos · tu pricing. En 5 días lista.</div>
+  </div>
+
+  <!-- ============================================
+       SCENE 8 — Outro (25.71-30s)
+       ============================================ -->
+  <div class="scene scene-8 s8-bg">
+    <div class="s8-deco">↗</div>
+    <div style="position:relative;z-index:2;width:100%">
+      <div class="label t-in" style="color:var(--pink)">Tu cotizador en 5 días</div>
+      <h1>
+        <span class="line t-line-1">Link <em>en</em></span>
+        <span class="line t-line-2"><em>la bio.</em></span>
+      </h1>
+      <div class="s8-handle t-pop" style="animation-delay:calc(var(--start) + 1.6s)">→ Cotizador · Demo · Pricing</div>
+      <div class="s8-tag t-in-4" style="animation-delay:calc(var(--start) + 2.1s)">Diseñado para agentes de seguros</div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+/* ============================
+   MODO 4K — escala el video a 2160×3840 reales
+   ============================ */
+function fit4K(){
+  const v = document.querySelector('.video');
+  if (!document.body.classList.contains('mode-4k')) return;
+  const scaleW = window.innerWidth  / 2160;
+  const scaleH = window.innerHeight / 3840;
+  const scale  = Math.min(scaleW, scaleH) * 0.97;
+  v.style.transform = 'translate(-50%,-50%) scale(' + scale + ')';
+}
+
+function toggle4KMode(){
+  const body = document.body;
+  const v = document.querySelector('.video');
+  const btn = document.getElementById('btn4K');
+  body.classList.toggle('mode-4k');
+  if (body.classList.contains('mode-4k')){
+    fit4K();
+    btn.textContent = '↩ Salir 4K';
+    btn.classList.add('primary');
+  } else {
+    v.style.transform = '';
+    btn.textContent = '📐 Modo 4K';
+    btn.classList.remove('primary');
+  }
+}
+window.addEventListener('resize', fit4K);
+
+// Auto-activar 4K si la URL trae ?mode=4k
+if (new URLSearchParams(location.search).get('mode') === '4k'){
+  // Esperar un tick para que CSS aplique
+  requestAnimationFrame(() => toggle4KMode());
+}
+
+/* ============================
+   GRABACIÓN — captura 30s del loop y descarga .webm 4K
+   ============================ */
+async function recordPromo(){
+  const btn = document.getElementById('btnRec');
+  if (!navigator.mediaDevices || !navigator.mediaDevices.getDisplayMedia){
+    alert('Tu navegador no soporta captura de pantalla. Usa Chrome o Edge actualizado.');
+    return;
+  }
+  if (!window.MediaRecorder){
+    alert('Tu navegador no soporta MediaRecorder.');
+    return;
+  }
+
+  // Activar modo 4K si no está
+  if (!document.body.classList.contains('mode-4k')) toggle4KMode();
+
+  let stream;
+  try {
+    stream = await navigator.mediaDevices.getDisplayMedia({
+      video: { width: { ideal: 3840 }, height: { ideal: 2160 }, frameRate: { ideal: 60, max: 60 } },
+      audio: false,
+      preferCurrentTab: true,
+      selfBrowserSurface: 'include',
+      surfaceSwitching: 'exclude'
+    });
+  } catch (e) {
+    alert('Grabación cancelada: ' + (e.message || e));
+    return;
+  }
+
+  // Elegir el mejor códec disponible
+  const candidates = [
+    'video/webm;codecs=vp9',
+    'video/webm;codecs=vp8',
+    'video/webm'
+  ];
+  const mimeType = candidates.find(t => MediaRecorder.isTypeSupported(t)) || 'video/webm';
+
+  const recorder = new MediaRecorder(stream, {
+    mimeType,
+    videoBitsPerSecond: 24_000_000 // 24 Mbps → calidad 4K cómoda
+  });
+  const chunks = [];
+  recorder.ondataavailable = e => { if (e.data && e.data.size > 0) chunks.push(e.data); };
+
+  recorder.onstop = () => {
+    document.body.classList.remove('recording');
+    btn.classList.remove('recording');
+    btn.textContent = '📥 Descargar 4K';
+    stream.getTracks().forEach(t => t.stop());
+
+    const blob = new Blob(chunks, { type: mimeType });
+    const url  = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'maggie-promo-4k.webm';
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(() => { URL.revokeObjectURL(url); a.remove(); }, 500);
+  };
+
+  // Si el usuario detiene el "share" desde la barra del navegador
+  stream.getVideoTracks()[0].addEventListener('ended', () => {
+    if (recorder.state !== 'inactive') recorder.stop();
+  });
+
+  // UI: ocultar toolbar y mostrar indicador
+  document.body.classList.add('recording');
+  btn.classList.add('recording');
+  btn.textContent = '⏺ Grabando…';
+
+  // Esperar a que el siguiente ciclo de animación arranque limpio
+  // El loop dura 30s; arrancamos en el próximo múltiplo aproximado
+  recorder.start();
+
+  // Detener exactamente después de 30s
+  setTimeout(() => {
+    if (recorder.state === 'recording') recorder.stop();
+  }, 30200);
+}
+</script>
+
+</body>
+</html>
