@@ -45,11 +45,11 @@
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.55;font-size:17px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body{font-family:var(--sans);background:var(--bg);color:var(--ink);line-height:1.6;font-size:16px;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 
 h1,h2,h3,h4{font-family:var(--serif);font-weight:400;line-height:1.05;letter-spacing:-0.015em;color:var(--ink)}
-h1{font-size:clamp(3.25rem,7.2vw,7.5rem);font-weight:400;letter-spacing:-0.025em;line-height:1.0}
-h2{font-size:clamp(2.5rem,5vw,4.5rem);font-weight:400;letter-spacing:-0.02em;line-height:1.05}
+h1{font-size:clamp(3rem,6.4vw,6.75rem);font-weight:400;letter-spacing:-0.025em;line-height:1.0}
+h2{font-size:clamp(2.35rem,4.4vw,4.1rem);font-weight:400;letter-spacing:-0.02em;line-height:1.05}
 h3{font-size:clamp(1.5rem,2.4vw,2rem);font-weight:500;letter-spacing:-0.01em;line-height:1.15}
 em,i{font-style:italic;font-family:var(--serif);font-weight:400;color:var(--ink)}
 em.pink,h1 em,h2 em,h3 em{color:var(--pink);font-family:var(--script);font-style:normal;font-weight:400;font-size:1.18em;letter-spacing:0;line-height:.9;display:inline-block;vertical-align:-0.04em}
@@ -59,7 +59,7 @@ p{color:#3A3530;font-size:1.0625rem;line-height:1.7;font-weight:400}
 img{display:block;max-width:100%}
 a{color:inherit;text-decoration:none}
 
-.container{max-width:1320px;margin:0 auto;padding:0 40px}
+.container{max-width:1440px;margin:0 auto;padding:0 56px}
 .label{font-family:var(--sans);font-size:.75rem;color:var(--pink);text-transform:uppercase;letter-spacing:.22em;font-weight:500;display:inline-flex;align-items:center;gap:14px}
 .label::before{content:"";display:inline-block;width:32px;height:1px;background:var(--pink);opacity:.6}
 .label-num{font-family:var(--sans);font-size:.75rem;color:var(--muted);font-weight:500;letter-spacing:.18em;text-transform:uppercase}
@@ -105,10 +105,10 @@ a{color:inherit;text-decoration:none}
 /* ============================================================
    HERO
    ============================================================ */
-.hero{padding:80px 0 100px;position:relative;overflow:hidden}
+.hero{padding:112px 0 132px;position:relative;overflow:hidden}
 .hero > .container{position:relative;z-index:2}
 .hero-label{margin-bottom:48px}
-.hero-grid{display:grid;grid-template-columns:1.3fr 0.7fr;gap:64px;align-items:end}
+.hero-grid{display:grid;grid-template-columns:1.3fr 0.7fr;gap:92px;align-items:end}
 .hero h1{margin-bottom:40px}
 .hero h1 em{position:relative;display:inline-block}
 .hero h1 em::before{content:"";display:none}
@@ -148,7 +148,7 @@ a{color:inherit;text-decoration:none}
 /* ============================================================
    BIG STATS SECTION
    ============================================================ */
-.bigstats{padding:100px 0;border-top:1px solid var(--ink)}
+.bigstats{padding:124px 0;border-top:1px solid var(--ink)}
 .bigstats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
 .bigstat{padding:32px 24px 32px 0;border-right:1px solid var(--line);position:relative}
 .bigstat:last-child{border-right:none}
@@ -161,7 +161,7 @@ a{color:inherit;text-decoration:none}
 /* ============================================================
    DIAGNÓSTICO / PAIN
    ============================================================ */
-.diag{padding:120px 0;border-top:1px solid var(--ink);background:var(--paper)}
+.diag{padding:152px 0;border-top:1px solid var(--ink);background:var(--paper)}
 .diag-head{margin-bottom:64px;max-width:920px}
 .diag-head .label{margin-bottom:32px}
 .diag-head h2{margin-bottom:32px}
@@ -182,7 +182,7 @@ a{color:inherit;text-decoration:none}
 /* ============================================================
    DIFERENCIADOR — Sobre Maggie
    ============================================================ */
-.diff{padding:140px 0;border-top:1px solid var(--ink);position:relative;overflow:hidden}
+.diff{padding:168px 0;border-top:1px solid var(--ink);position:relative;overflow:hidden}
 .diff-grid{display:grid;grid-template-columns:0.85fr 1.15fr;gap:80px;align-items:center}
 .diff-photo-col{position:relative;display:flex;flex-direction:column;align-items:center}
 .diff-photo-wrap{position:relative;width:100%;aspect-ratio:4/5;display:flex;align-items:flex-end;justify-content:center}
@@ -212,7 +212,7 @@ a{color:inherit;text-decoration:none}
 /* ============================================================
    MANIFIESTO
    ============================================================ */
-.manifesto{padding:160px 0;background:linear-gradient(135deg,#6D5B7E 0%,#5A4A6B 100%);color:#fff;border-top:none;position:relative;overflow:hidden}
+.manifesto{padding:184px 0;background:linear-gradient(135deg,#6D5B7E 0%,#5A4A6B 100%);color:#fff;border-top:none;position:relative;overflow:hidden}
 .manifesto::before{content:"";display:none}
 .manifesto::after{content:"";display:none}
 .manifesto-inner{max-width:1000px;margin:0 auto;position:relative;z-index:1}
@@ -275,7 +275,7 @@ a{color:inherit;text-decoration:none}
 /* ============================================================
    TESTIMONIOS
    ============================================================ */
-.testimonials{padding:140px 0;border-top:1px solid var(--ink);overflow:hidden}
+.testimonials{padding:164px 0;border-top:1px solid var(--ink);overflow:hidden}
 .testimonials-head{margin-bottom:64px;max-width:920px}
 .testimonials-head .label{margin-bottom:32px}
 .testimonials-carousel{position:relative;width:100%;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 4%,#000 96%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 4%,#000 96%,transparent 100%)}
@@ -415,47 +415,55 @@ a{color:inherit;text-decoration:none}
 /* ============================================================
    CALCULADORAS — Retiro y protección de vida
    ============================================================ */
-.calculators{padding:88px 0 104px;background:linear-gradient(180deg,var(--paper) 0%,var(--bg-deep) 100%);border-bottom:1px solid var(--ink)}
-.calculators-head{max-width:900px;margin-bottom:42px}
+.calculators{padding:112px 0 132px;background:radial-gradient(circle at 84% 8%,rgba(var(--purple-rgb),.1),transparent 28%),linear-gradient(180deg,var(--paper) 0%,var(--bg-deep) 100%);border-bottom:1px solid var(--ink);position:relative;overflow:hidden}
+.calculators::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.22;background-image:linear-gradient(rgba(var(--purple-rgb),.08) 1px,transparent 1px),linear-gradient(90deg,rgba(var(--purple-rgb),.08) 1px,transparent 1px);background-size:48px 48px;mask-image:linear-gradient(to bottom,black,transparent 68%)}
+.calculators > .container{position:relative;z-index:1}
+.calculators-head{max-width:980px;margin-bottom:54px}
 .calculators-head .label{margin-bottom:22px}
 .calculators-head h2{margin-bottom:18px}
 .calculators-intro{max-width:760px;font-size:1.0625rem;color:#3A3530;line-height:1.6}
-.calculator-difference{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:920px;margin-bottom:28px}
-.calculator-difference-item{display:flex;align-items:center;gap:13px;padding:16px 18px;background:rgba(255,255,255,.65);border:1px solid var(--line)}
+.calculator-difference{display:grid;grid-template-columns:1fr 1fr;gap:18px;max-width:1160px;margin-bottom:38px}
+.calculator-difference-item{display:flex;align-items:center;gap:16px;padding:20px 22px;background:rgba(255,255,255,.7);border:1px solid var(--line);backdrop-filter:blur(10px)}
 .calculator-difference-icon{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:var(--pink-bg);color:var(--pink);font-family:var(--serif);font-size:1.125rem;font-weight:600;flex-shrink:0}
 .calculator-difference-copy{font-size:.875rem;line-height:1.4;color:var(--ink)}
 .calculator-difference-copy strong{display:block;color:var(--pink);font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;margin-bottom:2px}
-.calculator-tabs{display:grid;grid-template-columns:1fr 1fr;max-width:760px;border:1px solid var(--ink);background:var(--paper)}
-.calculator-tab{appearance:none;border:0;border-right:1px solid var(--ink);background:transparent;color:var(--ink);padding:18px 20px;cursor:pointer;text-align:left;transition:background .2s,color .2s;font-family:var(--sans)}
+.calculator-tabs{display:grid;grid-template-columns:1fr 1fr;max-width:1160px;margin:0 auto;border:1px solid var(--ink);background:rgba(255,255,255,.82);backdrop-filter:blur(14px)}
+.calculator-tab{appearance:none;border:0;border-right:1px solid var(--ink);background:transparent;color:var(--ink);padding:21px 26px;cursor:pointer;text-align:left;transition:background .25s,color .25s,transform .25s;font-family:var(--sans);position:relative;overflow:hidden}
 .calculator-tab:last-child{border-right:0}
-.calculator-tab.is-active{background:var(--pink);color:#fff}
+.calculator-tab.is-active{background:linear-gradient(135deg,var(--pink),var(--purple-deep));color:#fff}
+.calculator-tab.is-active::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:rgba(255,255,255,.82);animation:smartScan 3s ease-in-out infinite}
 .calculator-tab-kicker{display:block;font-size:.625rem;text-transform:uppercase;letter-spacing:.18em;opacity:.72;margin-bottom:4px;font-weight:600}
 .calculator-tab-title{display:block;font-family:var(--serif);font-size:1.3rem;line-height:1.15;font-weight:500}
-.calculator-shell{border:1px solid var(--ink);border-top:0;background:var(--bg);box-shadow:0 28px 60px -28px rgba(10,10,10,.24)}
+.calculator-shell{max-width:1160px;margin:0 auto;border:1px solid var(--ink);border-top:0;background:var(--bg);box-shadow:0 36px 80px -36px rgba(42,23,50,.36)}
 .calculator-panel[hidden]{display:none}
-.calculator-layout{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr)}
-.calculator-form{padding:38px;border-right:1px solid var(--line);background:#fff}
-.calculator-form-head{margin-bottom:28px}
+.calculator-layout{display:grid;grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr)}
+.calculator-form{padding:50px 48px;border-right:1px solid var(--line);background:rgba(255,255,255,.94)}
+.calculator-form-head{margin-bottom:34px}
 .calculator-form-label{font-family:var(--mono);font-size:.6875rem;text-transform:uppercase;letter-spacing:.15em;color:var(--pink);font-weight:700;margin-bottom:8px}
 .calculator-form h3{font-size:1.75rem;margin-bottom:10px}
 .calculator-form p{font-size:.9rem;color:var(--muted);line-height:1.55}
-.calculator-fields{display:flex;flex-direction:column;gap:19px}
+.calculator-fields{display:flex;flex-direction:column;gap:24px}
 .calculator-field label{display:block;font-size:.8125rem;color:var(--ink);font-weight:600;margin-bottom:8px;line-height:1.35}
 .calculator-input-wrap{position:relative}
 .calculator-prefix,.calculator-suffix{position:absolute;top:50%;transform:translateY(-50%);color:var(--muted);font-family:var(--mono);font-size:.875rem;pointer-events:none}
 .calculator-prefix{left:15px}
 .calculator-suffix{right:15px}
-.calculator-input,.calculator-select{width:100%;height:52px;border:1px solid rgba(26,26,26,.25);background:var(--bg);color:var(--ink);padding:0 15px;font-family:var(--sans);font-size:1rem;border-radius:0;transition:border-color .2s,box-shadow .2s}
+.calculator-input,.calculator-select{width:100%;height:50px;border:1px solid rgba(26,26,26,.22);background:var(--bg);color:var(--ink);padding:0 15px;font-family:var(--sans);font-size:.95rem;border-radius:0;transition:border-color .2s,box-shadow .2s,background .2s}
 .calculator-input.has-prefix{padding-left:34px}
 .calculator-input.has-suffix{padding-right:62px}
 .calculator-input:focus,.calculator-select:focus{outline:none;border-color:var(--pink);box-shadow:0 0 0 3px rgba(var(--purple-rgb),.1)}
 .calculator-input[aria-invalid="true"]{border-color:#A54242}
 .calculator-field-help{font-family:var(--mono);font-size:.625rem;color:var(--muted);line-height:1.45;margin-top:6px;letter-spacing:.01em}
-.calculator-results{padding:38px;background:linear-gradient(145deg,#5A4A6B 0%,#4A2856 100%);color:#fff;display:flex;flex-direction:column}
+.calculator-results{padding:50px 48px;background:radial-gradient(circle at 100% 0%,rgba(211,199,223,.2),transparent 34%),linear-gradient(145deg,#5A4A6B 0%,#4A2856 100%);color:#fff;display:flex;flex-direction:column;position:relative;overflow:hidden}
+.calculator-results::before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(110deg,transparent 20%,rgba(255,255,255,.045) 42%,transparent 64%);transform:translateX(-120%);animation:intelligenceSweep 8s ease-in-out infinite}
+.calculator-results > *{position:relative;z-index:1}
 .calculator-results-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,.18)}
 .calculator-results-kicker{font-family:var(--mono);font-size:.6875rem;text-transform:uppercase;letter-spacing:.16em;color:rgba(255,255,255,.68);margin-bottom:8px}
 .calculator-results h3{color:#fff;font-size:1.75rem}
-.calculator-result-note{font-family:var(--mono);font-size:.625rem;text-transform:uppercase;letter-spacing:.09em;color:rgba(255,255,255,.7);text-align:right;max-width:190px;line-height:1.5}
+.calculator-result-meta{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
+.calculator-result-note{font-family:var(--mono);font-size:.625rem;text-transform:uppercase;letter-spacing:.09em;color:rgba(255,255,255,.7);text-align:right;max-width:220px;line-height:1.5}
+.smart-live{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:.6rem;text-transform:uppercase;letter-spacing:.12em;color:#fff;padding:7px 10px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.08);border-radius:999px;white-space:nowrap}
+.smart-live-dot{width:6px;height:6px;border-radius:50%;background:#B8FFD1;box-shadow:0 0 0 4px rgba(184,255,209,.1);animation:smartPulse 2s ease-in-out infinite}
 .retirement-results-grid{display:grid;grid-template-columns:1fr 1fr;margin:12px 0 24px}
 .retirement-metric{padding:22px 18px;border-bottom:1px solid rgba(255,255,255,.16);min-width:0}
 .retirement-metric:nth-child(odd){border-right:1px solid rgba(255,255,255,.16);padding-left:0}
@@ -464,7 +472,16 @@ a{color:inherit;text-decoration:none}
 .metric-value{font-family:var(--serif);font-size:clamp(1.55rem,3vw,2.25rem);font-weight:500;letter-spacing:-.02em;line-height:1.05;color:#fff;overflow-wrap:anywhere}
 .metric-value-main{color:#fff;font-size:clamp(2.15rem,4.4vw,3.45rem)}
 .metric-prefix-word{display:block;font-family:var(--sans);font-size:.625rem;text-transform:uppercase;letter-spacing:.14em;color:rgba(255,255,255,.62);margin-bottom:5px}
-.calculator-context{font-size:.875rem;color:rgba(255,255,255,.78);line-height:1.55;margin-bottom:22px}
+.calculator-context{font-size:.875rem;color:rgba(255,255,255,.78);line-height:1.55;margin-bottom:20px}
+.smart-analysis{padding:18px 19px;margin:0 0 28px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.075);backdrop-filter:blur(8px)}
+.smart-analysis-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px}
+.smart-analysis-label{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.625rem;text-transform:uppercase;letter-spacing:.14em;color:#fff;font-weight:700}
+.smart-analysis-label::before{content:"✦";color:#D9C8E8;font-size:.8rem}
+.smart-analysis-state{font-family:var(--mono);font-size:.5625rem;text-transform:uppercase;letter-spacing:.09em;color:rgba(255,255,255,.58)}
+.smart-analysis p{font-size:.875rem;color:rgba(255,255,255,.88);line-height:1.58;margin:0}
+.smart-signals{display:flex;gap:7px;flex-wrap:wrap;margin-top:13px}
+.smart-signal{font-family:var(--mono);font-size:.5625rem;letter-spacing:.05em;color:rgba(255,255,255,.78);padding:6px 8px;border:1px solid rgba(255,255,255,.15);background:rgba(0,0,0,.08)}
+.metric-value.is-updating,.life-amount.is-updating{animation:valueRefresh .38s ease}
 .calculator-results .btn{align-self:flex-start;background:#fff;color:var(--purple-deep);box-shadow:none;text-align:center;justify-content:center}
 .calculator-results .btn:hover{background:var(--pink-bg);color:var(--purple-deep)}
 .calculator-disclaimer{font-family:var(--mono);font-size:.625rem;color:rgba(255,255,255,.62);line-height:1.55;letter-spacing:.01em;margin-top:18px}
@@ -474,9 +491,14 @@ a{color:inherit;text-decoration:none}
 .life-need-label{font-family:var(--serif);font-size:1.25rem;color:#fff;line-height:1.4;max-width:620px;margin-bottom:10px}
 .life-amount{font-family:var(--serif);font-size:clamp(2.7rem,6vw,4.5rem);line-height:1;color:#fff;letter-spacing:-.04em;margin-bottom:12px;overflow-wrap:anywhere}
 .life-suggested{font-family:var(--mono);font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:#fff;padding:12px 14px;background:rgba(255,255,255,.1);border-left:2px solid #fff;display:inline-block}
-.life-explanation{font-size:.9rem;color:rgba(255,255,255,.8);line-height:1.55;margin-bottom:22px}
+.life-explanation{font-size:.9rem;color:rgba(255,255,255,.8);line-height:1.55;margin-bottom:20px}
 .life-promise{font-family:var(--serif);font-size:1.45rem;color:#fff;line-height:1.25;margin-bottom:8px}
-.life-promise-copy{font-size:.875rem;color:rgba(255,255,255,.72);line-height:1.55;margin-bottom:22px}
+.life-promise-copy{font-size:.875rem;color:rgba(255,255,255,.72);line-height:1.55;margin-bottom:26px}
+@keyframes smartPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.55;transform:scale(.82)}}
+@keyframes smartScan{0%,100%{transform:scaleX(.18);opacity:.45}50%{transform:scaleX(1);opacity:1}}
+@keyframes intelligenceSweep{0%,68%{transform:translateX(-120%)}88%,100%{transform:translateX(120%)}}
+@keyframes valueRefresh{0%{opacity:.35;transform:translateY(3px)}100%{opacity:1;transform:translateY(0)}}
+@media (prefers-reduced-motion:reduce){.calculator-tab.is-active::after,.calculator-results::before,.smart-live-dot,.metric-value.is-updating,.life-amount.is-updating{animation:none}}
 
 /* Captura de prospecto desde las calculadoras */
 .lead-modal{max-width:610px}
@@ -493,7 +515,7 @@ a{color:inherit;text-decoration:none}
 /* ============================================================
    CIERRE — Última llamada
    ============================================================ */
-.closing{padding:160px 0;border-top:1px solid var(--ink);text-align:left;position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 0%,rgba(109,91,126,0.10) 0%,transparent 55%),var(--bg)}
+.closing{padding:184px 0;border-top:1px solid var(--ink);text-align:left;position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 0%,rgba(109,91,126,0.10) 0%,transparent 55%),var(--bg)}
 .closing > .container{position:relative;z-index:2}
 .closing .container{max-width:1100px}
 .closing .label{margin-bottom:40px}
@@ -507,7 +529,7 @@ a{color:inherit;text-decoration:none}
 /* ============================================================
    APP BANNER
    ============================================================ */
-.appbanner{padding:120px 0;border-top:1px solid var(--ink);background:linear-gradient(180deg,var(--paper) 0%,#FFFCF7 100%)}
+.appbanner{padding:152px 0;border-top:1px solid var(--ink);background:linear-gradient(180deg,var(--paper) 0%,#FFFCF7 100%)}
 .appbanner-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:80px;align-items:center}
 .appbanner-content .label{margin-bottom:20px}
 .appbanner-content h2{font-size:clamp(2rem,3.5vw,3rem);letter-spacing:-0.03em;line-height:1.05;margin-bottom:18px}
@@ -763,7 +785,10 @@ a{color:inherit;text-decoration:none}
   .calculator-tab:last-child{border-bottom:0}
   .calculator-form,.calculator-results{padding:26px 18px}
   .calculator-results-head{flex-direction:column;gap:8px}
+  .calculator-result-meta{align-items:flex-start}
   .calculator-result-note{text-align:left;max-width:none}
+  .smart-analysis-top{align-items:flex-start;flex-direction:column;gap:5px}
+  .smart-analysis{padding:16px;margin-bottom:24px}
   .retirement-results-grid{grid-template-columns:1fr}
   .retirement-metric{padding:18px 0;border-right:0!important}
   .metric-label{min-height:0}
@@ -907,7 +932,10 @@ a{color:inherit;text-decoration:none}
                 <div class="calculator-results-kicker">Tu estimación</div>
                 <h3>Un vistazo a tu retiro</h3>
               </div>
-              <div class="calculator-result-note">Proyección a los 65 años · rendimiento anual estimado 7.635%</div>
+              <div class="calculator-result-meta">
+                <div class="smart-live"><span class="smart-live-dot" aria-hidden="true"></span>Análisis activo</div>
+                <div class="calculator-result-note">Proyección a los 65 años · rendimiento anual estimado 7.635%</div>
+              </div>
             </div>
             <div class="retirement-results-grid">
               <div class="retirement-metric">
@@ -930,6 +958,18 @@ a{color:inherit;text-decoration:none}
               </div>
             </div>
             <p class="calculator-context" id="retirementContext">Aportarías durante 15 años; después, el capital acumulado continuaría creciendo hasta tus 65 años.</p>
+            <div class="smart-analysis" id="retirementAnalysis">
+              <div class="smart-analysis-top">
+                <span class="smart-analysis-label">Lectura inteligente</span>
+                <span class="smart-analysis-state">Escenario actualizado</span>
+              </div>
+              <p id="retirementInsight">Con este escenario aportarías $900,000 en total. La proyección estima $4,775,000 a los 65; la diferencia estimada por crecimiento compuesto sería de $3,875,000.</p>
+              <div class="smart-signals" aria-label="Variables clave del escenario">
+                <span class="smart-signal" id="retirementSignalHorizon">Horizonte · 30 años</span>
+                <span class="smart-signal" id="retirementSignalContributions">Aportaciones · 15 años</span>
+                <span class="smart-signal">ISR · estimado</span>
+              </div>
+            </div>
             <button class="btn btn-primary" type="button" onclick="openLeadForm('retirement')">Quiero una propuesta personalizada</button>
             <p class="calculator-disclaimer">Esta herramienta proporciona una simulación ilustrativa. Las proyecciones y beneficios fiscales son estimados y pueden variar. No representan rendimientos ni devoluciones garantizadas. Los beneficios fiscales están sujetos a la situación particular del contribuyente y a la legislación vigente. Tope fiscal usado: cinco UMA anuales de 2026.</p>
           </div>
@@ -980,7 +1020,10 @@ a{color:inherit;text-decoration:none}
                 <div class="calculator-results-kicker">Tu estimación</div>
                 <h3>Protección para tu familia</h3>
               </div>
-              <div class="calculator-result-note">Suma asegurada sugerida · no calcula el costo de la póliza</div>
+              <div class="calculator-result-meta">
+                <div class="smart-live"><span class="smart-live-dot" aria-hidden="true"></span>Análisis activo</div>
+                <div class="calculator-result-note">Suma asegurada sugerida · no calcula el costo de la póliza</div>
+              </div>
             </div>
             <div class="life-result-copy">
               <p class="life-dependents" id="lifeDependentsCopy">Tienes <strong>3 personas</strong> que dependen económicamente de ti.</p>
@@ -989,6 +1032,18 @@ a{color:inherit;text-decoration:none}
               <div class="life-suggested" id="lifeSuggested">Suma asegurada sugerida: $8.4 millones</div>
             </div>
             <p class="life-explanation">Esta protección busca ayudar a sustituir los ingresos que tu familia dejaría de recibir si tú llegaras a faltar.</p>
+            <div class="smart-analysis" id="lifeAnalysis">
+              <div class="smart-analysis-top">
+                <span class="smart-analysis-label">Lectura inteligente</span>
+                <span class="smart-analysis-state">Escenario actualizado</span>
+              </div>
+              <p id="lifeInsight">El modelo toma tu ingreso anual estimado de $840,000 y lo proyecta durante 10 años. Tu edad y dependientes se conservan para personalizar la cotización; no modifican esta suma base.</p>
+              <div class="smart-signals" aria-label="Variables clave del escenario">
+                <span class="smart-signal" id="lifeSignalAnnualIncome">Ingreso anual · $840,000</span>
+                <span class="smart-signal" id="lifeSignalDependents">3 dependientes</span>
+                <span class="smart-signal" id="lifeSignalYears">Protección · 10 años</span>
+              </div>
+            </div>
             <div class="life-promise">Protege hoy lo que más importa mañana.</div>
             <p class="life-promise-copy">Con un Seguro de Vida Vitalicio puedes construir una protección de largo plazo para las personas que más amas.</p>
             <button class="btn btn-primary" type="button" onclick="openLeadForm('life')">Quiero saber cuánto me costaría esta protección</button>
@@ -1455,6 +1510,16 @@ function formatMillions(value){
   return formatMXN(value);
 }
 
+function pulseCalculatedValues(ids){
+  ids.forEach(id => {
+    const element = document.getElementById(id);
+    if (!element || !element.classList) return;
+    element.classList.remove('is-updating');
+    void element.offsetWidth;
+    element.classList.add('is-updating');
+  });
+}
+
 function estimateAnnualIsr(income){
   const taxableIncome = Math.max(0, income);
   let tax = 0;
@@ -1482,6 +1547,9 @@ function clearRetirementResults(){
     document.getElementById(id).textContent = '—';
   });
   document.getElementById('retirementContext').textContent = 'Completa los tres datos para ver tu estimación.';
+  document.getElementById('retirementInsight').textContent = 'La lectura inteligente aparecerá cuando el escenario tenga datos válidos.';
+  document.getElementById('retirementSignalHorizon').textContent = 'Horizonte · —';
+  document.getElementById('retirementSignalContributions').textContent = 'Aportaciones · —';
   retirementSnapshot = null;
 }
 
@@ -1521,6 +1589,8 @@ function calculateRetirement(){
   );
 
   const roundedProjection = Math.round(projectedRetirement / 1000) * 1000;
+  const totalContributed = annualContribution * contributionYears;
+  const estimatedGrowth = Math.max(0, roundedProjection - totalContributed);
   document.getElementById('retirementTotal').textContent = formatMXN(roundedProjection);
   document.getElementById('retirementAnnual').textContent = formatMXN(annualContribution);
   document.getElementById('retirementDeductible').textContent = formatMXN(potentiallyDeductible);
@@ -1531,13 +1601,24 @@ function calculateRetirement(){
     ? 'Aportarías durante ' + contributionYears + ' ' + yearWord + '; después, el capital acumulado continuaría creciendo ' + growthOnlyYears + ' años más hasta tus 65 años.'
     : 'Aportarías durante los ' + contributionYears + ' ' + yearWord + ' disponibles hasta cumplir 65 años.';
   document.getElementById('retirementContext').textContent = context;
+  document.getElementById('retirementInsight').textContent =
+    'Con este escenario aportarías ' + formatMXN(totalContributed) +
+    ' en total. La proyección estima ' + formatMXN(roundedProjection) +
+    ' a los 65; la diferencia estimada por crecimiento compuesto sería de ' + formatMXN(estimatedGrowth) + '.';
+  document.getElementById('retirementSignalHorizon').textContent =
+    'Horizonte · ' + yearsToRetirement + (yearsToRetirement === 1 ? ' año' : ' años');
+  document.getElementById('retirementSignalContributions').textContent =
+    'Aportaciones · ' + contributionYears + ' ' + yearWord;
+  pulseCalculatedValues(['retirementTotal','retirementAnnual','retirementDeductible','retirementTaxSaving']);
 
   retirementSnapshot = {
     age,
     annualContribution,
     monthlyIncome,
     contributionYears,
+    totalContributed,
     projectedRetirement: roundedProjection,
+    estimatedGrowth,
     potentiallyDeductible,
     estimatedTaxSaving
   };
@@ -1548,6 +1629,10 @@ function clearLifeResults(){
   document.getElementById('lifeNeedLabel').textContent = 'Tu familia podría necesitar aproximadamente:';
   document.getElementById('lifeCoverage').textContent = '—';
   document.getElementById('lifeSuggested').textContent = 'Suma asegurada sugerida: —';
+  document.getElementById('lifeInsight').textContent = 'La lectura inteligente aparecerá cuando el escenario tenga datos válidos.';
+  document.getElementById('lifeSignalAnnualIncome').textContent = 'Ingreso anual · —';
+  document.getElementById('lifeSignalDependents').textContent = 'Dependientes · —';
+  document.getElementById('lifeSignalYears').textContent = 'Protección · —';
   lifeSnapshot = null;
 }
 
@@ -1569,7 +1654,8 @@ function calculateLifeProtection(){
   const monthlyIncome = Number(incomeInput.value);
   const dependents = Math.floor(Number(dependentsInput.value));
   const protectionYears = Number(yearsInput.value);
-  const suggestedCoverage = monthlyIncome * 12 * protectionYears;
+  const annualIncome = monthlyIncome * 12;
+  const suggestedCoverage = annualIncome * protectionYears;
 
   let dependentsCopy;
   if (dependents === 0){
@@ -1584,8 +1670,16 @@ function calculateLifeProtection(){
   document.getElementById('lifeNeedLabel').textContent = 'Para proteger ' + protectionYears + ' años de tus ingresos, tu familia podría necesitar aproximadamente:';
   document.getElementById('lifeCoverage').textContent = formatMXN(suggestedCoverage);
   document.getElementById('lifeSuggested').textContent = 'Suma asegurada sugerida: ' + formatMillions(suggestedCoverage);
+  document.getElementById('lifeInsight').textContent =
+    'El modelo toma tu ingreso anual estimado de ' + formatMXN(annualIncome) +
+    ' y lo proyecta durante ' + protectionYears + ' años. Tu edad y dependientes se conservan para personalizar la cotización; no modifican esta suma base.';
+  document.getElementById('lifeSignalAnnualIncome').textContent = 'Ingreso anual · ' + formatMXN(annualIncome);
+  document.getElementById('lifeSignalDependents').textContent =
+    dependents + (dependents === 1 ? ' dependiente' : ' dependientes');
+  document.getElementById('lifeSignalYears').textContent = 'Protección · ' + protectionYears + ' años';
+  pulseCalculatedValues(['lifeCoverage']);
 
-  lifeSnapshot = { age, monthlyIncome, dependents, protectionYears, suggestedCoverage };
+  lifeSnapshot = { age, monthlyIncome, annualIncome, dependents, protectionYears, suggestedCoverage };
 }
 
 function switchCalculator(type){
