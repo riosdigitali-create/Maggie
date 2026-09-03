@@ -972,7 +972,7 @@ a{color:inherit;text-decoration:none}
                 <h3>Un vistazo a tu retiro</h3>
               </div>
               <div class="calculator-result-meta">
-                <div class="smart-live"><span class="smart-live-dot" aria-hidden="true"></span>Análisis activo</div>
+                <div class="smart-live"><span class="smart-live-dot" aria-hidden="true"></span>Tu resultado</div>
                 <div class="calculator-result-note">Proyección a los 65 años · rendimiento anual estimado 7.635%</div>
               </div>
             </div>
@@ -999,14 +999,14 @@ a{color:inherit;text-decoration:none}
             <p class="calculator-context" id="retirementContext">Aportarías durante 15 años; después, el capital acumulado continuaría creciendo hasta tus 65 años.</p>
             <div class="smart-analysis" id="retirementAnalysis">
               <div class="smart-analysis-top">
-                <span class="smart-analysis-label">Lectura inteligente</span>
-                <span class="smart-analysis-state">Escenario actualizado</span>
+                <span class="smart-analysis-label">Lo que esto puede darte</span>
+                <span class="smart-analysis-state">A tus 65 años</span>
               </div>
-              <p id="retirementInsight">Con este escenario aportarías $900,000 en total. La proyección estima $4,775,000 a los 65; la diferencia estimada por crecimiento compuesto sería de $3,875,000.</p>
-              <div class="smart-signals" aria-label="Variables clave del escenario">
-                <span class="smart-signal" id="retirementSignalHorizon">Horizonte · 30 años</span>
-                <span class="smart-signal" id="retirementSignalContributions">Aportaciones · 15 años</span>
-                <span class="smart-signal">ISR · estimado</span>
+              <p id="retirementInsight">Podrías llegar a los 65 con un respaldo estimado de $4,775,000. Esto puede darte mayor tranquilidad para mantener tu estilo de vida y depender menos de tus ingresos laborales. Además, tu aportación podría generar un ahorro fiscal estimado de hasta $18,000 al año.</p>
+              <div class="smart-signals" aria-label="Beneficios estimados del resultado">
+                <span class="smart-signal" id="retirementSignalHorizon">Retiro proyectado · $4,775,000</span>
+                <span class="smart-signal" id="retirementSignalContributions">Ahorro fiscal · hasta $18,000</span>
+                <span class="smart-signal">Meta · mayor tranquilidad</span>
               </div>
             </div>
             <div class="calculator-result-actions">
@@ -1084,7 +1084,7 @@ a{color:inherit;text-decoration:none}
                 <h3>Protección para tu familia</h3>
               </div>
               <div class="calculator-result-meta">
-                <div class="smart-live"><span class="smart-live-dot" aria-hidden="true"></span>Análisis activo</div>
+                <div class="smart-live"><span class="smart-live-dot" aria-hidden="true"></span>Tu resultado</div>
                 <div class="calculator-result-note">Suma asegurada sugerida · no calcula el costo de la póliza</div>
               </div>
             </div>
@@ -1097,14 +1097,14 @@ a{color:inherit;text-decoration:none}
             <p class="life-explanation">Esta protección busca ayudar a sustituir los ingresos que tu familia dejaría de recibir si tú llegaras a faltar.</p>
             <div class="smart-analysis" id="lifeAnalysis">
               <div class="smart-analysis-top">
-                <span class="smart-analysis-label">Lectura inteligente</span>
-                <span class="smart-analysis-state">Escenario actualizado</span>
+                <span class="smart-analysis-label">Lo que esto puede proteger</span>
+                <span class="smart-analysis-state">Para tu familia</span>
               </div>
-              <p id="lifeInsight">El modelo toma tu ingreso anual estimado de $840,000 y lo proyecta durante 10 años. Tu edad y dependientes se conservan para personalizar la cotización; no modifican esta suma base.</p>
-              <div class="smart-signals" aria-label="Variables clave del escenario">
-                <span class="smart-signal" id="lifeSignalAnnualIncome">Ingreso anual · $840,000</span>
-                <span class="smart-signal" id="lifeSignalDependents">3 dependientes</span>
-                <span class="smart-signal" id="lifeSignalYears">Protección · 10 años</span>
+              <p id="lifeInsight">Una protección estimada de $8,400,000 podría ayudar a que las 3 personas que dependen de ti mantengan continuidad económica durante 10 años, dando respaldo para vivienda, educación y gastos cotidianos si tú llegaras a faltar.</p>
+              <div class="smart-signals" aria-label="Beneficios estimados del resultado">
+                <span class="smart-signal" id="lifeSignalAnnualIncome">Respaldo · $8.4 millones</span>
+                <span class="smart-signal" id="lifeSignalDependents">Personas protegidas · 3</span>
+                <span class="smart-signal" id="lifeSignalYears">Continuidad · 10 años</span>
               </div>
             </div>
             <div class="life-promise">Protege hoy lo que más importa mañana.</div>
@@ -1611,9 +1611,9 @@ function clearRetirementResults(){
     document.getElementById(id).textContent = '—';
   });
   document.getElementById('retirementContext').textContent = 'Completa los tres datos para ver tu estimación.';
-  document.getElementById('retirementInsight').textContent = 'La lectura inteligente aparecerá cuando el escenario tenga datos válidos.';
-  document.getElementById('retirementSignalHorizon').textContent = 'Horizonte · —';
-  document.getElementById('retirementSignalContributions').textContent = 'Aportaciones · —';
+  document.getElementById('retirementInsight').textContent = 'Completa las preguntas para conocer qué puede representar este respaldo para tu retiro.';
+  document.getElementById('retirementSignalHorizon').textContent = 'Retiro proyectado · —';
+  document.getElementById('retirementSignalContributions').textContent = 'Ahorro fiscal · —';
   retirementSnapshot = null;
 }
 
@@ -1666,13 +1666,13 @@ function calculateRetirement(){
     : 'Aportarías durante los ' + contributionYears + ' ' + yearWord + ' disponibles hasta cumplir 65 años.';
   document.getElementById('retirementContext').textContent = context;
   document.getElementById('retirementInsight').textContent =
-    'Con este escenario aportarías ' + formatMXN(totalContributed) +
-    ' en total. La proyección estima ' + formatMXN(roundedProjection) +
-    ' a los 65; la diferencia estimada por crecimiento compuesto sería de ' + formatMXN(estimatedGrowth) + '.';
+    'Podrías llegar a los 65 con un respaldo estimado de ' + formatMXN(roundedProjection) +
+    '. Esto puede darte mayor tranquilidad para mantener tu estilo de vida y depender menos de tus ingresos laborales. Además, tu aportación podría generar un ahorro fiscal estimado de hasta ' +
+    formatMXN(estimatedTaxSaving) + ' al año.';
   document.getElementById('retirementSignalHorizon').textContent =
-    'Horizonte · ' + yearsToRetirement + (yearsToRetirement === 1 ? ' año' : ' años');
+    'Retiro proyectado · ' + formatMXN(roundedProjection);
   document.getElementById('retirementSignalContributions').textContent =
-    'Aportaciones · ' + contributionYears + ' ' + yearWord;
+    'Ahorro fiscal · hasta ' + formatMXN(estimatedTaxSaving);
   pulseCalculatedValues(['retirementTotal','retirementAnnual','retirementDeductible','retirementTaxSaving']);
 
   retirementSnapshot = {
@@ -1694,10 +1694,10 @@ function clearLifeResults(){
   document.getElementById('lifeNeedLabel').textContent = 'Tu familia podría necesitar aproximadamente:';
   document.getElementById('lifeCoverage').textContent = '—';
   document.getElementById('lifeSuggested').textContent = 'Suma asegurada sugerida: —';
-  document.getElementById('lifeInsight').textContent = 'La lectura inteligente aparecerá cuando el escenario tenga datos válidos.';
-  document.getElementById('lifeSignalAnnualIncome').textContent = 'Ingreso anual · —';
-  document.getElementById('lifeSignalDependents').textContent = 'Dependientes · —';
-  document.getElementById('lifeSignalYears').textContent = 'Protección · —';
+  document.getElementById('lifeInsight').textContent = 'Completa las preguntas para conocer qué puede representar esta protección para tu familia.';
+  document.getElementById('lifeSignalAnnualIncome').textContent = 'Respaldo · —';
+  document.getElementById('lifeSignalDependents').textContent = 'Personas protegidas · —';
+  document.getElementById('lifeSignalYears').textContent = 'Continuidad · —';
   lifeSnapshot = null;
 }
 
@@ -1735,13 +1735,26 @@ function calculateLifeProtection(){
   document.getElementById('lifeNeedLabel').textContent = 'Para proteger ' + protectionYears + ' años de tus ingresos, tu familia podría necesitar aproximadamente:';
   document.getElementById('lifeCoverage').textContent = formatMXN(suggestedCoverage);
   document.getElementById('lifeSuggested').textContent = 'Suma asegurada sugerida: ' + formatMillions(suggestedCoverage);
-  document.getElementById('lifeInsight').textContent =
-    'El modelo toma tu ingreso anual estimado de ' + formatMXN(annualIncome) +
-    ' y lo proyecta durante ' + protectionYears + ' años. Tu edad y dependientes se conservan para personalizar la cotización; no modifican esta suma base.';
-  document.getElementById('lifeSignalAnnualIncome').textContent = 'Ingreso anual · ' + formatMXN(annualIncome);
-  document.getElementById('lifeSignalDependents').textContent =
-    dependents + (dependents === 1 ? ' dependiente' : ' dependientes');
-  document.getElementById('lifeSignalYears').textContent = 'Protección · ' + protectionYears + ' años';
+  let lifeBenefitCopy;
+  if(dependents === 0){
+    lifeBenefitCopy = 'Una protección estimada de ' + formatMXN(suggestedCoverage) +
+      ' podría ayudar a cubrir compromisos y mantener continuidad económica durante ' + protectionYears +
+      ' años si tú llegaras a faltar. La propuesta personalizada permitirá ajustar este respaldo a tus prioridades.';
+  }else if(dependents === 1){
+    lifeBenefitCopy = 'Una protección estimada de ' + formatMXN(suggestedCoverage) +
+      ' podría ayudar a que la persona que depende de ti mantenga continuidad económica durante ' + protectionYears +
+      ' años, dando respaldo para vivienda, educación y gastos cotidianos si tú llegaras a faltar.';
+  }else{
+    lifeBenefitCopy = 'Una protección estimada de ' + formatMXN(suggestedCoverage) +
+      ' podría ayudar a que las ' + dependents + ' personas que dependen de ti mantengan continuidad económica durante ' + protectionYears +
+      ' años, dando respaldo para vivienda, educación y gastos cotidianos si tú llegaras a faltar.';
+  }
+  document.getElementById('lifeInsight').textContent = lifeBenefitCopy;
+  document.getElementById('lifeSignalAnnualIncome').textContent = 'Respaldo · ' + formatMillions(suggestedCoverage);
+  document.getElementById('lifeSignalDependents').textContent = dependents === 0
+    ? 'Compromisos protegidos'
+    : 'Personas protegidas · ' + dependents;
+  document.getElementById('lifeSignalYears').textContent = 'Continuidad · ' + protectionYears + ' años';
   pulseCalculatedValues(['lifeCoverage']);
 
   lifeSnapshot = { age, monthlyIncome, annualIncome, dependents, protectionYears, suggestedCoverage };
