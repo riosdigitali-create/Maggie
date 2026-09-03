@@ -881,7 +881,7 @@ a{color:inherit;text-decoration:none}
 
 <!-- NAV -->
 <nav class="nav">
-  <a href="#" class="logo">
+  <a href="/" class="logo" data-restart-page aria-label="Volver al inicio y reiniciar las calculadoras">
     <span class="logo-mark">MS.</span>
     <span class="logo-text">
       <span class="logo-name">Maggie Salmerón</span>
@@ -1432,7 +1432,7 @@ a{color:inherit;text-decoration:none}
   <div class="container">
     <div class="footer-top">
       <div>
-        <a href="#" class="logo">
+        <a href="/" class="logo" data-restart-page aria-label="Volver al inicio y reiniciar las calculadoras">
           <span class="logo-mark">MS.</span>
           <span class="logo-text">
             <span class="logo-name">Maggie Salmerón</span>
@@ -2005,6 +2005,17 @@ leadForm.addEventListener('submit', event => {
   const whatsappUrl = 'https://wa.me/525576408221?text=' + encodeURIComponent(lines.join('\n'));
   window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
   closeLeadForm();
+});
+
+document.querySelectorAll('[data-restart-page]').forEach(link => {
+  link.addEventListener('click', event => {
+    event.preventDefault();
+    if (window.location.search || window.location.hash){
+      window.location.assign(window.location.pathname);
+    } else {
+      window.location.reload();
+    }
+  });
 });
 
 showJourneyStep('retirement', 0, false);
