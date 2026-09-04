@@ -43,11 +43,11 @@ export default function Dashboard({ refreshKey, onAddLead, onOpenLead, onNavigat
 
       <section className="metric-grid">
         <article className="metric-card metric-card--accent">
-          <span>Prospectos y clientes</span><strong>{data.totals.all}</strong><small><Users size={14} /> {data.totals.thisMonth} nuevos este mes</small>
+          <span className="metric-card__top"><i><Users size={17} /></i> Prospectos y clientes</span><strong>{data.totals.all}</strong><small>{data.totals.thisMonth} nuevos este mes</small>
         </article>
-        <article className="metric-card"><span>Seguimientos próximos</span><strong>{data.followUps.length}</strong><small><Clock3 size={14} /> En los siguientes 7 días</small></article>
-        <article className="metric-card"><span>Citas esta semana</span><strong>{data.appointments.length}</strong><small><CalendarDays size={14} /> Confirmadas en el CRM</small></article>
-        <article className="metric-card"><span>Conversión de la landing</span><strong>{conversion}%</strong><small><CircleDollarSign size={14} /> {leads} datos recibidos</small></article>
+        <article className="metric-card"><span className="metric-card__top"><i><Clock3 size={17} /></i> Seguimientos próximos</span><strong>{data.followUps.length}</strong><small>En los siguientes 7 días</small></article>
+        <article className="metric-card"><span className="metric-card__top"><i><CalendarDays size={17} /></i> Citas esta semana</span><strong>{data.appointments.length}</strong><small>Confirmadas en el CRM</small></article>
+        <article className="metric-card"><span className="metric-card__top"><i><CircleDollarSign size={17} /></i> Conversión de la landing</span><strong>{conversion}%</strong><small>{leads} datos recibidos</small></article>
       </section>
 
       <section className="dashboard-grid">

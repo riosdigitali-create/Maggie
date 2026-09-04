@@ -32,6 +32,11 @@ export default function Login({ onSuccess }: { onSuccess: () => void }) {
           <span className="eyebrow"><Sparkles size={14} /> Tu cartera, con claridad</span>
           <h1>Todo lo que construyes,<br /><em>bien acompañado.</em></h1>
           <p>Prospectos, clientes, seguimientos, citas y renovaciones en un solo lugar privado.</p>
+          <div className="login-story__details" aria-label="Funciones principales">
+            <span>Prospectos desde la landing</span>
+            <span>Agenda y seguimientos</span>
+            <span>Renovaciones a tiempo</span>
+          </div>
         </div>
         <p className="login-story__quote">“Un buen seguimiento convierte una intención en protección real.”</p>
       </section>
@@ -60,7 +65,7 @@ export default function Login({ onSuccess }: { onSuccess: () => void }) {
           <button className="button button--primary button--wide" disabled={loading}>
             {loading ? "Abriendo…" : "Entrar al CRM"}
           </button>
-          <small className="login-card__security">Sesión privada y datos protegidos.</small>
+          <small className="login-card__security"><i /> Sesión privada y datos protegidos.</small>
         </form>
       </section>
     </main>

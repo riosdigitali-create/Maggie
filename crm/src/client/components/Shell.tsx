@@ -1,5 +1,5 @@
 import { ReactNode, useState } from "react";
-import { BarChart3, CalendarDays, ChevronLeft, ChevronRight, Gauge, LogOut, Menu, RefreshCw, Settings, Users, X } from "lucide-react";
+import { BarChart3, CalendarDays, ChevronLeft, ChevronRight, Gauge, Link2, LogOut, Menu, RefreshCw, Settings, Users, X } from "lucide-react";
 import type { Section } from "../types";
 import Brand from "./Brand";
 
@@ -9,7 +9,7 @@ const items: Array<{ id: Section; label: string; icon: typeof Gauge }> = [
   { id: "agenda", label: "Agenda", icon: CalendarDays },
   { id: "renovaciones", label: "Renovaciones", icon: RefreshCw },
   { id: "metricas", label: "Métricas de la landing", icon: BarChart3 },
-  { id: "ajustes", label: "Conexiones", icon: Settings },
+  { id: "ajustes", label: "Conexiones y seguridad", icon: Settings },
 ];
 
 export default function Shell({ section, onNavigate, onLogout, children, topAction }: {
@@ -22,6 +22,7 @@ export default function Shell({ section, onNavigate, onLogout, children, topActi
   const [collapsed, setCollapsed] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const current = items.find(item => item.id === section);
+  const today = new Intl.DateTimeFormat("es-MX", { weekday: "long", day: "numeric", month: "long" }).format(new Date());
   const navigate = (next: Section) => {
     onNavigate(next);
     setMobileOpen(false);
@@ -59,6 +60,10 @@ export default function Shell({ section, onNavigate, onLogout, children, topActi
           <div>
             <span className="topbar__overline">MaggIA CRM</span>
             <strong>{current?.label || "Inicio"}</strong>
+          </div>
+          <div className="topbar__context" aria-label="Estado del CRM">
+            <span className="topbar__date">{today}</span>
+            <span className="connection-chip"><i /><Link2 size={13} /> Landing conectada</span>
           </div>
           <div className="topbar__actions">{topAction}</div>
         </header>
