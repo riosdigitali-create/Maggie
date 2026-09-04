@@ -13,7 +13,6 @@
 <meta property="og:image" content="hero-illustration.webp" />
 <meta property="og:locale" content="es_MX" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="crm-api-url" content="https://maggia-crm.riosdigitali.workers.dev" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="preload" as="image" href="hero-illustration.webp" fetchpriority="high" />
@@ -508,7 +507,7 @@ a{color:inherit;text-decoration:none}
 .result-lead-capture{padding:22px;margin:0 0 24px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.075)}
 .result-lead-heading{font-family:var(--serif);font-size:1.35rem;font-weight:500;color:#fff;line-height:1.2;margin-bottom:7px}
 .result-lead-copy{font-size:.82rem;color:rgba(255,255,255,.74);line-height:1.5;margin-bottom:17px}
-.result-lead-fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:16px}
+.result-lead-fields{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
 .result-lead-field label{display:block;font-family:var(--mono);font-size:.6rem;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.72);margin-bottom:7px}
 .result-lead-field input{width:100%;height:50px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.96);color:var(--ink);padding:0 14px;font-family:var(--sans);font-size:.95rem;border-radius:0}
 .result-lead-field input:focus{outline:none;border-color:#fff;box-shadow:0 0 0 3px rgba(255,255,255,.14)}
@@ -977,15 +976,11 @@ a{color:inherit;text-decoration:none}
             </div>
             <form class="result-lead-capture" data-result-lead-form="retirement">
               <div class="result-lead-heading">Recibe una propuesta basada en tu resultado</div>
-              <p class="result-lead-copy">Déjame tu nombre, correo y teléfono para preparar una asesoría personalizada.</p>
+              <p class="result-lead-copy">Déjame tu nombre y teléfono para preparar una asesoría personalizada.</p>
               <div class="result-lead-fields">
                 <div class="result-lead-field">
                   <label for="retirementLeadName">Nombre</label>
                   <input id="retirementLeadName" name="name" type="text" autocomplete="name" required minlength="2" placeholder="Tu nombre" />
-                </div>
-                <div class="result-lead-field">
-                  <label for="retirementLeadEmail">Correo electrónico</label>
-                  <input id="retirementLeadEmail" name="email" type="email" autocomplete="email" required placeholder="tu@correo.com" />
                 </div>
                 <div class="result-lead-field">
                   <label for="retirementLeadPhone">Número de teléfono / WhatsApp</label>
@@ -996,7 +991,7 @@ a{color:inherit;text-decoration:none}
                 <button class="btn btn-primary" type="submit">Quiero una propuesta personalizada</button>
                 <button class="btn btn-ghost btn-result-edit" type="button" onclick="editCalculator('retirement')">Cambiar mis respuestas</button>
               </div>
-              <p class="result-lead-privacy">Al continuar, tus datos y el resultado se guardarán de forma privada para dar seguimiento a tu solicitud; también se abrirá WhatsApp con la información lista para enviar a Maggie.</p>
+              <p class="result-lead-privacy">Al continuar, se abrirá WhatsApp con tu nombre, teléfono y resultado listos para enviar a Maggie.</p>
             </form>
             <p class="calculator-disclaimer">Esta herramienta proporciona una simulación ilustrativa. Las proyecciones y beneficios fiscales son estimados y pueden variar. No representan rendimientos ni devoluciones garantizadas. Los beneficios fiscales están sujetos a la situación particular del contribuyente y a la legislación vigente. Tope fiscal usado: cinco UMA anuales de 2026.</p>
           </div>
@@ -1103,15 +1098,11 @@ a{color:inherit;text-decoration:none}
             <p class="life-promise-copy">Con un Seguro de Vida Vitalicio puedes construir una protección de largo plazo para las personas que más amas.</p>
             <form class="result-lead-capture" data-result-lead-form="life">
               <div class="result-lead-heading">Conoce tu cotización personalizada</div>
-              <p class="result-lead-copy">Déjame tu nombre, correo y teléfono para preparar una asesoría basada en esta protección.</p>
+              <p class="result-lead-copy">Déjame tu nombre y teléfono para preparar una asesoría basada en esta protección.</p>
               <div class="result-lead-fields">
                 <div class="result-lead-field">
                   <label for="lifeLeadName">Nombre</label>
                   <input id="lifeLeadName" name="name" type="text" autocomplete="name" required minlength="2" placeholder="Tu nombre" />
-                </div>
-                <div class="result-lead-field">
-                  <label for="lifeLeadEmail">Correo electrónico</label>
-                  <input id="lifeLeadEmail" name="email" type="email" autocomplete="email" required placeholder="tu@correo.com" />
                 </div>
                 <div class="result-lead-field">
                   <label for="lifeLeadPhone">Número de teléfono / WhatsApp</label>
@@ -1122,7 +1113,7 @@ a{color:inherit;text-decoration:none}
                 <button class="btn btn-primary" type="submit">Quiero conocer mi cotización personalizada</button>
                 <button class="btn btn-ghost btn-result-edit" type="button" onclick="editCalculator('life')">Cambiar mis respuestas</button>
               </div>
-              <p class="result-lead-privacy">Al continuar, tus datos y el resultado se guardarán de forma privada para dar seguimiento a tu solicitud; también se abrirá WhatsApp con la información lista para enviar a Maggie.</p>
+              <p class="result-lead-privacy">Al continuar, se abrirá WhatsApp con tu nombre, teléfono y resultado listos para enviar a Maggie.</p>
             </form>
             <p class="calculator-disclaimer">El monto mostrado es únicamente una referencia de presupuesto y no representa el costo de una póliza ni una cotización. La prima y suma asegurada finales dependerán de las características del asegurado, producto, coberturas y proceso de suscripción.</p>
           </div>
@@ -1504,43 +1495,6 @@ const ISR_BRACKETS = [
 let retirementSnapshot = null;
 let lifeSnapshot = null;
 const journeyState = { retirement: 0, life: 0 };
-const LANDING_CRM_API = (document.querySelector('meta[name="crm-api-url"]')?.content || '').replace(/\/$/, '');
-
-function getLandingSessionId(){
-  try{
-    const key = 'maggie_landing_session';
-    const existing = localStorage.getItem(key);
-    if(existing) return existing;
-    const created = window.crypto?.randomUUID?.() || ('landing-' + Date.now() + '-' + Math.random().toString(36).slice(2));
-    localStorage.setItem(key, created);
-    return created;
-  }catch(error){
-    return 'landing-' + Date.now() + '-' + Math.random().toString(36).slice(2);
-  }
-}
-
-const landingSessionId = getLandingSessionId();
-
-function sendCrmRequest(path, payload){
-  if(!LANDING_CRM_API) return Promise.resolve(null);
-  return fetch(LANDING_CRM_API + path, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(payload),
-    keepalive: true
-  }).catch(() => null);
-}
-
-function trackLandingEvent(eventType, calculatorType = null, metadata = null){
-  void sendCrmRequest('/api/public/events', {
-    event_type: eventType,
-    anonymous_session_id: landingSessionId,
-    calculator_type: calculatorType,
-    metadata
-  });
-}
-
-trackLandingEvent('page_view', null, { path: window.location.pathname, referrer: document.referrer || null });
 
 function formatMXN(value){
   return '$' + Math.round(value).toLocaleString('es-MX');
@@ -1823,7 +1777,6 @@ function revealCalculatorResult(type){
   journey.results.classList.remove('is-revealed');
   void journey.results.offsetWidth;
   journey.results.classList.add('is-revealed');
-  trackLandingEvent('calculation_completed', type, { source: 'calculator' });
   setTimeout(() => journey.results.focus({ preventScroll: true }), 120);
 }
 
@@ -1884,8 +1837,6 @@ function startCalculator(type){
   journey.results.hidden = true;
   journey.form.hidden = false;
   showJourneyStep(type, 0);
-  trackLandingEvent('calculator_selected', type, { source: 'chooser' });
-  trackLandingEvent('calculation_started', type, { source: 'chooser' });
 }
 
 document.querySelectorAll('[data-calculator-choice]').forEach(choice => {
@@ -1911,7 +1862,6 @@ document.querySelectorAll('[data-result-lead-form]').forEach(form => {
     if (!snapshot) return;
 
     const name = form.elements.namedItem('name').value.trim();
-    const email = form.elements.namedItem('email').value.trim();
     const phone = phoneField.value.trim();
     if (phone.replace(/\D/g, '').length < 10){
       phoneField.setCustomValidity('Escribe un número de teléfono de al menos 10 dígitos.');
@@ -1920,7 +1870,6 @@ document.querySelectorAll('[data-result-lead-form]').forEach(form => {
     }
     const lines = [
       'Hola Maggie 👋 Soy ' + name + '.',
-      'Mi correo: ' + email,
       'Mi teléfono / WhatsApp: ' + phone,
       ''
     ];
@@ -1955,54 +1904,9 @@ document.querySelectorAll('[data-result-lead-form]').forEach(form => {
       );
     }
 
-    const leadPayload = type === 'retirement' ? {
-      full_name: name,
-      email,
-      phone,
-      calculator_type: 'retiro',
-      interest_type: 'retiro',
-      anonymous_session_id: landingSessionId,
-      calculated_amount: snapshot.projectedRetirement,
-      annual_budget: snapshot.annualContribution,
-      calculation: {
-        edad_actual: snapshot.age,
-        aportacion_anual: snapshot.annualContribution,
-        ingreso_mensual: snapshot.monthlyIncome,
-        anos_aportando: snapshot.contributionYears,
-        total_aportado: snapshot.totalContributed,
-        crecimiento_estimado: snapshot.estimatedGrowth,
-        deduccion_potencial: snapshot.potentiallyDeductible,
-        ahorro_fiscal_estimado: snapshot.estimatedTaxSaving
-      }
-    } : {
-      full_name: name,
-      email,
-      phone,
-      calculator_type: 'vida',
-      interest_type: 'vida',
-      anonymous_session_id: landingSessionId,
-      calculated_amount: snapshot.suggestedCoverage,
-      annual_budget: snapshot.annualProtectionBudget,
-      calculation: {
-        edad_actual: snapshot.age,
-        ingreso_mensual: snapshot.monthlyIncome,
-        ingreso_anual: snapshot.annualIncome,
-        dependientes: snapshot.dependents,
-        anos_proteccion: snapshot.protectionYears,
-        proteccion_sugerida: snapshot.suggestedCoverage,
-        presupuesto_anual_orientativo: snapshot.annualProtectionBudget
-      }
-    };
-    void sendCrmRequest('/api/public/leads', leadPayload);
-    trackLandingEvent('whatsapp_clicked', type, { source: 'result_cta' });
-
     const whatsappUrl = 'https://wa.me/525576408221?text=' + encodeURIComponent(lines.join('\n'));
     window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
   });
-});
-
-document.querySelectorAll('a[href*="agendar"], a[href*="cita"]').forEach(link => {
-  link.addEventListener('click', () => trackLandingEvent('appointment_intent', null, { href: link.getAttribute('href') }));
 });
 
 document.querySelectorAll('[data-restart-page]').forEach(link => {

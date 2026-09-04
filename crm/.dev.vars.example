@@ -1,0 +1,4 @@
+# Copia este archivo como .dev.vars para desarrollo local. Nunca subas secretos al repositorio.
+CRM_PASSWORD=coloca-la-contrasena-local
+SESSION_SECRET=coloca-un-secreto-largo-y-aleatorio
+DATA_ENCRYPTION_KEY=coloca-32-bytes-en-base64
