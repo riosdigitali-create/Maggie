@@ -1,5 +1,5 @@
 import { askMaggia, configureGoogle, configureOpenAI, createGoogleCalendarEvent, disconnectIntegration, extractPolicy, finishGoogleOAuth, getIntegrationStatuses, googleAuthorizationUrl } from "./server/integrations";
-import { addActivity, analyticsOverview, createLead, createOrMergePublicLead, dashboard, getLead, listAppointments, listLeads, listRenewals, maggiaContext, recordAnalyticsEvent, saveAppointment, savePolicy, updateLead } from "./server/data";
+import { addActivity, analyticsOverview, createLead, createOrMergePublicLead, dashboard, deleteLead, getLead, listAppointments, listLeads, listRenewals, maggiaContext, recordAnalyticsEvent, saveAppointment, savePolicy, updateLead } from "./server/data";
 import { fail, isMutation, json, readJson, textValue } from "./server/http";
 import { changeAdminPassword, clearLoginAttempts, clearSessionCookie, createSignedToken, isAuthenticated, loginRateLimited, recordFailedLogin, sessionCookie, verifyAdminPassword } from "./server/security";
 import type { JsonObject } from "./server/types";
@@ -156,6 +156,10 @@ async function api(request: Request, env: Env): Promise<Response> {
   if (leadMatch && request.method === "PUT") {
     const bundle = await updateLead(env, leadMatch[1], await readJson(request));
     return bundle ? json(bundle) : fail("El prospecto no existe.", 404);
+  }
+  if (leadMatch && request.method === "DELETE") {
+    const deleted = await deleteLead(env, leadMatch[1]);
+    return deleted ? json({ ok: true, deletedId: leadMatch[1] }) : fail("El prospecto no existe.", 404);
   }
 
   const activityMatch = pathname.match(/^\/api\/leads\/([a-zA-Z0-9-]+)\/activities$/);

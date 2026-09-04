@@ -39,7 +39,7 @@ export default function App() {
   return <>
     <Shell section={section} onNavigate={navigate} onLogout={() => void logout()}><Suspense fallback={<LoadingBlock />}>{content}</Suspense></Shell>
     {addLead && <AddLeadModal onClose={() => setAddLead(false)} onCreated={created} />}
-    {selectedLead && <ClientDrawer id={selectedLead} onClose={() => setSelectedLead(null)} onChanged={changed} />}
+    {selectedLead && <ClientDrawer id={selectedLead} onClose={() => setSelectedLead(null)} onChanged={changed} onDeleted={() => { setSelectedLead(null); changed(); }} />}
     <MaggiaAgent />
   </>;
 }

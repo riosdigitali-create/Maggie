@@ -1,5 +1,5 @@
 import { FormEvent, useEffect, useMemo, useRef, useState } from "react";
-import { Bot, CalendarPlus, Check, ExternalLink, FileSearch, FileText, Mail, MessageCircle, Phone, Plus, Save, ShieldCheck, Sparkles, UploadCloud, UserRound } from "lucide-react";
+import { AlertTriangle, Bot, CalendarPlus, Check, ExternalLink, FileSearch, FileText, Mail, MessageCircle, Phone, Plus, Save, ShieldCheck, Sparkles, Trash2, UploadCloud, UserRound } from "lucide-react";
 import { api } from "../api";
 import type { Appointment, LeadBundle, LeadStatus, Policy } from "../types";
 import { dateTime, Field, initials, interestLabels, LoadingBlock, Modal, money, shortDate, statusLabels } from "../ui";
@@ -16,13 +16,14 @@ function titleCase(value: string): string {
   return value.replace(/_/g, " ").replace(/\b\w/g, char => char.toUpperCase());
 }
 
-export default function ClientDrawer({ id, onClose, onChanged }: { id: string; onClose: () => void; onChanged: () => void }) {
+export default function ClientDrawer({ id, onClose, onChanged, onDeleted }: { id: string; onClose: () => void; onChanged: () => void; onDeleted: () => void }) {
   const [bundle, setBundle] = useState<LeadBundle | null>(null);
   const [tab, setTab] = useState<Tab>("resumen");
   const [error, setError] = useState("");
   const [busy, setBusy] = useState("");
   const [policyDraft, setPolicyDraft] = useState<PolicyDraft | null>(null);
   const [fileName, setFileName] = useState("");
+  const [confirmingDelete, setConfirmingDelete] = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
 
   const reload = async () => {
@@ -103,6 +104,17 @@ export default function ClientDrawer({ id, onClose, onChanged }: { id: string; o
     finally { setBusy(""); }
   }
 
+  async function removeLead() {
+    setBusy("delete"); setError("");
+    try {
+      await api<{ ok: true }>(`/api/leads/${id}`, { method: "DELETE" });
+      onDeleted();
+    } catch (caught) {
+      setError(caught instanceof Error ? caught.message : "No fue posible eliminar el lead.");
+      setBusy("");
+    }
+  }
+
   if (!bundle) return <Modal title="Ficha del cliente" onClose={onClose} wide>{error ? <div className="notice notice--error">{error}</div> : <LoadingBlock />}</Modal>;
   const { lead } = bundle;
   const phoneDigits = lead.phone.replace(/\D/g, "");
@@ -129,7 +141,7 @@ export default function ClientDrawer({ id, onClose, onChanged }: { id: string; o
       </div>
       {error && <div className="notice notice--error">{error}</div>}
 
-      {tab === "resumen" && (
+      {tab === "resumen" && (<>
         <div className="detail-layout">
           <form className="panel form-stack" onSubmit={saveProfile}>
             <header className="panel__header"><div><span className="eyebrow">Datos de contacto</span><h3>Información principal</h3></div></header>
@@ -151,7 +163,20 @@ export default function ClientDrawer({ id, onClose, onChanged }: { id: string; o
             <article className="panel quick-summary"><span className="eyebrow">Siguiente paso</span><h3>{lead.next_follow_up_at ? dateTime(lead.next_follow_up_at) : "Sin seguimiento programado"}</h3><p>Creado el {shortDate(lead.created_at)} · Origen: {lead.source}</p><button className="text-button" onClick={() => setTab("seguimiento")}>Agregar seguimiento <ExternalLink size={14} /></button></article>
           </div>
         </div>
-      )}
+        <section className={`delete-zone ${confirmingDelete ? "is-confirming" : ""}`}>
+          <span className="delete-zone__icon"><AlertTriangle size={19} /></span>
+          <div className="delete-zone__copy">
+            <strong>Eliminar este lead</strong>
+            <p>Se borrarán sus datos, seguimientos, pólizas, citas y avisos guardados en el CRM. Los eventos ya creados en Google Calendar no se eliminarán.</p>
+          </div>
+          {confirmingDelete ? (
+            <div className="delete-zone__actions">
+              <button className="button button--ghost" type="button" onClick={() => setConfirmingDelete(false)} disabled={busy === "delete"}>Cancelar</button>
+              <button className="button button--danger" type="button" onClick={() => void removeLead()} disabled={busy === "delete"}><Trash2 size={17} /> {busy === "delete" ? "Eliminando…" : `Sí, eliminar a ${lead.full_name.split(" ")[0]}`}</button>
+            </div>
+          ) : <button className="text-button text-button--danger" type="button" onClick={() => setConfirmingDelete(true)}><Trash2 size={16} /> Eliminar lead</button>}
+        </section>
+      </>)}
 
       {tab === "seguimiento" && (
         <div className="detail-layout">

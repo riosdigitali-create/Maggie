@@ -174,6 +174,25 @@ export async function updateLead(env: Env, id: string, body: JsonObject): Promis
   return getLead(env, id);
 }
 
+export async function deleteLead(env: Env, id: string): Promise<boolean> {
+  const existing = await env.DB.prepare("SELECT id FROM leads WHERE id = ?").bind(id).first<{ id: string }>();
+  if (!existing) return false;
+
+  await env.DB.batch([
+    env.DB.prepare(`
+      DELETE FROM notifications
+      WHERE entity_id = ?
+        OR entity_id IN (SELECT id FROM policies WHERE lead_id = ?)
+        OR entity_id IN (SELECT id FROM appointments WHERE lead_id = ?)
+    `).bind(id, id, id),
+    env.DB.prepare("DELETE FROM activities WHERE lead_id = ?").bind(id),
+    env.DB.prepare("DELETE FROM policies WHERE lead_id = ?").bind(id),
+    env.DB.prepare("DELETE FROM appointments WHERE lead_id = ?").bind(id),
+    env.DB.prepare("DELETE FROM leads WHERE id = ?").bind(id),
+  ]);
+  return true;
+}
+
 export async function addActivity(env: Env, leadId: string, body: JsonObject): Promise<JsonObject> {
   const note = textValue(body.note, 5_000);
   if (!note) throw new Error("Escribe una nota de seguimiento.");

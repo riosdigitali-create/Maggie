@@ -146,6 +146,15 @@ button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-vis
 .lead-overview__icon{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;flex:0 0 auto;background:var(--purple-soft);color:var(--purple)}
 .lead-overview__icon--connected{background:#e8f3eb;color:#3f7d50}
 .lead-overview__icon--attention{background:#f8ecdc;color:#91612a}
+.button--danger{background:#9e3e50;color:#fff;box-shadow:0 9px 20px rgba(126,39,58,.17)}
+.button--danger:hover{background:#7f2f40}
+.delete-zone{display:flex;align-items:center;gap:14px;padding:16px 18px;margin-top:18px;border:1px solid #ead5d9;border-radius:var(--radius);background:rgba(255,248,248,.75)}
+.delete-zone.is-confirming{background:#fff3f4;border-color:#dcaeb7}
+.delete-zone__icon{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;flex:0 0 auto;background:#f7e3e7;color:#9e3e50}
+.delete-zone__copy{min-width:0;flex:1}
+.delete-zone__copy strong{font-size:14px;color:#6f2837}
+.delete-zone__copy p{margin-top:3px;font-size:13px;line-height:1.5;color:#80686d}
+.delete-zone__actions{display:flex;align-items:center;gap:9px;flex:0 0 auto}
 .search-field{height:46px;border-radius:10px}
 .search-field input{font-size:14px}
 .toolbar select,.page-heading>select{height:46px;border-radius:10px;font-size:14px}
@@ -271,6 +280,11 @@ button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-vis
   .metric-grid{gap:10px}
   .lead-overview{grid-template-columns:1fr;gap:8px}
   .lead-overview article{min-height:70px;padding:12px 14px}
+  .delete-zone{align-items:flex-start;flex-wrap:wrap;padding:14px}
+  .delete-zone__copy{flex-basis:calc(100% - 56px)}
+  .delete-zone>.text-button,.delete-zone__actions{width:100%;margin-left:56px}
+  .delete-zone__actions{align-items:stretch;flex-direction:column-reverse}
+  .delete-zone__actions .button{width:100%}
   .metric-card{min-height:148px;padding:17px}
   .metric-card__top{align-items:flex-start;line-height:1.35}
   .metric-card__top i{width:30px;height:30px;border-radius:9px}
