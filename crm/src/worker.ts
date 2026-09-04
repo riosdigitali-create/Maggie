@@ -70,13 +70,15 @@ async function handlePublic(request: Request, env: Env, pathname: string): Promi
       return json({ ok: true }, 201, cors);
     }
     const result = await createOrMergePublicLead(env, body);
-    await recordAnalyticsEvent(env, {
-      event_type: "lead_created",
-      anonymous_session_id: body.anonymous_session_id ?? body.sessionId,
-      calculator_type: body.calculator_type ?? body.interest_type,
-      metadata: { leadId: result.id, merged: result.merged },
-    });
-    return json({ ok: true, leadId: result.id, merged: result.merged }, 201, cors);
+    if (!result.ignored) {
+      await recordAnalyticsEvent(env, {
+        event_type: "lead_created",
+        anonymous_session_id: body.anonymous_session_id ?? body.sessionId,
+        calculator_type: body.calculator_type ?? body.interest_type,
+        metadata: { leadId: result.id, merged: result.merged },
+      });
+    }
+    return json({ ok: true, leadId: result.id || undefined, merged: result.merged }, 201, cors);
   } catch (error) {
     const message = error instanceof Error ? error.message : "No se pudo guardar la información.";
     return json({ error: message }, 400, cors);

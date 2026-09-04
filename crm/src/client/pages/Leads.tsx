@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { ArrowRight, LayoutGrid, List, Plus, Search, UserRoundSearch, Users } from "lucide-react";
+import { ArrowRight, Inbox, LayoutGrid, Link2, List, Plus, Search, UserRoundSearch, Users } from "lucide-react";
 import { api } from "../api";
 import type { Lead, LeadStatus } from "../types";
 import { dateTime, EmptyState, initials, interestLabels, LoadingBlock, statusLabels } from "../ui";
@@ -24,6 +24,8 @@ export default function Leads({ refreshKey, onAdd, onOpen, onChanged }: { refres
     const term = search.trim().toLocaleLowerCase("es");
     return leads.filter(lead => (filter === "todos" || lead.status === filter) && (!term || `${lead.full_name} ${lead.email} ${lead.phone}`.toLocaleLowerCase("es").includes(term)));
   }, [leads, search, filter]);
+  const fromLanding = leads.filter(lead => lead.source === "landing").length;
+  const newLeads = leads.filter(lead => lead.status === "nuevo").length;
 
   async function changeStatus(id: string, status: LeadStatus) {
     const previous = leads;
@@ -46,6 +48,11 @@ export default function Leads({ refreshKey, onAdd, onOpen, onChanged }: { refres
         <div><span className="eyebrow">Relaciones que crecen</span><h1>Prospectos y <em>clientes</em></h1><p>Cada conversación, cálculo y próxima acción en una sola ficha.</p></div>
         <button className="button button--primary" onClick={onAdd}><Plus size={18} /> Nuevo prospecto</button>
       </section>
+      <section className="lead-overview" aria-label="Resumen de la cartera">
+        <article><span className="lead-overview__icon"><Users size={18} /></span><div><strong>{leads.length}</strong><span>Total en cartera</span></div></article>
+        <article><span className="lead-overview__icon lead-overview__icon--connected"><Link2 size={18} /></span><div><strong>{fromLanding}</strong><span>Desde la landing</span></div></article>
+        <article><span className="lead-overview__icon lead-overview__icon--attention"><Inbox size={18} /></span><div><strong>{newLeads}</strong><span>Nuevos por contactar</span></div></article>
+      </section>
       <section className="toolbar">
         <label className="search-field"><Search size={18} /><input value={search} onChange={event => setSearch(event.target.value)} placeholder="Buscar por nombre, correo o teléfono" /></label>
         <select value={filter} onChange={event => setFilter(event.target.value as LeadStatus | "todos")} aria-label="Filtrar por etapa">
@@ -55,7 +62,7 @@ export default function Leads({ refreshKey, onAdd, onOpen, onChanged }: { refres
       </section>
       {error && <div className="notice notice--error">{error}</div>}
       {loading ? <LoadingBlock /> : filtered.length === 0 ? (
-        <EmptyState icon={<UserRoundSearch size={28} />} title={leads.length ? "No encontré coincidencias" : "Tu cartera comienza aquí"} copy={leads.length ? "Prueba otra búsqueda o etapa." : "Agrega un prospecto o conecta la landing para recibirlos automáticamente."} action={!leads.length ? <button className="button button--primary" onClick={onAdd}><Plus size={17} /> Agregar prospecto</button> : undefined} />
+        <EmptyState icon={<UserRoundSearch size={28} />} title={leads.length ? "No encontré coincidencias" : "Tu cartera comienza aquí"} copy={leads.length ? "Prueba otra búsqueda o etapa." : "Agrega un prospecto manualmente; quienes dejen sus datos en la landing aparecerán aquí automáticamente."} action={!leads.length ? <button className="button button--primary" onClick={onAdd}><Plus size={17} /> Agregar prospecto</button> : undefined} />
       ) : view === "lista" ? (
         <section className="table-card">
           <div className="data-table data-table--leads">

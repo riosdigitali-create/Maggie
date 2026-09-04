@@ -450,9 +450,9 @@ a{color:inherit;text-decoration:none}
 .calculator-progress{height:3px;background:var(--line);margin-top:18px;overflow:hidden}
 .calculator-progress span{display:block;width:33.333%;height:100%;background:linear-gradient(90deg,var(--pink),var(--purple-deep));transition:width .36s cubic-bezier(.4,0,.2,1)}
 .calculator-question{padding:38px 0 24px;animation:questionIn .38s cubic-bezier(.2,.8,.2,1)}
-.calculator-question-overline{font-family:var(--mono);font-size:.625rem;text-transform:uppercase;letter-spacing:.16em;color:var(--pink);margin-bottom:17px}
+.calculator-question-overline{font-family:var(--mono);font-size:.75rem;text-transform:uppercase;letter-spacing:.14em;color:var(--pink);margin-bottom:17px}
 .calculator-question-title{display:block;font-family:var(--serif);font-size:clamp(1.9rem,3.1vw,2.45rem);font-weight:400;letter-spacing:-.025em;line-height:1.08;color:var(--ink);max-width:660px;margin-bottom:22px}
-.calculator-question-support{font-size:.875rem;color:var(--muted);line-height:1.55;margin-top:12px;max-width:620px}
+.calculator-question-support{font-size:.95rem;color:var(--muted);line-height:1.6;margin-top:12px;max-width:620px}
 .calculator-input-wrap{position:relative}
 .calculator-prefix,.calculator-suffix{position:absolute;top:50%;transform:translateY(-50%);color:var(--muted);font-family:var(--mono);font-size:.875rem;pointer-events:none}
 .calculator-prefix{left:19px;font-size:1.1rem}
@@ -463,56 +463,58 @@ a{color:inherit;text-decoration:none}
 .calculator-input.has-suffix{padding-right:78px}
 .calculator-input:focus,.calculator-select:focus{outline:none;border-color:var(--pink);box-shadow:0 0 0 3px rgba(var(--purple-rgb),.1)}
 .calculator-input[aria-invalid="true"]{border-color:#A54242}
-.calculator-journey-error{min-height:21px;font-family:var(--mono);font-size:.625rem;color:#8C3030;line-height:1.45;margin-top:auto;padding:4px 0 10px;letter-spacing:.02em}
+.calculator-journey-error{min-height:21px;font-family:var(--mono);font-size:.75rem;color:#8C3030;line-height:1.45;margin-top:auto;padding:4px 0 10px;letter-spacing:.02em}
 .calculator-journey-actions{display:flex;align-items:center;justify-content:space-between;gap:14px;padding-top:16px;border-top:1px solid var(--line)}
-.calculator-journey-back{appearance:none;border:0;background:transparent;color:var(--muted);font-family:var(--mono);font-size:.6875rem;text-transform:uppercase;letter-spacing:.1em;padding:13px 0;cursor:pointer}
+.calculator-journey-back{appearance:none;border:0;background:transparent;color:var(--muted);font-family:var(--mono);font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;padding:13px 0;cursor:pointer}
 .calculator-journey-back:hover{color:var(--ink)}
 .calculator-journey-back[hidden]{display:block;visibility:hidden;pointer-events:none}
 .calculator-journey-next{min-width:190px;justify-content:center}
-.calculator-enter-hint{font-family:var(--mono);font-size:.5625rem;color:var(--muted);letter-spacing:.06em;text-align:right;margin-top:12px}
+.calculator-enter-hint{font-family:var(--mono);font-size:.75rem;color:var(--muted);letter-spacing:.04em;text-align:right;margin-top:12px}
 .calculator-results{padding:50px 48px;background:radial-gradient(circle at 100% 0%,rgba(211,199,223,.2),transparent 34%),linear-gradient(145deg,#5A4A6B 0%,#4A2856 100%);color:#fff;display:flex;flex-direction:column;position:relative;overflow:hidden}
 .calculator-results.is-revealed{animation:resultReveal .5s cubic-bezier(.2,.8,.2,1)}
 .calculator-results::before{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(110deg,transparent 20%,rgba(255,255,255,.045) 42%,transparent 64%);transform:translateX(-120%);animation:intelligenceSweep 8s ease-in-out infinite}
 .calculator-results > *{position:relative;z-index:1}
 .calculator-results-head{display:flex;justify-content:space-between;gap:18px;align-items:flex-start;padding-bottom:24px;border-bottom:1px solid rgba(255,255,255,.18)}
-.calculator-results-kicker{font-family:var(--mono);font-size:.6875rem;text-transform:uppercase;letter-spacing:.16em;color:rgba(255,255,255,.68);margin-bottom:8px}
+.calculator-results-kicker{font-family:var(--mono);font-size:.75rem;text-transform:uppercase;letter-spacing:.15em;color:rgba(255,255,255,.72);margin-bottom:8px}
 .calculator-results h3{color:#fff;font-size:1.75rem}
 .calculator-result-meta{display:flex;flex-direction:column;align-items:flex-end;gap:8px}
-.calculator-result-note{font-family:var(--mono);font-size:.625rem;text-transform:uppercase;letter-spacing:.09em;color:rgba(255,255,255,.7);text-align:right;max-width:220px;line-height:1.5}
-.smart-live{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:.6rem;text-transform:uppercase;letter-spacing:.12em;color:#fff;padding:7px 10px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.08);border-radius:999px;white-space:nowrap}
+.calculator-result-note{font-family:var(--mono);font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.74);text-align:right;max-width:250px;line-height:1.5}
+.smart-live{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:#fff;padding:7px 10px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.08);border-radius:999px;white-space:nowrap}
 .smart-live-dot{width:6px;height:6px;border-radius:50%;background:#B8FFD1;box-shadow:0 0 0 4px rgba(184,255,209,.1);animation:smartPulse 2s ease-in-out infinite}
 .retirement-results-grid{display:grid;grid-template-columns:1fr 1fr;margin:12px 0 24px}
 .retirement-metric{padding:22px 18px;border-bottom:1px solid rgba(255,255,255,.16);min-width:0}
 .retirement-metric:nth-child(odd){border-right:1px solid rgba(255,255,255,.16);padding-left:0}
 .retirement-metric:nth-child(even){padding-right:0}
-.metric-label{font-family:var(--mono);font-size:.625rem;text-transform:uppercase;letter-spacing:.11em;color:rgba(255,255,255,.68);line-height:1.4;min-height:2.8em;margin-bottom:8px}
+.metric-label{font-family:var(--mono);font-size:.75rem;text-transform:uppercase;letter-spacing:.09em;color:rgba(255,255,255,.72);line-height:1.45;min-height:2.8em;margin-bottom:8px}
 .metric-value{font-family:var(--serif);font-size:clamp(1.55rem,3vw,2.25rem);font-weight:500;letter-spacing:-.02em;line-height:1.05;color:#fff;overflow-wrap:anywhere}
 .metric-value-main{color:#fff;font-size:clamp(2.15rem,4.4vw,3.45rem)}
-.metric-prefix-word{display:block;font-family:var(--sans);font-size:.625rem;text-transform:uppercase;letter-spacing:.14em;color:rgba(255,255,255,.62);margin-bottom:5px}
-.calculator-context{font-size:.875rem;color:rgba(255,255,255,.78);line-height:1.55;margin-bottom:20px}
+.metric-prefix-word{display:block;font-family:var(--sans);font-size:.75rem;text-transform:uppercase;letter-spacing:.12em;color:rgba(255,255,255,.68);margin-bottom:5px}
+.calculator-context{font-size:1rem;color:rgba(255,255,255,.82);line-height:1.6;margin-bottom:20px}
 .smart-analysis{padding:18px 19px;margin:0 0 28px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.075);backdrop-filter:blur(8px)}
 .smart-analysis-top{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px}
-.smart-analysis-label{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.625rem;text-transform:uppercase;letter-spacing:.14em;color:#fff;font-weight:700}
+.smart-analysis-label{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:.75rem;text-transform:uppercase;letter-spacing:.12em;color:#fff;font-weight:700}
 .smart-analysis-label::before{content:"✦";color:#D9C8E8;font-size:.8rem}
-.smart-analysis-state{font-family:var(--mono);font-size:.5625rem;text-transform:uppercase;letter-spacing:.09em;color:rgba(255,255,255,.58)}
-.smart-analysis p{font-size:.875rem;color:rgba(255,255,255,.88);line-height:1.58;margin:0}
+.smart-analysis-state{font-family:var(--mono);font-size:.75rem;text-transform:uppercase;letter-spacing:.08em;color:rgba(255,255,255,.64)}
+.smart-analysis p{font-size:1rem;color:rgba(255,255,255,.9);line-height:1.62;margin:0}
 .smart-signals{display:flex;gap:7px;flex-wrap:wrap;margin-top:13px}
-.smart-signal{font-family:var(--mono);font-size:.5625rem;letter-spacing:.05em;color:rgba(255,255,255,.78);padding:6px 8px;border:1px solid rgba(255,255,255,.15);background:rgba(0,0,0,.08)}
+.smart-signal{font-family:var(--mono);font-size:.75rem;letter-spacing:.03em;color:rgba(255,255,255,.82);padding:7px 9px;border:1px solid rgba(255,255,255,.15);background:rgba(0,0,0,.08)}
 .metric-value.is-updating,.life-amount.is-updating,.life-budget-value.is-updating{animation:valueRefresh .38s ease}
 .calculator-result-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
 .calculator-results .btn{background:#fff;color:var(--purple-deep);box-shadow:none;text-align:center;justify-content:center}
 .calculator-results .btn:hover{background:var(--pink-bg);color:var(--purple-deep)}
 .calculator-results .btn-result-edit{background:transparent;color:#fff;border-color:rgba(255,255,255,.42)}
 .calculator-results .btn-result-edit:hover{background:rgba(255,255,255,.1);color:#fff;border-color:#fff}
-.calculator-disclaimer{font-family:var(--mono);font-size:.625rem;color:rgba(255,255,255,.62);line-height:1.55;letter-spacing:.01em;margin-top:18px}
+.calculator-disclaimer{font-family:var(--mono);font-size:.75rem;color:rgba(255,255,255,.66);line-height:1.6;letter-spacing:.01em;margin-top:18px}
 .result-lead-capture{padding:22px;margin:0 0 24px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.075)}
 .result-lead-heading{font-family:var(--serif);font-size:1.35rem;font-weight:500;color:#fff;line-height:1.2;margin-bottom:7px}
-.result-lead-copy{font-size:.82rem;color:rgba(255,255,255,.74);line-height:1.5;margin-bottom:17px}
+.result-lead-copy{font-size:1rem;color:rgba(255,255,255,.78);line-height:1.55;margin-bottom:17px}
 .result-lead-fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:16px}
-.result-lead-field label{display:block;font-family:var(--mono);font-size:.6rem;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.72);margin-bottom:7px}
+.result-lead-field label{display:block;font-family:var(--mono);font-size:.75rem;text-transform:uppercase;letter-spacing:.1em;color:rgba(255,255,255,.72);margin-bottom:7px}
 .result-lead-field input{width:100%;height:50px;border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.96);color:var(--ink);padding:0 14px;font-family:var(--sans);font-size:.95rem;border-radius:0}
 .result-lead-field input:focus{outline:none;border-color:#fff;box-shadow:0 0 0 3px rgba(255,255,255,.14)}
-.result-lead-privacy{font-family:var(--mono);font-size:.58rem;color:rgba(255,255,255,.58);line-height:1.5;margin-top:12px}
+.result-lead-privacy{font-family:var(--mono);font-size:.75rem;color:rgba(255,255,255,.64);line-height:1.55;margin-top:12px}
+.result-lead-hp{position:absolute!important;left:-10000px!important;width:1px!important;height:1px!important;overflow:hidden!important}
+.result-lead-capture.is-saved{border-color:rgba(191,231,201,.58);background:rgba(92,157,109,.12)}
 .life-result-copy{padding:27px 0 23px;border-bottom:1px solid rgba(255,255,255,.16);margin-bottom:22px}
 .life-dependents{font-size:1rem;color:rgba(255,255,255,.82);line-height:1.55;margin-bottom:17px}
 .life-dependents strong{color:#fff}
@@ -992,6 +994,7 @@ a{color:inherit;text-decoration:none}
                   <input id="retirementLeadPhone" name="phone" type="tel" autocomplete="tel" required inputmode="tel" pattern="[0-9+() -]{10,}" title="Escribe un número de al menos 10 dígitos" placeholder="Tu número a 10 dígitos" />
                 </div>
               </div>
+              <div class="result-lead-hp" aria-hidden="true"><label>Empresa<input name="company" type="text" tabindex="-1" autocomplete="off" /></label></div>
               <div class="calculator-result-actions">
                 <button class="btn btn-primary" type="submit">Quiero una propuesta personalizada</button>
                 <button class="btn btn-ghost btn-result-edit" type="button" onclick="editCalculator('retirement')">Cambiar mis respuestas</button>
@@ -1118,6 +1121,7 @@ a{color:inherit;text-decoration:none}
                   <input id="lifeLeadPhone" name="phone" type="tel" autocomplete="tel" required inputmode="tel" pattern="[0-9+() -]{10,}" title="Escribe un número de al menos 10 dígitos" placeholder="Tu número a 10 dígitos" />
                 </div>
               </div>
+              <div class="result-lead-hp" aria-hidden="true"><label>Empresa<input name="company" type="text" tabindex="-1" autocomplete="off" /></label></div>
               <div class="calculator-result-actions">
                 <button class="btn btn-primary" type="submit">Quiero conocer mi cotización personalizada</button>
                 <button class="btn btn-ghost btn-result-edit" type="button" onclick="editCalculator('life')">Cambiar mis respuestas</button>
@@ -1521,14 +1525,22 @@ function getLandingSessionId(){
 
 const landingSessionId = getLandingSessionId();
 
-function sendCrmRequest(path, payload){
-  if(!LANDING_CRM_API) return Promise.resolve(null);
-  return fetch(LANDING_CRM_API + path, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(payload),
-    keepalive: true
-  }).catch(() => null);
+async function sendCrmRequest(path, payload, retries = 0){
+  if(!LANDING_CRM_API) return null;
+  for(let attempt = 0; attempt <= retries; attempt += 1){
+    try{
+      const response = await fetch(LANDING_CRM_API + path, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+        keepalive: true
+      });
+      if(response.ok) return response;
+    }catch(error){
+      /* El siguiente intento conserva el prospecto si hubo un corte momentáneo. */
+    }
+  }
+  return null;
 }
 
 function trackLandingEvent(eventType, calculatorType = null, metadata = null){
@@ -1913,6 +1925,7 @@ document.querySelectorAll('[data-result-lead-form]').forEach(form => {
     const name = form.elements.namedItem('name').value.trim();
     const email = form.elements.namedItem('email').value.trim();
     const phone = phoneField.value.trim();
+    const company = form.elements.namedItem('company')?.value?.trim() || '';
     if (phone.replace(/\D/g, '').length < 10){
       phoneField.setCustomValidity('Escribe un número de teléfono de al menos 10 dígitos.');
       phoneField.reportValidity();
@@ -1959,6 +1972,7 @@ document.querySelectorAll('[data-result-lead-form]').forEach(form => {
       full_name: name,
       email,
       phone,
+      company,
       calculator_type: 'retiro',
       interest_type: 'retiro',
       anonymous_session_id: landingSessionId,
@@ -1978,6 +1992,7 @@ document.querySelectorAll('[data-result-lead-form]').forEach(form => {
       full_name: name,
       email,
       phone,
+      company,
       calculator_type: 'vida',
       interest_type: 'vida',
       anonymous_session_id: landingSessionId,
@@ -1993,11 +2008,29 @@ document.querySelectorAll('[data-result-lead-form]').forEach(form => {
         presupuesto_anual_orientativo: snapshot.annualProtectionBudget
       }
     };
-    void sendCrmRequest('/api/public/leads', leadPayload);
-    trackLandingEvent('whatsapp_clicked', type, { source: 'result_cta' });
-
     const whatsappUrl = 'https://wa.me/525576408221?text=' + encodeURIComponent(lines.join('\n'));
     window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+    const submitButton = form.querySelector('button[type="submit"]');
+    const privacyCopy = form.querySelector('.result-lead-privacy');
+    const originalButtonCopy = submitButton?.textContent || '';
+    if(submitButton){
+      submitButton.disabled = true;
+      submitButton.textContent = 'Guardando tu solicitud…';
+    }
+    void sendCrmRequest('/api/public/leads', leadPayload, 1).then(saved => {
+      if(saved){
+        form.classList.add('is-saved');
+        if(submitButton) submitButton.textContent = 'Solicitud guardada ✓';
+        if(privacyCopy) privacyCopy.textContent = 'Listo. Tus datos y tu resultado ya llegaron de forma privada al CRM de Maggie.';
+      }else{
+        if(submitButton){
+          submitButton.disabled = false;
+          submitButton.textContent = originalButtonCopy;
+        }
+        if(privacyCopy) privacyCopy.textContent = 'WhatsApp ya está abierto. Si deseas asegurar el registro en el CRM, vuelve a pulsar el botón.';
+      }
+    });
+    trackLandingEvent('whatsapp_clicked', type, { source: 'result_cta' });
   });
 });
 

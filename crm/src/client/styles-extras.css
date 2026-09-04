@@ -138,6 +138,14 @@ button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-vis
 .getting-started p{font-size:14px}
 
 .toolbar{padding:13px;border-radius:var(--radius);box-shadow:var(--shadow-soft)}
+.lead-overview{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.lead-overview article{min-height:82px;padding:15px 18px;display:flex;align-items:center;gap:13px;background:rgba(255,253,249,.86);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-soft)}
+.lead-overview article>div{display:flex;flex-direction:column}
+.lead-overview article strong{font-family:var(--serif);font-size:1.9rem;line-height:1;color:var(--ink)}
+.lead-overview article div span{margin-top:4px;color:var(--muted);font-size:13px}
+.lead-overview__icon{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;flex:0 0 auto;background:var(--purple-soft);color:var(--purple)}
+.lead-overview__icon--connected{background:#e8f3eb;color:#3f7d50}
+.lead-overview__icon--attention{background:#f8ecdc;color:#91612a}
 .search-field{height:46px;border-radius:10px}
 .search-field input{font-size:14px}
 .toolbar select,.page-heading>select{height:46px;border-radius:10px;font-size:14px}
@@ -261,6 +269,8 @@ button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-vis
   .page-heading p,.welcome-row p{font-size:15px}
   .page-heading>.button,.welcome-row>.button{width:100%}
   .metric-grid{gap:10px}
+  .lead-overview{grid-template-columns:1fr;gap:8px}
+  .lead-overview article{min-height:70px;padding:12px 14px}
   .metric-card{min-height:148px;padding:17px}
   .metric-card__top{align-items:flex-start;line-height:1.35}
   .metric-card__top i{width:30px;height:30px;border-radius:9px}

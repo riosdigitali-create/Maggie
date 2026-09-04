@@ -104,12 +104,12 @@ export async function createLead(env: Env, body: JsonObject, source = "manual"):
   return bundle;
 }
 
-export async function createOrMergePublicLead(env: Env, body: JsonObject): Promise<{ id: string; merged: boolean }> {
+export async function createOrMergePublicLead(env: Env, body: JsonObject): Promise<{ id: string; merged: boolean; ignored?: boolean }> {
   const fullName = textValue(body.full_name ?? body.fullName, 200);
   const email = textValue(body.email, 300).toLowerCase();
   const phone = textValue(body.phone, 50);
   const honeypot = textValue(body.company, 200);
-  if (honeypot) return { id: crypto.randomUUID(), merged: false };
+  if (honeypot) return { id: "", merged: false, ignored: true };
   if (!fullName || !email || !phone) throw new Error("Completa nombre, correo y teléfono.");
   if (!/^\S+@\S+\.\S+$/.test(email)) throw new Error("El correo no tiene un formato válido.");
   if (phone.replace(/\D/g, "").length < 10) throw new Error("El teléfono debe tener al menos 10 dígitos.");
