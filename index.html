@@ -13,7 +13,6 @@
 <meta property="og:image" content="hero-illustration.webp" />
 <meta property="og:locale" content="es_MX" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="crm-api-url" content="https://maggia-crm.riosdigitali.workers.dev" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link rel="preload" as="image" href="hero-illustration.webp" fetchpriority="high" />
@@ -2013,6 +2012,11 @@ document.querySelectorAll('[data-result-lead-form]').forEach(form => {
     const submitButton = form.querySelector('button[type="submit"]');
     const privacyCopy = form.querySelector('.result-lead-privacy');
     const originalButtonCopy = submitButton?.textContent || '';
+    if(!LANDING_CRM_API){
+      if(submitButton) submitButton.textContent = 'WhatsApp abierto ✓';
+      if(privacyCopy) privacyCopy.textContent = 'Listo. Tu información quedó preparada en WhatsApp para solicitar tu propuesta personalizada.';
+      return;
+    }
     if(submitButton){
       submitButton.disabled = true;
       submitButton.textContent = 'Guardando tu solicitud…';
