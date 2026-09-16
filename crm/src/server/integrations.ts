@@ -51,10 +51,11 @@ async function storeEncryptedIntegration(
 export async function getIntegrationStatuses(env: Env): Promise<JsonObject> {
   const result = await env.DB.prepare("SELECT integration_type, status, metadata_json, updated_at FROM integrations").all<Pick<IntegrationRow, "integration_type" | "status" | "metadata_json" | "updated_at">>();
   const statuses: JsonObject = {
-    openai: { status: "disconnected" },
+    openai: env.OPENAI_API_KEY ? { status: "connected", metadata: { label: "OpenAI conectado", model: env.OPENAI_MODEL || "gpt-5.6-luna", source: "cloudflare-secret" } } : { status: "disconnected" },
     google: { status: "disconnected" },
   };
   for (const row of result.results) {
+    if (row.integration_type === "openai" && env.OPENAI_API_KEY) continue;
     statuses[row.integration_type] = {
       status: row.status,
       metadata: parseStoredJson<JsonObject>(row.metadata_json, {}),
@@ -245,12 +246,14 @@ function outputText(response: JsonObject): string {
 }
 
 async function openAIRequest(env: Env, payload: JsonObject): Promise<JsonObject> {
-  const stored = await readEncryptedIntegration<OpenAISecret>(env, "openai");
-  if (!stored || stored.row.status !== "connected") throw new Error("Conecta OpenAI desde Ajustes para activar MaggIA.");
+  const stored = env.OPENAI_API_KEY ? null : await readEncryptedIntegration<OpenAISecret>(env, "openai");
+  const apiKey = env.OPENAI_API_KEY || (stored?.row.status === "connected" ? stored.secret.apiKey : "");
+  const model = env.OPENAI_MODEL || stored?.secret.model || "gpt-5.6-luna";
+  if (!apiKey) throw new Error("Configura OPENAI_API_KEY como secreto del Worker para activar MaggIA.");
   const response = await fetch("https://api.openai.com/v1/responses", {
     method: "POST",
-    headers: { Authorization: `Bearer ${stored.secret.apiKey}`, "content-type": "application/json" },
-    body: JSON.stringify({ model: stored.secret.model, store: false, ...payload }),
+    headers: { Authorization: `Bearer ${apiKey}`, "content-type": "application/json" },
+    body: JSON.stringify({ model, store: false, ...payload }),
   });
   const data = await response.json() as JsonObject;
   if (!response.ok) {
